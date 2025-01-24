@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|c:\\users\\nvme\\desktop\\atlyss skills visualizer\\atlyss_visualizer\\changelog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|solutionrelative:changelog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|c:\\users\\nvme\\desktop\\atlyss skills visualizer\\atlyss_visualizer\\src\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|solutionrelative:src\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|c:\\users\\nvme\\desktop\\atlyss skills visualizer\\atlyss_visualizer\\stylesheet.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|solutionrelative:stylesheet.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|c:\\users\\nvme\\desktop\\atlyss skills visualizer\\atlyss_visualizer\\src\\skill-icons.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|solutionrelative:src\\skill-icons.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|c:\\users\\nvme\\desktop\\atlyss skills visualizer\\atlyss_visualizer\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|c:\\users\\nvme\\desktop\\atlyss skills visualizer\\atlyss_visualizer\\src\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|solutionrelative:src\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|c:\\users\\nvme\\desktop\\atlyss skills visualizer\\atlyss_visualizer\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|solutionrelative:app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|c:\\users\\nvme\\desktop\\atlyss skills visualizer\\atlyss_visualizer\\.gitattributes||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|solutionrelative:.gitattributes||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|c:\\users\\nvme\\desktop\\atlyss skills visualizer\\atlyss_visualizer\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\node_modules\\@eslint\\config-array\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:node_modules\\@eslint\\config-array\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|c:\\users\\nvme\\desktop\\atlyss skills visualizer\\atlyss_visualizer\\src\\stylesheet.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1EE1BAAE-1106-4ECC-A338-A69B9BF133D1}|Atlyss_Visualizer.esproj|solutionrelative:src\\stylesheet.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,117 +26,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:131:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CHANGELOG.md",
-              "DocumentMoniker": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\CHANGELOG.md",
-              "RelativeDocumentMoniker": "CHANGELOG.md",
-              "ToolTip": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\CHANGELOG.md",
-              "RelativeToolTip": "CHANGELOG.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-12-24T19:03:11.501Z",
+              "DocumentIndex": 1,
+              "Title": "skill-icons.json",
+              "DocumentMoniker": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\src\\skill-icons.json",
+              "RelativeDocumentMoniker": "src\\skill-icons.json",
+              "ToolTip": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\src\\skill-icons.json",
+              "RelativeToolTip": "src\\skill-icons.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-21T14:56:48.234Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Stylesheet.css",
-              "DocumentMoniker": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\Stylesheet.css",
-              "RelativeDocumentMoniker": "Stylesheet.css",
-              "ToolTip": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\Stylesheet.css",
-              "RelativeToolTip": "Stylesheet.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "stylesheet.css",
+              "DocumentMoniker": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\src\\stylesheet.css",
+              "RelativeDocumentMoniker": "src\\stylesheet.css",
+              "ToolTip": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\src\\stylesheet.css",
+              "RelativeToolTip": "src\\stylesheet.css",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAE8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-24T18:57:05.192Z",
+              "WhenOpened": "2024-12-25T01:24:00.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\index.html",
-              "RelativeDocumentMoniker": "index.html",
-              "ToolTip": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\index.html",
-              "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAHAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\src\\index.html",
+              "RelativeDocumentMoniker": "src\\index.html",
+              "ToolTip": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\src\\index.html",
+              "RelativeToolTip": "src\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-24T18:56:49.108Z",
+              "WhenOpened": "2024-12-24T22:36:47.087Z",
               "EditorCaption": ""
-            },
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "app.js",
-              "DocumentMoniker": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\app.js",
-              "RelativeDocumentMoniker": "app.js",
-              "ToolTip": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\app.js",
-              "RelativeToolTip": "app.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "main.js",
+              "DocumentMoniker": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\src\\main.js",
+              "RelativeDocumentMoniker": "src\\main.js",
+              "ToolTip": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\src\\main.js",
+              "RelativeToolTip": "src\\main.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-24T18:45:17.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": ".gitattributes",
-              "DocumentMoniker": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\.gitattributes",
-              "RelativeDocumentMoniker": ".gitattributes",
-              "ToolTip": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\.gitattributes",
-              "RelativeToolTip": ".gitattributes",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2024-12-24T18:45:06.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "README.md",
-              "DocumentMoniker": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\node_modules\\@eslint\\config-array\\README.md",
-              "RelativeDocumentMoniker": "node_modules\\@eslint\\config-array\\README.md",
-              "ToolTip": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\node_modules\\@eslint\\config-array\\README.md",
-              "RelativeToolTip": "node_modules\\@eslint\\config-array\\README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-12-24T18:27:59.542Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "README.md",
-              "DocumentMoniker": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\README.md",
-              "RelativeDocumentMoniker": "README.md",
-              "ToolTip": "C:\\Users\\NVME\\Desktop\\Atlyss Skills Visualizer\\Atlyss_Visualizer\\README.md",
-              "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-12-24T18:23:42.633Z",
+              "WhenOpened": "2024-12-25T01:24:11.793Z",
+              "IsPinned": true,
               "EditorCaption": ""
             }
           ]
