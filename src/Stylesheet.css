@@ -1,4 +1,3 @@
-
 h1 {
     text-align: center;
 }
@@ -9,10 +8,11 @@ h1 {
     gap: 20px;
     margin: 20px 0;
 }
-    .class-choice img {
-        width: 180px;
-        height: auto;
-    }
+
+.class-choice img {
+    width: 180px;
+    height: auto;
+}
 
 
 img.icon {
@@ -45,12 +45,12 @@ img.icon {
     background-color: #fff;
 }
 
-    .hotbar-slot img {
-        width: 90px;
-        height: auto;
-        object-fit: contain;
-        border-radius: 8px;
-    }
+.hotbar-slot img {
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
 
 
 #novice-box {
@@ -67,14 +67,14 @@ img.icon {
     width: 40%;
 }
 
-    #novice-box img {
-        width: 90px;
-        height: auto;
-    }
+#novice-box img {
+    width: 90px;
+    height: auto;
+}
 
 
 
-    /* New Icon Container*/
+/* New Icon Container*/
 /*
         #icon-container {
     display: flex;
