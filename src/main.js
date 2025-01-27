@@ -63,6 +63,7 @@ choices.forEach(choice => {
         const resultClass = document.getElementById(`${choiceId}-box`);
         if (resultClass) {
             resultClass.style.display = 'flex';
+            resultClass.style.justifyContent = 'center';
         };
 
     });
