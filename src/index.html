@@ -13,18 +13,57 @@
 
     <body>
 
+        <div class="stat-box">
+            <h2>STATS</h2>
+
+            <div class="text">
+                <p>Nickname: </p>
+                <p>Race: </p>
+                <p>Level: </p>
+                <br />
+                <p>Health: </p>
+                <p>Mana: </p>
+            </div>
+
+            <div class="modifiers">
+                <p class="modif" id="nickname">IHAVEALOONAPLUSH</p>
+                <p id="race">Poon</p>
+
+                <p class="modif" id="level"></p>
+                <button type="button" onclick="lvlModifier()">Increase Level!</button>
+                <br />
+
+                <p class="modif" id="health"></p>
+                <p class="modif" id="mana"></p>
+            </div>
+
+
+
+
+        </div>
+
+        <!--/*
+        <label for="numberDropdown">Choose a number:</label>
+        <select id="numberDropdown"></select>
+        */-->
+
+
+
+
 
         <h1>Class selection</h1>
 
+
+
         <div class="class-choice">
-            <img src="../assets/Fighter_(Icon).png" alt="Fighter Class" data-choice="fighter">
+            <img src="../assets/Fighter_(Icon).png" alt="Fighter Class" data-choice="Fighter">
             <img src="../assets/Mystic_(Icon).png" alt="Mystic Class" data-choice="Mystic">
             <img src="../assets/Bandit_(Icon).png" alt="Bandit Class" data-choice="Bandit">
         </div>
 
 
 
-        <div class="skill-class" id="fighter-box"></div>
+        <div class="skill-class" id="Fighter-box"></div>
 
         <div class="skill-class" id="Mystic-box"></div>
 
@@ -34,14 +73,25 @@
 
 
 
+
+
+
+
         <div class="hotbar">
             <div class="hotbar-slot"></div>
         </div>
 
+
+
+
+
+
+
+
+
+
+
         <script src="main.js"></script>
-
-
-
 
     </body>
 

@@ -11,7 +11,7 @@ const categories = {
 const containers = {
     "Novice-icons": document.getElementById('novice-box'),
 
-    "Fighter-icons": document.getElementById('fighter-box'),
+    "Fighter-icons": document.getElementById('Fighter-box'),
     "Mystic-icons": document.getElementById('Mystic-box'),
     "Bandit-icons": document.getElementById('Bandit-box')
 };
@@ -70,5 +70,76 @@ choices.forEach(choice => {
 
     
 });
+
+
+
+// Stats Section
+
+
+
+
+
+
+// Stats Calculation
+/*
+function modif() {
+    let lvl = 1;
+    return  () => {
+        lvl += 1;
+        return lvl;
+    }
+};
+*/
+
+/*
+const add = modif();
+function lvlModifier() {
+    document.getElementById("level").innerHTML = add();
+}
+*/
+
+const stats = {
+    lvl: 1,
+    health: 19,
+    mana: 15
+}
+
+document.getElementById("level").innerHTML = stats.lvl;
+
+document.getElementById("health").innerHTML = stats.health;
+document.getElementById("mana").innerHTML = stats.mana;
+
+
+// Function using the lvl to change other modifiers
+// When lvl is changed, modifiers are also changed
+
+const modifs = document.querySelectorAll('.modif');
+modifs.forEach(() => {
+    modifs.forEach(box => box.innerHTML = "LOL");
+});
+
+
+
+
+/*
+const dropdown = document.getElementById('numberDropdown');
+
+// Generate options dynamically
+for (let i = 1; i <= 25; i++) {
+    const option = document.createElement('option');
+    option.value = i;        // Set the value
+    option.textContent = i;  // Set the visible text
+    dropdown.appendChild(option);
+}
+
+const placeholder = document.createElement('option');
+placeholder.textContent = 'Select a number';
+placeholder.value = '';
+placeholder.disabled = true;
+placeholder.selected = true;
+dropdown.appendChild(placeholder);
+*/
+
+
 
 

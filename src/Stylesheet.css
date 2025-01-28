@@ -2,6 +2,11 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+}
+
+
 .class-choice {
     display: flex;
     justify-content: center;
@@ -97,3 +102,23 @@ img.icon {
     }
 
     */
+
+
+.stat-box {
+    position: fixed;
+    justify-content: center;
+    font-size: 1.7em;
+    padding: 5px;
+    border: 2px solid #ddd;
+    left: 70%;
+    background-color: #f1f1f1;
+}
+
+.stat-box .text {
+    display: inline-table;
+}
+
+.stat-box .modifiers {
+    display: inline-table;
+}
+
