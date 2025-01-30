@@ -1,6 +1,6 @@
 // Predefined list of categories and their images
 const categories = {
-    "Novice-icons": ['Recovery.png', 'Rock_Toss.png'],
+    "Novice-icons": ['Recovery.png', 'Rock_Toss.png', 'Divine.png'],
 
     "Fighter-icons": ['Rage.png', 'Lethal_Strike.png'],
     "Mystic-icons": ['Restora.png', 'Cross.png'],
@@ -37,6 +37,7 @@ function appendCategoryImages(category) {
         img.src = `../assets/${category}/${icon}`;
         img.alt = icon;
         img.className = 'icon';
+        img.draggable = true;
         parentContainer.appendChild(img);
     });
 
@@ -142,4 +143,4 @@ dropdown.appendChild(placeholder);
 
 
 
-
+//DRAG AND DROP  Section

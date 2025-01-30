@@ -1,15 +1,13 @@
 {
-  "name": "atlyss_visualizer",
-  "version": "1.0.0",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "type": "module",
+  "author": "Kabilapok",
   "description": "",
-  "devDependencies": {
-    "eslint": "^9.17.0"
-  }
+  "keywords": [],
+  "license": "MIT",
+  "main": "app.js",
+  "name": "atlyss_visualizer",
+  "scripts": {
+    "main": "app.js"
+  },
+  "version": "0.0.5"
 }

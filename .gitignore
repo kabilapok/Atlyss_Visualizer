@@ -2,4 +2,34 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-*.vsidx
+.vscode/
+.vs/
+*.user
+*.suo
+*.vcxproj.user
+*.code-workspace
+
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.log
+
+node_modules/
+package-lock.json
+dist/
+wwwroot/
+
+.env   
+secrets.json
+appsettings.*.json
+
+.DS_Store
+Thumbs.db
+*.bak
+
+*.min.js
+*.map
+tsconfig.tsbuildinfo
