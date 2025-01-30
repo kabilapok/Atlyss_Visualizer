@@ -2,6 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+<<<<<<< HEAD
 .vscode/
 .vs/
 *.user
@@ -33,3 +34,7 @@ Thumbs.db
 *.min.js
 *.map
 tsconfig.tsbuildinfo
+=======
+*.vsidx
+node_modules
+>>>>>>> 26d5c646c2e6b653e76f4a4adfc450b22d40151d
