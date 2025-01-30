@@ -1,15 +1,16 @@
 {
-  "name": "atlyss_visualizer",
-  "version": "1.0.0",
+  "author": "",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
   "main": "app.js",
+  "name": "atlyss_visualizer",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "eslint": "^9.17.0"
+  "type": "module",
+  "version": "1.0.0",
+  "dependencies": {
+    "dragula": "^3.7.3"
   }
 }

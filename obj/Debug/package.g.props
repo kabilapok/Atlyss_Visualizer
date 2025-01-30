@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
   <PropertyGroup>
-    <PackageJsonName Condition="$(PackageJsonName) == ''">atlyss_visualizer</PackageJsonName>
-    <PackageJsonVersion Condition="$(PackageJsonVersion) == ''">1.0.0</PackageJsonVersion>
-    <PackageJsonMain Condition="$(PackageJsonMain) == ''">app.js</PackageJsonMain>
-    <PackageJsonScriptsTest Condition="$(PackageJsonScriptsTest) == ''">echo "Error: no test specified" &amp;&amp; exit 1</PackageJsonScriptsTest>
-    <PackageJsonKeywords Condition="$(PackageJsonKeywords) == ''">[]</PackageJsonKeywords>
     <PackageJsonAuthor Condition="$(PackageJsonAuthor) == ''"></PackageJsonAuthor>
-    <PackageJsonLicense Condition="$(PackageJsonLicense) == ''">ISC</PackageJsonLicense>
     <PackageJsonDescription Condition="$(PackageJsonDescription) == ''"></PackageJsonDescription>
-    <PackageJsonDevdependenciesEslint Condition="$(PackageJsonDevdependenciesEslint) == ''">^9.17.0</PackageJsonDevdependenciesEslint>
+    <PackageJsonKeywords Condition="$(PackageJsonKeywords) == ''">[]</PackageJsonKeywords>
+    <PackageJsonLicense Condition="$(PackageJsonLicense) == ''">ISC</PackageJsonLicense>
+    <PackageJsonMain Condition="$(PackageJsonMain) == ''">app.js</PackageJsonMain>
+    <PackageJsonName Condition="$(PackageJsonName) == ''">atlyss_visualizer</PackageJsonName>
+    <PackageJsonScriptsTest Condition="$(PackageJsonScriptsTest) == ''">echo "Error: no test specified" &amp;&amp; exit 1</PackageJsonScriptsTest>
+    <PackageJsonType Condition="$(PackageJsonType) == ''">module</PackageJsonType>
+    <PackageJsonVersion Condition="$(PackageJsonVersion) == ''">1.0.0</PackageJsonVersion>
+    <PackageJsonDependenciesDragula Condition="$(PackageJsonDependenciesDragula) == ''">^3.7.3</PackageJsonDependenciesDragula>
   </PropertyGroup>
 </Project>

@@ -56,13 +56,13 @@
 
 
         <div class="class-choice">
-            <img src="../assets/Fighter_(Icon).png" alt="Fighter Class" data-choice="Fighter">
-            <img src="../assets/Mystic_(Icon).png" alt="Mystic Class" data-choice="Mystic">
-            <img src="../assets/Bandit_(Icon).png" alt="Bandit Class" data-choice="Bandit">
+            <img src="../assets/Fighter_(Icon).png" class="choice" alt="Fighter Class" draggable="false" data-choice="Fighter">
+            <img src="../assets/Mystic_(Icon).png" class="choice" alt="Mystic Class" draggable="false" data-choice="Mystic">
+            <img src="../assets/Bandit_(Icon).png" class="choice" alt="Bandit Class" draggable="false" data-choice="Bandit">
         </div>
 
 
-
+        <!-- DRAG FROM -->
         <div class="skill-class" id="Fighter-box"></div>
 
         <div class="skill-class" id="Mystic-box"></div>
@@ -76,8 +76,13 @@
 
 
 
-
+        <!-- DROP TO -->
         <div class="hotbar">
+            <div class="hotbar-slot"></div>
+            <div class="hotbar-slot"></div>
+            <div class="hotbar-slot"></div>
+            <div class="hotbar-slot"></div>
+            <div class="hotbar-slot"></div>
             <div class="hotbar-slot"></div>
         </div>
 
@@ -91,7 +96,7 @@
 
 
 
-        <script src="main.js"></script>
+        <script src="./main.js"></script>
 
     </body>
 
