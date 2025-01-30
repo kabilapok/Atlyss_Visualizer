@@ -1,3 +1,8 @@
+import _ from 'dragula';
+dragula([document.querySelector('.skill-class'), document.querySelector('hotbar-slot')]);
+
+
+
 // Predefined list of categories and their images
 const categories = {
     "Novice-icons": ['Recovery.png', 'Rock_Toss.png', 'Divine.png'],
