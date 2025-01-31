@@ -27,3 +27,6 @@ Thumbs.db
 tsconfig.tsbuildinfo
 *.vsidx
 Release/
+.sln
+.eproj
+/Atlyss_Visualizer.esproj

@@ -1,0 +1,20 @@
+{
+  "name": "atlyss_visualizer",
+  "version": "0.0.1",
+  "description": "My attempt at doing a Skill Visualizer for the game Atlyss. Please don't mind as I'm getting into the environment of setting my code up and doing things properly.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kabilapok/Atlyss_Visualizer.git"
+  },
+  "keywords": [],
+  "author": "Kabilapok",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kabilapok/Atlyss_Visualizer/issues"
+  },
+  "homepage": "https://github.com/kabilapok/Atlyss_Visualizer#readme"
+}
