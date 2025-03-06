@@ -1,0 +1,35 @@
+{
+  "Fighter": {
+    "Active": [ "Stomp", "Rage", "Lethal_Strike", "Blood_Gush", "Cyclone", "Shield_Bash", "Execute" ],
+    "Passive": [ "Bulwark", "Reflect" ]
+  },
+
+  "Mystic": {
+    "Active": [ "Fluxbolt", "Fluxspear", "Cross", "Nova", "Prism", "Imbue", "Restora" ],
+    "Passive": [ "Blink", "Manaflow" ]
+  },
+
+  "Bandit": {
+    "Active": [ "Venom_Shot", "Killer_Jab", "Volley", "Pay_Day", "Bomb_Trap", "Mist_Veil", "Devious_Signet" ],
+    "Passive": [ "Agile_Technique" ]
+  },
+
+  "Novice": {
+    "Active": [
+      "Alacrity",
+      "Inner_Focus",
+      "Leg_Up",
+      "Recovery",
+      "Rock_Toss",
+      "Siphon_Leech",
+      "Sturdy",
+      "Cryo_Needle",
+      "Divine",
+      "Fireball",
+      "Life_Tap",
+      "Spire",
+      "Spread_Shot"
+    ]
+  }
+
+}
