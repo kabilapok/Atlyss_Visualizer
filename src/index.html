@@ -4,76 +4,27 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE-edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./Stylesheet.css" />
-
         <title>main ig</title>
-
-
+        <script defer src="src/main.js" ></script>
+        <link rel="stylesheet" href="src/Stylesheet.css" />
     </head>
 
     <body>
 
-        <div class="stat-box">
-            <h2>STATS</h2>
-
-            <div class="text">
-                <p>Nickname: </p>
-                <p>Race: </p>
-                <p>Level: </p>
-                <br />
-                <p>Health: </p>
-                <p>Mana: </p>
-            </div>
-
-            <div class="modifiers">
-                <p class="modif" id="nickname">IHAVEALOONAPLUSH</p>
-                <p id="race">Poon</p>
-
-                <p class="modif" id="level"></p>
-                <button type="button" onclick="lvlModifier()">Increase Level!</button>
-                <br />
-
-                <p class="modif" id="health"></p>
-                <p class="modif" id="mana"></p>
-            </div>
-
-
-
-
-        </div>
-
-        <!--/*
-        <label for="numberDropdown">Choose a number:</label>
-        <select id="numberDropdown"></select>
-        */-->
-
-
-
-
-
-        <h1>Class selection</h1>
-
-
-
+        <h1>Class Selection</h1>
         <div class="class-choice">
-            <img src="../assets/Fighter_(Icon).png" class="choice" alt="Fighter Class" draggable="false" data-choice="Fighter">
-            <img src="../assets/Mystic_(Icon).png" class="choice" alt="Mystic Class" draggable="false" data-choice="Mystic">
-            <img src="../assets/Bandit_(Icon).png" class="choice" alt="Bandit Class" draggable="false" data-choice="Bandit">
+            <img src="../assets/Fighter_(Icon).png" class="choice" alt="Fighter Class" draggable="false" data-choice="Fighter" />
+            <img src="../assets/Mystic_(Icon).png" class="choice" alt="Mystic Class" draggable="false" data-choice="Mystic" />
+            <img src="../assets/Bandit_(Icon).png" class="choice" alt="Bandit Class" draggable="false" data-choice="Bandit" />
         </div>
 
 
+        <h2>Icon Gallery</h2>
         <!-- DRAG FROM -->
-        <div class="skill-class" id="Fighter-box"></div>
-
-        <div class="skill-class" id="Mystic-box"></div>
-
-        <div class="skill-class" id="Bandit-box"></div>
-
-        <div id="novice-box"></div>
-
-
-
-
+        <div id="Fighter-box" class="icon-container" ></div>
+        <div id="Mystic-box" class="icon-container" ></div>
+        <div id="Bandit-box" class="icon-container" ></div>
+        <div id="Novice-box" ></div>
 
 
         <!-- DROP TO -->
@@ -86,23 +37,5 @@
             <div class="hotbar-slot"></div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-        <script src="./main.js"></script>
-
     </body>
-
-
-
-
-
-
 </html>

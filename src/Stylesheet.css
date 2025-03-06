@@ -1,3 +1,7 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 h1 {
     text-align: center;
 }
@@ -10,29 +14,48 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin: 50px ;
+    margin: 50px;
 }
 
-.class-choice img {
-    width: 180px;
-    height: auto;
+    .class-choice img {
+        width: 180px;
+        height: auto;
+    }
+
+    .class-choice .choice:hover {
+        box-shadow: 0 0 0px #000000;
+        cursor: pointer;
+    }
+
+    .class-choice .choice:active {
+        background-color: #C37500;
+        opacity: 0.7 !important;
+        box-shadow: 0 0 0px #000000;
+    }
+
+.icon-container {
+    display: none;
 }
 
-.class-choice .choice:hover {
-    box-shadow: 0 0 0px #000000;
-    cursor: pointer;
-
+#Fighter-box {
+    background-color: rgba(255, 0, 0, 0.400);
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 50px;
 }
 
-.class-choice .choice:active {
-    background-color: #C37500;
-    opacity:0.7 !important;    
-    box-shadow: 0 0 0px #000000;
-
+#Mystic-box {
+    background-color: rgba(0, 0, 255, 0.400);
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 50px;
 }
 
-.skill-class {
-    display: none;   
+#Bandit-box {
+    background-color: rgba(0, 255, 0, 0.400);
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 50px;
 }
 
 img.icon {
@@ -40,20 +63,18 @@ img.icon {
     border-radius: 5px;
     height: auto;
     margin: 1rem;
-
-}
-
-.icon {
-    width: 100px;
-    height: 100px;
     object-fit: contain;
+    pointer-events: auto;
     cursor: pointer;
     transition: transform 0.2s;
 }
 
+
 .icon:hover {
     transform: scale(1.1);
 }
+
+
 
 .hotbar {
     position: fixed;
@@ -67,7 +88,7 @@ img.icon {
     padding: 10px;
     border: 2px solid #ddd;
     border-radius: 8px;
-    width: 80%;
+    width: 50%;
 }
 
 .hotbar-slot {
@@ -76,16 +97,19 @@ img.icon {
     border: 2px dashed #aaa;
     border-radius: 8px;
     background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
 }
 
-.hotbar-slot img {
-    width: 90px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-}
+    .hotbar-slot img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 
-#novice-box {
+#Novice-box {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
@@ -96,17 +120,15 @@ img.icon {
     padding: 10px;
     border: 2px solid #ddd;
     border-radius: 8px;
-    width: 40%;
-
     /*Wrap to test with many icons*/
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
-#novice-box img {
-    width: 90px;
-    height: auto;
-}
+    #Novice-box img {
+        width: 90px;
+        height: auto;
+    }
 
 .stat-box {
     position: fixed;
@@ -118,11 +140,10 @@ img.icon {
     background-color: #f1f1f1;
 }
 
-.stat-box .text {
-    display: inline-table;
-}
+    .stat-box .text {
+        display: inline-table;
+    }
 
-.stat-box .modifiers {
-    display: inline-table;
-}
-
+    .stat-box .modifiers {
+        display: inline-table;
+    }
