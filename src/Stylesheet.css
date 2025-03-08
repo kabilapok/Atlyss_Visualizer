@@ -29,12 +29,12 @@ h2 {
 
     .class-choice .choice:active {
         background-color: #C37500;
-        opacity: 0.7 !important;
+        opacity: 0.7 ;
         box-shadow: 0 0 0px #000000;
     }
 
 .icon-container {
-    display: none;
+    display: none !important;
 }
 
 #Fighter-box {
@@ -75,7 +75,6 @@ img.icon {
 }
 
 
-
 .hotbar {
     position: fixed;
     bottom: 20px;
@@ -103,11 +102,11 @@ img.icon {
     overflow: hidden;
 }
 
-    .hotbar-slot img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
+.hotbar-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
 #Novice-box {
     position: fixed;
@@ -125,25 +124,9 @@ img.icon {
     margin-top: 20px;
 }
 
-    #Novice-box img {
-        width: 90px;
-        height: auto;
-    }
+#Novice-box img {
+    width: 90px;
+    height: auto;
 
-.stat-box {
-    position: fixed;
-    justify-content: center;
-    font-size: 1.7em;
-    padding: 5px;
-    border: 2px solid #ddd;
-    left: 80%;
-    background-color: #f1f1f1;
 }
 
-    .stat-box .text {
-        display: inline-table;
-    }
-
-    .stat-box .modifiers {
-        display: inline-table;
-    }
