@@ -1,30 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE-edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>main ig</title>
-        <script defer src="src/main.js" ></script>
-        <link rel="stylesheet" href="src/Stylesheet.css" />
+        <script defer src="main.js" ></script>
+        <link rel="stylesheet" href="Stylesheet.css">
     </head>
 
     <body>
 
+        <div id="statbox">
+            <div id="main-stats">
+                <h3>Box 1</h3>
+                <label for="nickname">Nickname:</label>
+                <input type="text" id="nickname" placeholder="IHaveALoonaPlush">
+
+                <label for="Race">Race:</label>
+                <select id="Race">
+                    <option value="poon">Poon</option>
+                    <option value="byrdle">Byrdle</option>
+                    <option value="chang">Chang</option>
+                    <option value="imp">Imp</option>
+                </select>
+
+                <label for="class">Class:</label>
+                <select id="class">
+                    <!-- CLASS # -->
+                </select>
+
+                <label for="level">Level:</label>
+                <select id="level">
+                    <!-- LEVEL # -->
+                </select>
+
+            </div>
+
+            <h4>Box 2</h4>
+            <div id="sub-stats">
+                <div class="stat-box" id="health-box">Health: <span id="health-value">19</span></div>
+                <div class="stat-box" id="mana-box">Mana: <span id="mana-value">0</span></div>
+                <div class="stat-box" id="stamina-box">Stamina: <span id="stamina-value">0</span></div>
+            </div>
+
+        </div>
+
+
         <h1>Class Selection</h1>
         <div class="class-choice">
-            <img src="../assets/Fighter_(Icon).png" class="choice" alt="Fighter Class" draggable="false" data-choice="Fighter" />
-            <img src="../assets/Mystic_(Icon).png" class="choice" alt="Mystic Class" draggable="false" data-choice="Mystic" />
-            <img src="../assets/Bandit_(Icon).png" class="choice" alt="Bandit Class" draggable="false" data-choice="Bandit" />
+            <img src="../assets/Fighter_(Icon).png" class="choice" alt="Fighter Class" draggable="false" data-choice="Fighter">
+            <img src="../assets/Mystic_(Icon).png" class="choice" alt="Mystic Class" draggable="false" data-choice="Mystic">
+            <img src="../assets/Bandit_(Icon).png" class="choice" alt="Bandit Class" draggable="false" data-choice="Bandit">
         </div>
 
 
         <h2>Icon Gallery</h2>
         <!-- DRAG FROM -->
-        <div id="Fighter-box" class="icon-container" ></div>
-        <div id="Mystic-box" class="icon-container" ></div>
-        <div id="Bandit-box" class="icon-container" ></div>
-        <div id="Novice-box" ></div>
+        <div id="Fighter-box" class="icon-container"></div>
+        <div id="Mystic-box" class="icon-container"></div>
+        <div id="Bandit-box" class="icon-container"></div>
+        <div id="Novice-box"></div>
 
 
         <!-- DROP TO -->
