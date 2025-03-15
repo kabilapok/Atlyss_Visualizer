@@ -1,17 +1,23 @@
 {
   "Fighter": {
     "Active": [ "Stomp", "Rage", "Lethal_Strike", "Blood_Gush", "Cyclone", "Shield_Bash", "Execute" ],
-    "Passive": [ "Bulwark", "Reflect" ]
+    "Passive": [ "Bulwark", "Reflect" ],
+
+    "Mastery": ["Heavy_Melee_Mastery", "Melee_Mastery", "Polearm_Mastery"]
   },
 
   "Mystic": {
     "Active": [ "Fluxbolt", "Fluxspear", "Cross", "Nova", "Prism", "Imbue", "Restora" ],
-    "Passive": [ "Blink", "Manaflow" ]
+    "Passive": [ "Blink", "Manaflow" ],
+
+    "Mastery": ["Bell_Mastery", "Scepter_Mastery"]
   },
 
   "Bandit": {
     "Active": [ "Venom_Shot", "Killer_Jab", "Volley", "Pay_Day", "Bomb_Trap", "Mist_Veil", "Devious_Signet" ],
-    "Passive": [ "Agile_Technique" ]
+    "Passive": [ "Agile_Technique" ],
+    
+    "Mastery": ["Katar_Mastery", "Ranged_Mastery"]
   },
 
   "Novice": {
