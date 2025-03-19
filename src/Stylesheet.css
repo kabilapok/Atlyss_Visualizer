@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'terminal-grotesque';
+    src: url('../assets/Terminale-Grotesque-master/terminal-grotesque.ttf') format('ttf'), url('../assets/Terminale-Grotesque-master/terminal-grotesque_open.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Terminal Grotesque', Verdana, Geneva, Tahoma, sans-serif;
+    background-color: cadetblue;
 }
 
 h1 {
@@ -7,6 +15,10 @@ h1 {
 }
 
 h2 {
+    text-align: center;
+}
+
+#main-stats {
     text-align: center;
 }
 
@@ -34,24 +46,44 @@ h2 {
     }
 
 .icon-container {
-    display: none !important;
+    /*display: none !important;*/
 }
 
-#Fighter-box {
+#Icon-gallery {
+    text-align: center;
+}
+
+
+#Mastery-box {
+    border-bottom: 5px solid #57b1dc;
+}
+
+#Class-icons {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap to the next line */
+    gap: 10px; /* Space between images */
+    padding: 10px;
+    max-width: 80em; /* Maximum width for the container */
+    margin: 0 auto;
+    align-items: center; /* Center content vertically inside */
+    justify-content: center;
+}
+
+#Fighter {
     background-color: rgba(255, 0, 0, 0.400);
     padding: 10px;
     border: 2px solid #ddd;
     border-radius: 50px;
 }
 
-#Mystic-box {
+#Mystic {
     background-color: rgba(0, 0, 255, 0.400);
     padding: 10px;
     border: 2px solid #ddd;
     border-radius: 50px;
 }
 
-#Bandit-box {
+#Bandit {
     background-color: rgba(0, 255, 0, 0.400);
     padding: 10px;
     border: 2px solid #ddd;
@@ -76,7 +108,7 @@ img.icon {
 
 
 .hotbar {
-    position: fixed;
+    position: relative;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -108,8 +140,10 @@ img.icon {
     object-fit: contain;
 }
 
-#Novice-box {
-    position: fixed;
+
+#Novice {
+    position: relative;
+    max-width: 80em;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
