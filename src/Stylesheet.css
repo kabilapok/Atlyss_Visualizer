@@ -7,30 +7,49 @@
 
 body {
     font-family: 'Terminal Grotesque', Verdana, Geneva, Tahoma, sans-serif;
-    background-color: cadetblue;
+    background-color: antiquewhite;
+        
 }
 
 h1 {
     text-align: center;
+    text-decoration: underline;
 }
 
 h2 {
     text-align: center;
 }
 
+
 #main-stats {
     text-align: center;
 }
+
+.main-stats-box {
+    padding: 3px;
+}
+
+#sub-stats {
+    border: 2px dashed #aaa;
+    max-width: fit-content;
+    position: absolute;
+}
+
+.sub-stats-box {
+    border: 1px dashed #ff6a00;
+    max-width: fit-content;
+}
+
 
 .class-choice {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin: 50px;
+    margin: 30px;
 }
 
     .class-choice img {
-        width: 180px;
+        width: 80px;
         height: auto;
     }
 
@@ -46,7 +65,7 @@ h2 {
     }
 
 .icon-container {
-    /*display: none !important;*/
+    display: none !important;
 }
 
 #Icon-gallery {
@@ -109,7 +128,6 @@ img.icon {
 
 .hotbar {
     position: relative;
-    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -143,7 +161,7 @@ img.icon {
 
 #Novice {
     position: relative;
-    max-width: 80em;
+    width: 45%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -153,13 +171,12 @@ img.icon {
     padding: 10px;
     border: 2px solid #ddd;
     border-radius: 8px;
-    /*Wrap to test with many icons*/
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
 #Novice-box img {
-    width: 90px;
+    width: 80px;
     height: auto;
 
 }
