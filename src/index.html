@@ -5,62 +5,107 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>main ig</title>
+        <link rel="icon" type="image/svg" href="../assets/order_icon.svg">
         <script defer src="main.js" ></script>
         <link rel="stylesheet" href="Stylesheet.css">
     </head>
 
     <body>
+        <header>
+            <h1>Chose your class and start dragging!</h1>
+        </header>
 
         <section id="statbox">
             <div id="main-stats">
-                <h3>Box 1</h3>
-                <label for="nickname">Nickname:</label>
-                <input type="text" id="nickname" placeholder="IHaveALoonaPlush">
+                <!--<h3>Box 1</h3>-->
 
-                <label for="Race">Race:</label>
-                <select id="Race">
-                    <option value="poon">Poon</option>
-                    <option value="kubold">Kubold</option>
-                    <option value="byrdle">Byrdle</option>
-                    <option value="chang">Chang</option>
-                    <option value="imp">Imp</option>
-                </select>
+                <div class="main-stats-box">
+                    <label for="nickname">Nickname:</label>
+                    <input type="text" id="nickname" placeholder="IHaveALoonaPlush">
+                </div>
 
-                <label for="class">Class:</label>
-                <select id="class">
-                    <!-- CLASS # -->
-                </select>
+                <div class="main-stats-box">
+                    <label for="Race">Race:</label>
+                    <select id="Race">
+                        <option value="">-</option>
+                        <option value="poon">Poon</option>
+                        <option value="kubold">Kubold</option>
+                        <option value="byrdle">Byrdle</option>
+                        <option value="chang">Chang</option>
+                        <option value="imp">Imp</option>
+                    </select>
 
-                <label for="level">Level:</label>
-                <select id="level">
-                    <!-- LEVEL # -->
-                </select>
+
+                    <label for="class">Class:</label>
+                    <select id="class">
+                        <!-- CLASS # -->
+                    </select>
+
+                    <label for="level">Level:</label>
+                    <select id="level">
+                        <!-- LEVEL # -->
+                    </select>
+                </div>
 
             </div>
 
-            <h4>Box 2</h4>
+            <!--Sub stats-->
             <div id="sub-stats">
-                <div class="stat-box" id="health-box">Health: <span id="health-value">19</span></div>
-                <div class="stat-box" id="mana-box">Mana: <span id="mana-value">0</span></div>
-                <div class="stat-box" id="stamina-box">Stamina: <span id="stamina-value">0</span></div>
+                <h4>Box 2</h4>
+                <div class="sub-stats-box">
+                    <div class="stat-box" id="health">Health: <span id="health-value">19</span></div>
+                    <div class="stat-box" id="mana">Mana: <span id="mana-value"></span></div>
+                    <div class="stat-box" id="stamina">Stamina: <span id="stamina-value">10</span></div>
+                </div>
+
+                <div class="sub-stats-box">
+                    <div class="stat-box" id="attack">Attack Power: <span id="attack-value">1</span></div>
+                    <div class="stat-box" id="dex">Dex Power: <span id="dex-value">1</span></div>
+                    <div class="stat-box" id="physcrit">Phys. Crit %: <span id="physcrit-value">0.03%</span></div>
+                </div>
+
+                <div class="sub-stats-box">
+                    <div class="stat-box" id="mgk">Mgk. Power: <span id="mgk-value">0</span></div>
+                    <div class="stat-box" id="mgkcrit">Mgk. Crit %: <span id="mgkcrit-value">0.01%</span></div>
+                </div>
+
+                <div class="sub-stats-box">
+                    <div class="stat-box" id="defense">Defense: <span id="defense-value">0</span></div>
+                    <div class="stat-box" id="mgkdefense">Mgk. Defense: <span id="mgkdefense-value">0</span></div>
+
+                </div>
+
+                <div class="sub-stats-box">
+                    <div class="stat-box" id="evasion">Evasion %: <span id="evasion-value">1.20%</span></div>
+                    <div class="stat-box" id="movespd">Mov Spd: <span id="movspd-value">100%</span></div>
+                </div>
+
             </div>
 
         </section>
 
+        
+        <!-- Skillbook concept -->
+        <div id="skillbook">
+            <h1>Class Selection</h1>
 
-        <div>
-    <h1>Class Selection</h1>
-    <div class="class-choice">
-        <img src="../assets/Fighter_(Icon).png" class="choice" alt="Fighter Class" draggable="false" data-choice="Fighter">
-        <img src="../assets/Mystic_(Icon).png" class="choice" alt="Mystic Class" draggable="false" data-choice="Mystic">
-        <img src="../assets/Bandit_(Icon).png" class="choice" alt="Bandit Class" draggable="false" data-choice="Bandit">
-    </div>
-    </div>
+            <div class="class-choice">
+                <img src="../assets/Novice_(Icon).png" class="choice" alt="Novice Class" draggable="false">
+            </div>
+
+            <div class="class-choice">
+                <img src="../assets/Fighter_(Icon).png" class="choice" alt="Fighter Class" draggable="false" data-choice="Fighter">
+                <img src="../assets/Mystic_(Icon).png" class="choice" alt="Mystic Class" draggable="false" data-choice="Mystic">
+                <img src="../assets/Bandit_(Icon).png" class="choice" alt="Bandit Class" draggable="false" data-choice="Bandit">
+            </div>
+
+            <div>Berserker, Paladin, etc</div>
+        </div>
 
 
         <section id="Icon-gallery">
-            <h2>Icon Gallery</h2>
-            <!-- DRAG FROM -->
+            <h2 class="icon-container">Icon Gallery</h2>
+            <!--DRAG FROM-->
             <div id="Class-icons">
 
                 <div id="Fighter" class="icon-container">
@@ -119,6 +164,7 @@
             <div class="hotbar-slot"></div>
             <div class="hotbar-slot"></div>
         </div>
+
 
 
     </body>
