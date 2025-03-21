@@ -40,6 +40,25 @@ function initializeOptions() {
 }
 initializeOptions();
 
+// Race
+function getSelectedRace() {
+    const selectElement = document.getElementById("Race");
+    const selectedValue = selectElement.value; // Get the value of the selected option
+    console.log(`Selected Race value: ${selectedValue}`);
+
+    const selectedText = selectElement.options[selectElement.selectedIndex].text; // Get the text
+    console.log(`Selected Race text: ${selectedText}`);
+
+    return selectedValue;
+};
+
+document.getElementById("Race").addEventListener("change", function () {
+    const selectedRace = getSelectedRace();
+    if (selectedRace === "kubold") {
+        console.log(`The class modifier is: ${selectedRace} from getSelectedRace()`);
+    };
+});
+
 // class selection implementation
 function populateClassOption() {
     const classSelect = document.getElementById("class");
@@ -73,7 +92,6 @@ document.getElementById("class").addEventListener("change", function () {
         console.log(`The class modifier is: ${selectedClass} from getSelectedClass()`);
     }
 })
-
 
 // level selection implementation
 function populateLevelOption() {
@@ -109,21 +127,3 @@ document.getElementById("level").addEventListener('change', function () {
 });
 
 
-// Race
-function getSelectedRace() {
-    const selectElement = document.getElementById("Race");
-    const selectedValue = selectElement.value; // Get the value of the selected option
-    console.log(`Selected Race value: ${selectedValue}`);
-
-    const selectedText = selectElement.options[selectElement.selectedIndex].text; // Get the text
-    console.log(`Selected Race text: ${selectedText}`);
-
-    return selectedValue;
-};
-
-document.getElementById("Race").addEventListener("change", function () {
-    const selectedRace = getSelectedRace();
-    if (selectedRace === "kubold") {
-        console.log(`The class modifier is: ${selectedRace} from getSelectedRace()`);
-    };
-});
