@@ -1,7 +1,38 @@
+//DragnDrop
+function dragstartHandler(ev) {
+    ev.dataTransfer.setData("text/plain", ev.target.id);
+}
+
+function dragoverHandler(ev) {
+    ev.preventDefault();    
+}
+
+function dropHandler(ev) {
+    ev.preventDefault();
+    let data = ev.dataTransfer.getData("text/plain");
+    ev.target.appendChild(document.getElementById(data));
+}
+
+let statsData = {};
+let iconData = {};
+
+Promise.all([fetch("data.json").then((response) => response.json()),
+            fetch("Stats.json").then(response => response.json()) ])
+
 // icon implementation
-fetch("data.json")
-    .then((response) => response.json())
-    .then((data) => {
+    .then(([data, baseStats]) => {
+
+       
+
+        iconData = data;
+        console.log(iconData);
+
+
+        statsData = baseStats;
+        console.log(statsData);
+
+        
+
 
         Object.entries(data).forEach(([skillClass, types]) => {
             Object.entries(types).forEach(([state, icons]) => {
@@ -14,6 +45,8 @@ fetch("data.json")
                     img.setAttribute("draggable", "true");
                     img.classList.add(skillClass, state, "icon");
 
+                    //dragndrop
+                    img.addEventListener("dragstart", dragstartHandler);
 
                     let container = document.getElementById(`${skillClass}-box`);
                     const masteryContainer = document.getElementById("Mastery-box");
@@ -28,17 +61,55 @@ fetch("data.json")
                 });
             });
         });
+
+
+        //stats implementation
+        const Mainstats = baseStats["Main-stats"];
+        console.log(`Main stats: ${JSON.stringify(Mainstats, null, 2)}`);
+
+        const Substats = baseStats["Sub-stats"];
+        console.log(`Sub stats: ${JSON.stringify(Substats, null, 2)}`);
+
+        Object.entries(Mainstats).forEach(([statName, statValue]) => {
+            const statContainer = document.getElementById(`${statName}-value`);
+            statContainer.textContent = statValue;
+        });
+
+        Object.entries(Substats).forEach(([category, stats]) => {
+            Object.entries(stats).forEach(([statName, statValue]) => {
+                const statContainer = document.getElementById(`${statName}-value`);
+
+                if (statName === "Evasion") {
+                    statValue = statValue.toFixed(2); 
+                } else if (statName === "Mov-spd") {
+                    statValue = statValue.toFixed(1); 
+                }
+                statContainer.textContent = statValue;
+
+            })
+
+        })
+        updateHealth(getSelectedLevel());
+
+
     });
+
 
 function initializeOptions() {
     populateClassOption();
     populateLevelOption();
 
-    getSelectedRace(); // call to get the initial race value
-    getSelectedClass(); // call to get the initial class value
-    getSelectedLevel(); // call to get the initial level value
+    populateHotbarslot();
+
+    updateRaceimg(getSelectedRace());
+
+    // only for future utility
+    getSelectedRace(); // get the initial race value
+    getSelectedClass(); // get the initial class value
+    getSelectedLevel(); // get the initial level value
 }
 initializeOptions();
+
 
 // Race
 function getSelectedRace() {
@@ -52,13 +123,25 @@ function getSelectedRace() {
     return selectedValue;
 };
 
-document.getElementById("Race").addEventListener("change", function () {
-    const selectedRace = getSelectedRace();
-    if (selectedRace === "kubold") {
-        console.log(`The class modifier is: ${selectedRace} from getSelectedRace()`);
-    };
-});
+function updateRaceimg(selected) {
+    const container = document.getElementById("Race-img");
 
+    container.innerHTML = '';
+
+    if (selected) {
+        const raceId = document.createElement("img");
+        raceId.src = `../assets/Race-icons/rcIco_${selected}.png`;
+        raceId.id = selected;
+        raceId.alt = `${selected}.png`;
+        container.appendChild(raceId);
+    }
+
+}
+
+document.getElementById("Race").addEventListener('change', function () {
+    updateRaceimg(this.value);
+})
+    
 // class selection implementation
 function populateClassOption() {
     const classSelect = document.getElementById("class");
@@ -69,7 +152,6 @@ function populateClassOption() {
         classSelect.appendChild(option);
     });
     classSelect.value = "Novice";
-
 };
 
 // Class
@@ -83,14 +165,21 @@ function getSelectedClass() {
     console.log(classtext);
 
     return classValue;
-
 }
 
 document.getElementById("class").addEventListener("change", function () {
     const selectedClass = getSelectedClass(); // getSelectedClass returns the class selected
-    if (selectedClass === "Fighter") {
-        console.log(`The class modifier is: ${selectedClass} from getSelectedClass()`);
+
+
+    //Show current class icons and hide non current ones
+    const resultBox = document.querySelectorAll('.icon-container');
+    resultBox.forEach(box => box.style.display = 'none');
+
+    const resultClass = document.getElementById(`${selectedClass}`);
+    if (resultClass ) {
+        resultClass.style.display = "flex";
     }
+
 })
 
 // level selection implementation
@@ -103,8 +192,6 @@ function populateLevelOption() {
         option.textContent = i;
         levelSelect.appendChild(option);
     };
-    
-
 };
 
 // Level
@@ -120,10 +207,18 @@ function getSelectedLevel() {
 };
 
 document.getElementById("level").addEventListener('change', function () {
-    const selectedLevel = getSelectedLevel();
-    if (selectedLevel === "20") {
-        console.log(`The class modifier is: ${selectedLevel} from getSelectedLevel()`);
-    };
-});
+    updateHealth(this.value);
+})
 
+function updateHealth(amount) {
+    let healthValue = Number(statsData["Main-stats"].Health + (Number(amount) - 1) * 1.625).toFixed(0);
+    document.getElementById("Health-value").textContent = healthValue;
+}
 
+//populateHotbar for dragNdrop
+function populateHotbarslot() {
+    document.querySelectorAll(".hotbar-slot").forEach(slot => {
+        slot.setAttribute("ondrop", "dropHandler(event)");
+        slot.setAttribute("ondragover", "dragoverHandler(event)");
+    })   
+}

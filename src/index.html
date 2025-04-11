@@ -11,161 +11,183 @@
     </head>
 
     <body>
-        <header>
-            <h1>Chose your class and start dragging!</h1>
-        </header>
 
-        <section id="statbox">
-            <div id="main-stats">
-                <!--<h3>Box 1</h3>-->
+        <div id="MAIN">
+            <div><h1>Select your class and start dragging!</h1></div>
 
-                <div class="main-stats-box">
-                    <label for="nickname">Nickname:</label>
-                    <input type="text" id="nickname" placeholder="IHaveALoonaPlush">
+            <section id="Main-Section">
+
+                <div id="Race-img">
+                    <!-- RACE IMG -->
                 </div>
 
-                <div class="main-stats-box">
-                    <label for="Race">Race:</label>
-                    <select id="Race">
-                        <option value="">-</option>
-                        <option value="poon">Poon</option>
-                        <option value="kubold">Kubold</option>
-                        <option value="byrdle">Byrdle</option>
-                        <option value="chang">Chang</option>
-                        <option value="imp">Imp</option>
-                    </select>
+                <div id="main-stats">
+
+                    <div class="main-stats-box">
+                        <label for="nickname">Nickname:</label>
+                        <input type="text" id="nickname" placeholder="IHaveALoonaPlush">
+                    </div>
+
+                    <div class="main-stats-box">
+                        <label for="Race">Race:</label>
+                        <select id="Race">
+                            <option value="poon">Poon</option>
+                            <option value="azora">Kubold</option>
+                            <option value="byrdle">Byrdle</option>
+                            <option value="chang">Chang</option>
+                            <option value="imp">Imp</option>
+                        </select>
 
 
-                    <label for="class">Class:</label>
-                    <select id="class">
-                        <!-- CLASS # -->
-                    </select>
+                        <label for="class">Class:</label>
+                        <select id="class">
+                            <!-- CLASS # -->
+                        </select>
 
-                    <label for="level">Level:</label>
-                    <select id="level">
-                        <!-- LEVEL # -->
-                    </select>
+                        <label for="level">Level:</label>
+                        <select id="level">
+                            <!-- LEVEL # -->
+                        </select>
+                    </div>
+
                 </div>
 
+
+
+            </section>
+
+            <!-- DROP TO -->
+            <div id="hotbar">
+                <div class="hotbar-slot"></div>
+                <div class="hotbar-slot"></div>
+                <div class="hotbar-slot"></div>
+                <div class="hotbar-slot"></div>
+                <div class="hotbar-slot"></div>
+                <div class="hotbar-slot"></div>
             </div>
 
-            <!--Sub stats-->
-            <div id="sub-stats">
-                <h4>Box 2</h4>
-                <div class="sub-stats-box">
-                    <div class="stat-box" id="health">Health: <span id="health-value">19</span></div>
-                    <div class="stat-box" id="mana">Mana: <span id="mana-value"></span></div>
-                    <div class="stat-box" id="stamina">Stamina: <span id="stamina-value">10</span></div>
+            <section id="Second-Section">
+
+                <div id="modifiers">
+
+                    <div id="stat-modifiers">
+                        <!-- Stats Modifiers -->
+                        <h2>Attributes</h2>
+                        <div>Unspent Points: <span id="pointsAttribute">0</span></div>
+
+                        <div>
+                            <div>
+                                <img src="../assets/Strength_(Icon).png"> <span>STENGTH</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <img src="../assets/Mind_(Icon).png"> <span>MIND</span>
+                        </div>
+
+                        <div>
+                            <img src="../assets/Dexterity_(Icon).png"> <span>DEXTERITY</span>
+                        </div>
+
+                        <div>
+                            <img src="../assets/Vitality_(Icon).png"> <span>VITALITY</span>
+                        </div>
+
+                    </div>
+
+                    <!--Sub stats-->
+                    <div id="sub-stats">
+                        <h3>stats</h3>
+                        <div class="sub-stats-box">
+                            <div class="stat-box" id="health">Health: <u><span id="Health-value" title="Can vary by 1 point."></span></u></div>
+                            <div class="stat-box" id="mana">Mana: <span id="Mana-value"></span></div>
+                            <div class="stat-box" id="stamina">Stamina: <span id="Stamina-value"></span></div>
+                        </div>
+
+                        <div class="sub-stats-box">
+                            <div class="stat-box" id="attack">Attack Power: <span id="Attack-Power-value"></span></div>
+                            <div class="stat-box" id="dex">Dex Power: <span id="Dex-Power-value"></span></div>
+                            <div class="stat-box" id="physcrit">Phys. Crit %: <span id="Phys-Crit-value"></span> %</div>
+                        </div>
+
+                        <div class="sub-stats-box">
+                            <div class="stat-box" id="mgk">Mgk. Power: <span id="Mgk-Power-value"></span></div>
+                            <div class="stat-box" id="mgkcrit">Mgk. Crit %: <span id="Mgk-Crit-value"></span> %</div>
+                        </div>
+
+                        <div class="sub-stats-box">
+                            <div class="stat-box" id="defense">Defense: <span id="Defense-value"></span></div>
+                            <div class="stat-box" id="mgkdefense">Mgk. Defense: <span id="Mgk-Defense-value"></span></div>
+
+                        </div>
+
+                        <div class="sub-stats-box">
+                            <div class="stat-box" id="evasion">Evasion %: <span id="Evasion-value"></span> %</div>
+                            <div class="stat-box" id="movespd">Mov Spd: <span id="Mov-spd-value"></span> %</div>
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="sub-stats-box">
-                    <div class="stat-box" id="attack">Attack Power: <span id="attack-value">1</span></div>
-                    <div class="stat-box" id="dex">Dex Power: <span id="dex-value">1</span></div>
-                    <div class="stat-box" id="physcrit">Phys. Crit %: <span id="physcrit-value">0.03%</span></div>
-                </div>
 
-                <div class="sub-stats-box">
-                    <div class="stat-box" id="mgk">Mgk. Power: <span id="mgk-value">0</span></div>
-                    <div class="stat-box" id="mgkcrit">Mgk. Crit %: <span id="mgkcrit-value">0.01%</span></div>
-                </div>
+                <section id="Icon-gallery">
 
-                <div class="sub-stats-box">
-                    <div class="stat-box" id="defense">Defense: <span id="defense-value">0</span></div>
-                    <div class="stat-box" id="mgkdefense">Mgk. Defense: <span id="mgkdefense-value">0</span></div>
 
-                </div>
+                    <!--DRAG FROM-->
+                    <div id="Class-icons">
 
-                <div class="sub-stats-box">
-                    <div class="stat-box" id="evasion">Evasion %: <span id="evasion-value">1.20%</span></div>
-                    <div class="stat-box" id="movespd">Mov Spd: <span id="movspd-value">100%</span></div>
-                </div>
+                        <div id="Fighter" class="icon-container" data-choice="Fighter">
 
-            </div>
+                            <div id="Fighter-box"></div>
 
-        </section>
+                            <div>
+                                <h4>Passives</h4>
+                                <div id="Fighter-passive-box"></div>
+                            </div>
 
-        
-        <!-- Skillbook concept -->
-        <div id="skillbook">
-            <h1>Class Selection</h1>
+                        </div>
 
-            <div class="class-choice">
-                <img src="../assets/Novice_(Icon).png" class="choice" alt="Novice Class" draggable="false">
-            </div>
+                        <div id="Mystic" class="icon-container" data-choice="Mystic">
 
-            <div class="class-choice">
-                <img src="../assets/Fighter_(Icon).png" class="choice" alt="Fighter Class" draggable="false" data-choice="Fighter">
-                <img src="../assets/Mystic_(Icon).png" class="choice" alt="Mystic Class" draggable="false" data-choice="Mystic">
-                <img src="../assets/Bandit_(Icon).png" class="choice" alt="Bandit Class" draggable="false" data-choice="Bandit">
-            </div>
+                            <div id="Mystic-box"></div>
 
-            <div>Berserker, Paladin, etc</div>
+                            <div>
+                                <h4>Passives</h4>
+                                <div id="Mystic-passive-box"></div>
+                            </div>
+
+                        </div>
+
+                        <div id="Bandit" class="icon-container" data-choice="Bandit">
+
+                            <div id="Bandit-box"></div>
+
+                            <div>
+                                <h4>Passives</h4>
+                                <div id="Bandit-passive-box"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div id="Novice" data-choice="Novice">
+                        <div>
+                            <h3>Mastery Skills</h3>
+                            <div id="Mastery-box"></div>
+                        </div>
+                        <div>
+                            <h3>Novice Skills</h3>
+                            <div id="Novice-box"></div>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+
         </div>
-
-
-        <section id="Icon-gallery">
-            <h2 class="icon-container">Icon Gallery</h2>
-            <!--DRAG FROM-->
-            <div id="Class-icons">
-
-                <div id="Fighter" class="icon-container">
-
-                    <div id="Fighter-box"></div>
-
-                    <div>
-                        <h4>Passives</h4>
-                        <div id="Fighter-passive-box"></div>
-                    </div>
-
-                </div>
-
-                <div id="Mystic" class="icon-container">
-
-                    <div id="Mystic-box"></div>
-
-                    <div>
-                        <h4>Passives</h4>
-                        <div id="Mystic-passive-box"></div>
-                    </div>
-
-                </div>
-
-                <div id="Bandit" class="icon-container">
-
-                    <div id="Bandit-box"></div>
-
-                    <div>
-                        <h4>Passives</h4>
-                        <div id="Bandit-passive-box"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div id="Novice" data-choice="Novice">
-                <div>
-                    <h3>Mastery Skills</h3>
-                    <div id="Mastery-box"></div>
-                </div>
-                <div>
-                    <h3>Novice Skills</h3>
-                    <div id="Novice-box"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DROP TO -->
-        <div class="hotbar">
-            <div class="hotbar-slot"></div>
-            <div class="hotbar-slot"></div>
-            <div class="hotbar-slot"></div>
-            <div class="hotbar-slot"></div>
-            <div class="hotbar-slot"></div>
-            <div class="hotbar-slot"></div>
-        </div>
-
-
 
     </body>
 </html>
