@@ -1,146 +1,224 @@
-// Predefined list of categories and their images
-const categories = {
-    "Novice-icons": ['Recovery.png', 'Rock_Toss.png', 'Divine.png'],
+//DragnDrop
+function dragstartHandler(ev) {
+    ev.dataTransfer.setData("text/plain", ev.target.id);
+}
 
-    "Fighter-icons": ['Rage.png', 'Lethal_Strike.png'],
-    "Mystic-icons": ['Restora.png', 'Cross.png'],
-    "Bandit-icons": ['Volley.png', 'Pay_Day.png']
-};
+function dragoverHandler(ev) {
+    ev.preventDefault();    
+}
 
-// Containers for each category
-const containers = {
-    "Novice-icons": document.getElementById('novice-box'),
+function dropHandler(ev) {
+    ev.preventDefault();
+    let data = ev.dataTransfer.getData("text/plain");
+    ev.target.appendChild(document.getElementById(data));
+}
 
-    "Fighter-icons": document.getElementById('Fighter-box'),
-    "Mystic-icons": document.getElementById('Mystic-box'),
-    "Bandit-icons": document.getElementById('Bandit-box')
-};
+let statsData = {};
+let iconData = {};
+
+Promise.all([fetch("data.json").then((response) => response.json()),
+            fetch("Stats.json").then(response => response.json()) ])
+
+// icon implementation
+    .then(([data, baseStats]) => {
+
+       
+
+        iconData = data;
+        console.log(iconData);
 
 
-// Function to append all images for a category
-function appendCategoryImages(category) {
-    const parentContainer = containers[category];
+        statsData = baseStats;
+        console.log(statsData);
 
-    if (!parentContainer) {
-        console.error(`Container for category "${category}" not found.`);
-        return;
-    };
+        
 
-    const images = categories[category];
-    if (!images) {
-        console.error(`No images found for category "${category}".`);
-        return;
-    };
 
-    images.forEach((icon) => {
-        const img = document.createElement('img');
-        img.src = `../assets/${category}/${icon}`;
-        img.alt = icon;
-        img.className = 'icon';
-        img.draggable = true;
-        parentContainer.appendChild(img);
+        Object.entries(data).forEach(([skillClass, types]) => {
+            Object.entries(types).forEach(([state, icons]) => {
+                icons.forEach((icon) => {
+                    const img = document.createElement("img");
+                    img.src = `../assets/${skillClass}-icons/${icon}.png`;
+                    img.id = icon;
+                    img.alt = `${icon}.png`;
+                    img.title = icon.replace(/_/g, ' ');
+                    img.setAttribute("draggable", "true");
+                    img.classList.add(skillClass, state, "icon");
+
+                    //dragndrop
+                    img.addEventListener("dragstart", dragstartHandler);
+
+                    let container = document.getElementById(`${skillClass}-box`);
+                    const masteryContainer = document.getElementById("Mastery-box");
+                    let passiveContainer = document.getElementById(`${skillClass}-passive-box`);
+
+                    const stateActions = {
+                        "Mastery": () => masteryContainer.appendChild(img),
+                        "Passive": () => passiveContainer.appendChild(img),
+                        "Default": () => container.appendChild(img),
+                    };
+                    (stateActions[state] || stateActions["Default"])();
+                });
+            });
+        });
+
+
+        //stats implementation
+        const Mainstats = baseStats["Main-stats"];
+        console.log(`Main stats: ${JSON.stringify(Mainstats, null, 2)}`);
+
+        const Substats = baseStats["Sub-stats"];
+        console.log(`Sub stats: ${JSON.stringify(Substats, null, 2)}`);
+
+        Object.entries(Mainstats).forEach(([statName, statValue]) => {
+            const statContainer = document.getElementById(`${statName}-value`);
+            statContainer.textContent = statValue;
+        });
+
+        Object.entries(Substats).forEach(([category, stats]) => {
+            Object.entries(stats).forEach(([statName, statValue]) => {
+                const statContainer = document.getElementById(`${statName}-value`);
+
+                if (statName === "Evasion") {
+                    statValue = statValue.toFixed(2); 
+                } else if (statName === "Mov-spd") {
+                    statValue = statValue.toFixed(1); 
+                }
+                statContainer.textContent = statValue;
+
+            })
+
+        })
+        updateHealth(getSelectedLevel());
+
+
     });
 
+
+function initializeOptions() {
+    populateClassOption();
+    populateLevelOption();
+
+    populateHotbarslot();
+
+    updateRaceimg(getSelectedRace());
+
+    // only for future utility
+    getSelectedRace(); // get the initial race value
+    getSelectedClass(); // get the initial class value
+    getSelectedLevel(); // get the initial level value
+}
+initializeOptions();
+
+
+// Race
+function getSelectedRace() {
+    const selectElement = document.getElementById("Race");
+    const selectedValue = selectElement.value; // Get the value of the selected option
+    console.log(`Selected Race value: ${selectedValue}`);
+
+    const selectedText = selectElement.options[selectElement.selectedIndex].text; // Get the text
+    console.log(`Selected Race text: ${selectedText}`);
+
+    return selectedValue;
 };
 
+function updateRaceimg(selected) {
+    const container = document.getElementById("Race-img");
 
-appendCategoryImages("Novice-icons");
+    container.innerHTML = '';
 
-
-appendCategoryImages("Fighter-icons");
-appendCategoryImages("Mystic-icons");
-appendCategoryImages("Bandit-icons");
-
-
-
-const choices = document.querySelectorAll('.class-choice img');
-
-choices.forEach(choice => {
-    choice.addEventListener('click', () => {
-        const resultBox = document.querySelectorAll('.skill-class');
-        resultBox.forEach(box => box.style.display = 'none');
-
-        const choiceId = choice.getAttribute('data-choice');
-        const resultClass = document.getElementById(`${choiceId}-box`);
-        if (resultClass) {
-            resultClass.style.display = 'flex';
-            resultClass.style.justifyContent = 'center';
-        };
-
-    });
-
-    
-});
-
-
-
-// Stats Section
-
-
-
-
-
-
-// Stats Calculation
-/*
-function modif() {
-    let lvl = 1;
-    return  () => {
-        lvl += 1;
-        return lvl;
+    if (selected) {
+        const raceId = document.createElement("img");
+        raceId.src = `../assets/Race-icons/rcIco_${selected}.png`;
+        raceId.id = selected;
+        raceId.alt = `${selected}.png`;
+        container.appendChild(raceId);
     }
+
+}
+
+document.getElementById("Race").addEventListener('change', function () {
+    updateRaceimg(this.value);
+})
+    
+// class selection implementation
+function populateClassOption() {
+    const classSelect = document.getElementById("class");
+    document.querySelectorAll("[data-choice]").forEach(element => {
+        let option = document.createElement("option");
+        option.value = element.dataset.choice;
+        option.textContent = element.dataset.choice;
+        classSelect.appendChild(option);
+    });
+    classSelect.value = "Novice";
 };
-*/
 
-/*
-const add = modif();
-function lvlModifier() {
-    document.getElementById("level").innerHTML = add();
-}
-*/
+// Class
+function getSelectedClass() {
 
-const stats = {
-    lvl: 1,
-    health: 19,
-    mana: 15
-}
+    const classSelect = document.getElementById("class");
+    const classValue = classSelect.value;
+    console.log(classValue);
 
-document.getElementById("level").innerHTML = stats.lvl;
+    const classtext = classSelect.options[classSelect.selectedIndex].text;
+    console.log(classtext);
 
-document.getElementById("health").innerHTML = stats.health;
-document.getElementById("mana").innerHTML = stats.mana;
-
-
-// Function using the lvl to change other modifiers
-// When lvl is changed, modifiers are also changed
-
-const modifs = document.querySelectorAll('.modif');
-modifs.forEach(() => {
-    modifs.forEach(box => box.innerHTML = "LOL");
-});
-
-
-
-
-/*
-const dropdown = document.getElementById('numberDropdown');
-
-// Generate options dynamically
-for (let i = 1; i <= 25; i++) {
-    const option = document.createElement('option');
-    option.value = i;        // Set the value
-    option.textContent = i;  // Set the visible text
-    dropdown.appendChild(option);
+    return classValue;
 }
 
-const placeholder = document.createElement('option');
-placeholder.textContent = 'Select a number';
-placeholder.value = '';
-placeholder.disabled = true;
-placeholder.selected = true;
-dropdown.appendChild(placeholder);
-*/
+document.getElementById("class").addEventListener("change", function () {
+    const selectedClass = getSelectedClass(); // getSelectedClass returns the class selected
 
 
+    //Show current class icons and hide non current ones
+    const resultBox = document.querySelectorAll('.icon-container');
+    resultBox.forEach(box => box.style.display = 'none');
 
-//DRAG AND DROP  Section
+    const resultClass = document.getElementById(`${selectedClass}`);
+    if (resultClass ) {
+        resultClass.style.display = "flex";
+    }
+
+})
+
+// level selection implementation
+function populateLevelOption() {
+    const levelSelect = document.getElementById("level");
+
+    for (let i = 25; i >= 1; i--) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        levelSelect.appendChild(option);
+    };
+};
+
+// Level
+function getSelectedLevel() {
+    const selectLevel = document.getElementById("level");
+    const levelValue = selectLevel.value;
+    console.log(levelValue);
+
+    const levelText = selectLevel.options[selectLevel.selectedIndex].text;
+    console.log(`The text is: ${levelText}`);
+
+    return levelValue;
+};
+
+document.getElementById("level").addEventListener('change', function () {
+    updateHealth(this.value);
+})
+
+function updateHealth(amount) {
+    let healthValue = Number(statsData["Main-stats"].Health + (Number(amount) - 1) * 1.625).toFixed(0);
+    document.getElementById("Health-value").textContent = healthValue;
+}
+
+//populateHotbar for dragNdrop
+function populateHotbarslot() {
+    document.querySelectorAll(".hotbar-slot").forEach(slot => {
+        slot.setAttribute("ondrop", "dropHandler(event)");
+        slot.setAttribute("ondragover", "dragoverHandler(event)");
+    })   
+}

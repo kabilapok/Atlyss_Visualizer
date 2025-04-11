@@ -1,108 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE-edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./Stylesheet.css" />
-
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>main ig</title>
-
-
+        <link rel="icon" type="image/svg" href="../assets/order_icon.svg">
+        <script defer src="main.js" ></script>
+        <link rel="stylesheet" href="Stylesheet.css">
     </head>
 
     <body>
 
-        <div class="stat-box">
-            <h2>STATS</h2>
+        <div id="MAIN">
+            <div><h1>Select your class and start dragging!</h1></div>
 
-            <div class="text">
-                <p>Nickname: </p>
-                <p>Race: </p>
-                <p>Level: </p>
-                <br />
-                <p>Health: </p>
-                <p>Mana: </p>
+            <section id="Main-Section">
+
+                <div id="Race-img">
+                    <!-- RACE IMG -->
+                </div>
+
+                <div id="main-stats">
+
+                    <div class="main-stats-box">
+                        <label for="nickname">Nickname:</label>
+                        <input type="text" id="nickname" placeholder="IHaveALoonaPlush">
+                    </div>
+
+                    <div class="main-stats-box">
+                        <label for="Race">Race:</label>
+                        <select id="Race">
+                            <option value="poon">Poon</option>
+                            <option value="azora">Kubold</option>
+                            <option value="byrdle">Byrdle</option>
+                            <option value="chang">Chang</option>
+                            <option value="imp">Imp</option>
+                        </select>
+
+
+                        <label for="class">Class:</label>
+                        <select id="class">
+                            <!-- CLASS # -->
+                        </select>
+
+                        <label for="level">Level:</label>
+                        <select id="level">
+                            <!-- LEVEL # -->
+                        </select>
+                    </div>
+
+                </div>
+
+
+
+            </section>
+
+            <!-- DROP TO -->
+            <div id="hotbar">
+                <div class="hotbar-slot"></div>
+                <div class="hotbar-slot"></div>
+                <div class="hotbar-slot"></div>
+                <div class="hotbar-slot"></div>
+                <div class="hotbar-slot"></div>
+                <div class="hotbar-slot"></div>
             </div>
 
-            <div class="modifiers">
-                <p class="modif" id="nickname">IHAVEALOONAPLUSH</p>
-                <p id="race">Poon</p>
+            <section id="Second-Section">
 
-                <p class="modif" id="level"></p>
-                <button type="button" onclick="lvlModifier()">Increase Level!</button>
-                <br />
+                <div id="modifiers">
 
-                <p class="modif" id="health"></p>
-                <p class="modif" id="mana"></p>
-            </div>
+                    <div id="stat-modifiers">
+                        <!-- Stats Modifiers -->
+                        <h2>Attributes</h2>
+                        <div>Unspent Points: <span id="pointsAttribute">0</span></div>
+
+                        <div>
+                            <div>
+                                <img src="../assets/Strength_(Icon).png"> <span>STENGTH</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <img src="../assets/Mind_(Icon).png"> <span>MIND</span>
+                        </div>
+
+                        <div>
+                            <img src="../assets/Dexterity_(Icon).png"> <span>DEXTERITY</span>
+                        </div>
+
+                        <div>
+                            <img src="../assets/Vitality_(Icon).png"> <span>VITALITY</span>
+                        </div>
+
+                    </div>
+
+                    <!--Sub stats-->
+                    <div id="sub-stats">
+                        <h3>stats</h3>
+                        <div class="sub-stats-box">
+                            <div class="stat-box" id="health">Health: <u><span id="Health-value" title="Can vary by 1 point."></span></u></div>
+                            <div class="stat-box" id="mana">Mana: <span id="Mana-value"></span></div>
+                            <div class="stat-box" id="stamina">Stamina: <span id="Stamina-value"></span></div>
+                        </div>
+
+                        <div class="sub-stats-box">
+                            <div class="stat-box" id="attack">Attack Power: <span id="Attack-Power-value"></span></div>
+                            <div class="stat-box" id="dex">Dex Power: <span id="Dex-Power-value"></span></div>
+                            <div class="stat-box" id="physcrit">Phys. Crit %: <span id="Phys-Crit-value"></span> %</div>
+                        </div>
+
+                        <div class="sub-stats-box">
+                            <div class="stat-box" id="mgk">Mgk. Power: <span id="Mgk-Power-value"></span></div>
+                            <div class="stat-box" id="mgkcrit">Mgk. Crit %: <span id="Mgk-Crit-value"></span> %</div>
+                        </div>
+
+                        <div class="sub-stats-box">
+                            <div class="stat-box" id="defense">Defense: <span id="Defense-value"></span></div>
+                            <div class="stat-box" id="mgkdefense">Mgk. Defense: <span id="Mgk-Defense-value"></span></div>
+
+                        </div>
+
+                        <div class="sub-stats-box">
+                            <div class="stat-box" id="evasion">Evasion %: <span id="Evasion-value"></span> %</div>
+                            <div class="stat-box" id="movespd">Mov Spd: <span id="Mov-spd-value"></span> %</div>
+                        </div>
+
+                    </div>
+
+                </div>
 
 
+                <section id="Icon-gallery">
+
+
+                    <!--DRAG FROM-->
+                    <div id="Class-icons">
+
+                        <div id="Fighter" class="icon-container" data-choice="Fighter">
+
+                            <div id="Fighter-box"></div>
+
+                            <div>
+                                <h4>Passives</h4>
+                                <div id="Fighter-passive-box"></div>
+                            </div>
+
+                        </div>
+
+                        <div id="Mystic" class="icon-container" data-choice="Mystic">
+
+                            <div id="Mystic-box"></div>
+
+                            <div>
+                                <h4>Passives</h4>
+                                <div id="Mystic-passive-box"></div>
+                            </div>
+
+                        </div>
+
+                        <div id="Bandit" class="icon-container" data-choice="Bandit">
+
+                            <div id="Bandit-box"></div>
+
+                            <div>
+                                <h4>Passives</h4>
+                                <div id="Bandit-passive-box"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div id="Novice" data-choice="Novice">
+                        <div>
+                            <h3>Mastery Skills</h3>
+                            <div id="Mastery-box"></div>
+                        </div>
+                        <div>
+                            <h3>Novice Skills</h3>
+                            <div id="Novice-box"></div>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
 
 
         </div>
-
-        <!--/*
-        <label for="numberDropdown">Choose a number:</label>
-        <select id="numberDropdown"></select>
-        */-->
-
-
-
-
-
-        <h1>Class selection</h1>
-
-
-
-        <div class="class-choice">
-            <img src="../assets/Fighter_(Icon).png" class="choice" alt="Fighter Class" draggable="false" data-choice="Fighter">
-            <img src="../assets/Mystic_(Icon).png" class="choice" alt="Mystic Class" draggable="false" data-choice="Mystic">
-            <img src="../assets/Bandit_(Icon).png" class="choice" alt="Bandit Class" draggable="false" data-choice="Bandit">
-        </div>
-
-
-        <!-- DRAG FROM -->
-        <div class="skill-class" id="Fighter-box"></div>
-
-        <div class="skill-class" id="Mystic-box"></div>
-
-        <div class="skill-class" id="Bandit-box"></div>
-
-        <div id="novice-box"></div>
-
-
-
-
-
-
-        <!-- DROP TO -->
-        <div class="hotbar">
-            <div class="hotbar-slot"></div>
-            <div class="hotbar-slot"></div>
-            <div class="hotbar-slot"></div>
-            <div class="hotbar-slot"></div>
-            <div class="hotbar-slot"></div>
-            <div class="hotbar-slot"></div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-        <script src="./main.js"></script>
 
     </body>
-
-
-
-
-
-
 </html>

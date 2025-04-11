@@ -1,128 +1,172 @@
+@font-face {
+    font-family: 'terminal-grotesque';
+    src: url('../assets/Terminale-Grotesque-master/terminal-grotesque.ttf') format('ttf'), url('../assets/Terminale-Grotesque-master/terminal-grotesque_open.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Terminal Grotesque', Verdana, Geneva, Tahoma, sans-serif;
+    background-color: darkgrey;
+}
+
+#MAIN {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    margin: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
 h1 {
     text-align: center;
+    text-decoration: underline;
 }
 
-h2 {
-    text-align: center;
+#Main-Section {
+    display: flex;
+    gap: 1rem;
+    max-width: 800px;
+    padding: 1rem;
 }
 
-.class-choice {
+#Race-img {
+    width: 60px; 
+    height: 60px;
+    background-color: #f9f9f9; 
+    border: 1px solid #ccc; 
+}
+
+
+.main-stats-box {
+    padding: 5px;
+}
+
+#hotbar {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin: 50px ;
+    gap: 10px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 35%;
 }
 
-.class-choice img {
-    width: 180px;
-    height: auto;
+.hotbar-slot {
+    width: 50px;
+    height: 50px;
+    border: 2px dashed #aaa;
+    border-radius: 8px;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
 }
+    .hotbar-slot img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 
-.class-choice .choice:hover {
-    box-shadow: 0 0 0px #000000;
-    cursor: pointer;
 
-}
-
-.class-choice .choice:active {
-    background-color: #C37500;
-    opacity:0.7 !important;    
-    box-shadow: 0 0 0px #000000;
-
-}
-
-.skill-class {
-    display: none;   
+.icon-container {
+    display: none;
 }
 
 img.icon {
-    width: 55px;
+    width: 50px;
     border-radius: 5px;
     height: auto;
-    margin: 1rem;
-
-}
-
-.icon {
-    width: 100px;
-    height: 100px;
+    margin: 0.5rem;
     object-fit: contain;
     cursor: pointer;
     transition: transform 0.2s;
 }
-
 .icon:hover {
     transform: scale(1.1);
 }
 
-.hotbar {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    background-color: #f1f1f1;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    width: 80%;
+
+#Second-Section {
+    position: relative;
+    width: 100%;
 }
 
-.hotbar-slot {
-    width: 90px;
-    height: 90px;
-    border: 2px dashed #aaa;
-    border-radius: 8px;
-    background-color: #fff;
-}
-
-.hotbar-slot img {
-    width: 90px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-#novice-box {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    background-color: #f1f1f1;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    width: 40%;
-
-    /*Wrap to test with many icons*/
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-#novice-box img {
-    width: 90px;
-    height: auto;
+#modifiers {
+    float: left;
+    padding: 1rem;
 }
 
 .stat-box {
-    position: fixed;
+    font-size: x-large;
+}
+
+.sub-stats-box span {
+    color: blue;
+}
+
+#Icon-gallery {
+    text-align: center;
+
+    margin: 0 auto;
+    width: fit-content;
+    padding: 1rem;
+}
+
+#Mastery-box {
+    border-bottom: 5px solid #57b1dc;
+}
+
+
+#Class-icons {
+    display: flex;
     justify-content: center;
-    font-size: 1.7em;
-    padding: 5px;
-    border: 2px solid #ddd;
-    left: 80%;
+}
+
+#Novice {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 45%;
+    justify-content: center;
+    gap: 10px;
     background-color: #f1f1f1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+Novice-box img {
+    width: 60px;
+    height: auto;
 }
 
-.stat-box .text {
-    display: inline-table;
+#Fighter {
+    background-color: rgba(255, 0, 0, 0.400);
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    align-items: center;
 }
 
-.stat-box .modifiers {
-    display: inline-table;
+#Mystic {
+    background-color: rgba(0, 0, 255, 0.400);
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    align-items: center;
 }
 
+#Bandit {
+    background-color: rgba(0, 255, 0, 0.400);
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    align-items: center;
+}
