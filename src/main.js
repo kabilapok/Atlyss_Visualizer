@@ -211,7 +211,7 @@ document.getElementById("level").addEventListener('change', function () {
 })
 
 function updateHealth(amount) {
-    let healthValue = Number(statsData["Main-stats"].Health + (Number(amount) - 1) * 1.625).toFixed(0);
+    let healthValue = Number(statsData["Main-stats"].Health + (Number(amount) - 1) * 1.92).toFixed(0);
     document.getElementById("Health-value").textContent = healthValue;
 }
 
