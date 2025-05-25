@@ -22,7 +22,6 @@ appsettings.*.json
 .DS_Store
 Thumbs.db
 *.bak
-*.min.js
 *.map
 tsconfig.tsbuildinfo
 *.vsidx
