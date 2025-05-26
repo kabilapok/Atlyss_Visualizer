@@ -6,7 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>main ig</title>
         <link rel="icon" type="image/svg" href="../assets/order_icon.svg">
-        <script defer src="main.js" ></script>
+
+        <script defer src="../Libs/Sortable.min.js"></script>
+
+
+        <script defer src="../Scripts/dragdrop.js"></script>
+        <script defer src="main.js"></script>
+
+
         <link rel="stylesheet" href="Stylesheet.css">
     </head>
 
@@ -139,33 +146,33 @@
 
                         <div id="Fighter" class="icon-container" data-choice="Fighter">
 
-                            <div id="Fighter-box"></div>
+                            <div id="Fighter-box" class="box"></div>
 
                             <div>
                                 <h4>Passives</h4>
-                                <div id="Fighter-passive-box"></div>
+                                <div id="Fighter-passive-box" class="box"></div>
                             </div>
 
                         </div>
 
                         <div id="Mystic" class="icon-container" data-choice="Mystic">
 
-                            <div id="Mystic-box"></div>
+                            <div id="Mystic-box" class="box"></div>
 
                             <div>
                                 <h4>Passives</h4>
-                                <div id="Mystic-passive-box"></div>
+                                <div id="Mystic-passive-box" class="box"></div>
                             </div>
 
                         </div>
 
                         <div id="Bandit" class="icon-container" data-choice="Bandit">
 
-                            <div id="Bandit-box"></div>
+                            <div id="Bandit-box" class="box"></div>
 
                             <div>
                                 <h4>Passives</h4>
-                                <div id="Bandit-passive-box"></div>
+                                <div id="Bandit-passive-box" class="box"></div>
                             </div>
 
                         </div>
@@ -175,11 +182,11 @@
                     <div id="Novice" data-choice="Novice">
                         <div>
                             <h3>Mastery Skills</h3>
-                            <div id="Mastery-box"></div>
+                            <div id="Mastery-box" class="box"></div>
                         </div>
                         <div>
                             <h3>Novice Skills</h3>
-                            <div id="Novice-box"></div>
+                            <div id="Novice-box" class="box"></div>
                         </div>
                     </div>
                 </section>
