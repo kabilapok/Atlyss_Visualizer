@@ -1,18 +1,3 @@
-//DragnDrop
-function dragstartHandler(ev) {
-    ev.dataTransfer.setData("text/plain", ev.target.id);
-}
-
-function dragoverHandler(ev) {
-    ev.preventDefault();    
-}
-
-function dropHandler(ev) {
-    ev.preventDefault();
-    let data = ev.dataTransfer.getData("text/plain");
-    ev.target.appendChild(document.getElementById(data));
-}
-
 let statsData = {};
 let iconData = {};
 
@@ -45,8 +30,8 @@ Promise.all([fetch("data.json").then((response) => response.json()),
                     img.setAttribute("draggable", "true");
                     img.classList.add(skillClass, state, "icon");
 
-                    //dragndrop
-                    img.addEventListener("dragstart", dragstartHandler);
+                    img.dataset.originalContainer = `${skillClass}-box`;
+
 
                     let container = document.getElementById(`${skillClass}-box`);
                     const masteryContainer = document.getElementById("Mastery-box");
@@ -98,8 +83,6 @@ Promise.all([fetch("data.json").then((response) => response.json()),
 function initializeOptions() {
     populateClassOption();
     populateLevelOption();
-
-    populateHotbarslot();
 
     updateRaceimg(getSelectedRace());
 
@@ -215,10 +198,3 @@ function updateHealth(amount) {
     document.getElementById("Health-value").textContent = healthValue;
 }
 
-//populateHotbar for dragNdrop
-function populateHotbarslot() {
-    document.querySelectorAll(".hotbar-slot").forEach(slot => {
-        slot.setAttribute("ondrop", "dropHandler(event)");
-        slot.setAttribute("ondragover", "dragoverHandler(event)");
-    })   
-}
