@@ -4,7 +4,6 @@ let iconData = {};
 Promise.all([fetch("data.json").then((response) => response.json()),
             fetch("Stats.json").then(response => response.json()) ])
 
-// icon implementation
     .then(([data, baseStats]) => {
 
        
@@ -18,7 +17,7 @@ Promise.all([fetch("data.json").then((response) => response.json()),
 
         
 
-
+        // icon implementation
         Object.entries(data).forEach(([skillClass, types]) => {
             Object.entries(types).forEach(([state, icons]) => {
                 icons.forEach((icon) => {
