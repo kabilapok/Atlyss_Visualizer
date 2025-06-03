@@ -1,6 +1,7 @@
 @font-face {
-    font-family: 'terminal-grotesque';
-    src: url('../assets/Terminale-Grotesque-master/terminal-grotesque.ttf') format('ttf'), url('../assets/Terminale-Grotesque-master/terminal-grotesque_open.otf') format('otf');
+    font-family: 'Terminal-Grotesque';
+    src: url('../assets/Terminale-Grotesque-master/terminal-grotesque.ttf') format('truetype'),
+         url('../assets/Terminale-Grotesque-master/terminal-grotesque_open.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -40,6 +41,11 @@ h1 {
     background-color: #f9f9f9; 
     border: 1px solid #ccc; 
 }
+    #Race-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }    
 
 
 .main-stats-box {
@@ -73,23 +79,32 @@ h1 {
         object-fit: contain;
     }
 
+    .hotbar-slot:hover {
+        transform: scale(1.1);
+    }
+
+    .hotbar-slot .icon:hover {
+        transform: none;
+    }
+
 
 .icon-container {
     display: none;
 }
 
-img.icon {
+.icon {
     width: 50px;
+    height: 50px;
     border-radius: 5px;
-    height: auto;
     margin: 0.5rem;
     object-fit: contain;
     cursor: pointer;
-    transition: transform 0.2s;
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out;
 }
-.icon:hover {
-    transform: scale(1.1);
-}
+    .icon:hover {
+        transform: scale(1.1);
+    }
 
 
 #Second-Section {
@@ -98,16 +113,17 @@ img.icon {
 }
 
 #modifiers {
-    float: left;
+    float: right;
     padding: 1rem;
 }
 
-.stat-box {
+.sub-stats-box {
+    text-align: left;
 }
+    .sub-stats-box span {
+        color: blue;
+    }
 
-.sub-stats-box span {
-    color: blue;
-}
 
 #Icon-gallery {
     text-align: center;
@@ -121,16 +137,13 @@ img.icon {
     border-bottom: 5px solid #57b1dc;
 }
 
-
 #Class-icons {
     display: flex;
     justify-content: center;
 }
 
 #Novice {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto;
     display: flex;
     width: 45%;
     justify-content: center;
@@ -142,10 +155,11 @@ img.icon {
     flex-wrap: wrap;
     margin-top: 20px;
 }
-Novice-box img {
+#Novice-box img {
     width: 60px;
     height: auto;
 }
+
 
 #Fighter {
     background-color: rgba(255, 0, 0, 0.400);
