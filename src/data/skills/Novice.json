@@ -1,0 +1,60 @@
+{
+  "Active": {
+
+    "Alacrity": {
+      "class": "Novice",
+      "needWeapon": false,
+      "needWeaponType": null,
+      "desc": "Applies a clearcast boon. The next cast will be instant with no mana, health or stamina cost.",
+      "scalingType": "Mind",
+      "cost": {
+        "Rank-1": {
+          "type": "Mana",
+          "amount": 3
+        },
+        "Rank-2": {
+          "type": "Mana",
+          "amount": 3
+        },
+        "Rank-3": {
+          "type": "Mana",
+          "amount": 3
+        }
+      },
+      "cast": {
+        "Rank-1": 2,
+        "Rank-2": 1,
+        "Rank-3": 0
+      },
+      "cooldown": 40
+    },
+
+    "Inner_Focus": {
+      "class": "Novice",
+      "needWeapon": false,
+      "needWeaponType": null,
+      "desc": "Provides a buff that guarantees a 100% Critical Strike chance for the next attack.",
+      "scalingType": null,
+      "cost": {
+        "Rank-1": {
+          "type": "Stamina",
+          "amount": 10
+        },
+        "Rank-2": {
+          "type": "Stamina",
+          "amount": 10
+        },
+        "Rank-3": {
+          "type": "Stamina",
+          "amount": 10
+        }
+      },
+      "cast": {
+        "Rank-1": 2,
+        "Rank-2": 1.4,
+        "Rank-3": 0.8
+      },
+      "cooldown": 45
+    }
+  }
+}

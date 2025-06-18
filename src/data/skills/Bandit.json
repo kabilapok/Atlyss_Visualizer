@@ -1,0 +1,81 @@
+{
+  "Passive": {
+    "Agile_Technique": {
+      "desc": "The Bandit becomes more acrobatic, unlocking different methods of movement."
+    }
+  },
+
+  "Active": {
+
+    "Venom_Shot": {
+      "class": "Bandit",
+      "needWeapon": true,
+      "needWeaponType": "Ranged",
+      "desc": "Shoots a venom coated projectile. Deals damage over time, and decreases the targets defense. Requires a ranged weapon.",
+      "scalingType": "Dexterity",
+      "cost": {
+        "type": "Mana",
+        "amount": 10
+      },
+      "cast": 0.3,
+      "cooldown": 10
+    },
+
+    "Killer_Jab": {
+      "class": "Bandit",
+      "needWeapon": true,
+      "needWeaponType": "Physical",
+      "desc": "Strikes the target, dealing high initial damage and a poison debuff. Requires a physical combat weapon.",
+      "scalingType": "Dexterity",
+      "cost": {
+        "type": "Stamina",
+        "amount": 5
+      },
+      "cast": 0.5,
+      "cooldown": 8
+    },
+
+    "Volley": {
+      "class": "Bandit",
+      "needWeapon": true,
+      "needWeaponType": "Ranged",
+      "desc": "Charge and release skill. Fires a projectile in the air, raining shrapnel within a radius below. Requires a ranged weapon.",
+      "scalingType": "Dexterity",
+      "cost": {
+        "type": "Mana",
+        "amount": 12
+      },
+      "cast": 0.3,
+      "cooldown": 8
+    },
+
+    "Pay_Day": {
+      "class": "Bandit",
+      "needWeapon": true,
+      "needWeaponType": "Physical",
+      "desc": "The Bandit stuns the target, additionally causing them to drop currency. Requires a physical combat weapon.",
+      "scalingType": "Dexterity",
+      "cost": {
+        "type": "Stamina",
+        "amount": 6
+      },
+      "cast": 0.3,
+      "cooldown": 13
+    },
+
+    "Bomb_Trap": {
+      "class": "Bandit",
+      "needWeapon": false,
+      "needWeaponType": null,
+      "desc": "Places an explosive trap that triggers within proximity of nearby targets. Scales off of Range Power.",
+      "scalingType": "Dexterity",
+      "cost": {
+        "type": "Mana",
+        "amount": 6
+      },
+      "cast": 0.12,
+      "cooldown": 5
+    }
+
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "Passive": {
+    "Blink": {
+      "desc": "Unlocks the ability to quickly teleport from one place to another."
+    },
+    "Manaflow": {
+      "desc": "Increases the Mana Regeneration speed of the player."
+    }
+  },
+
+  "Active": {
+
+    "Fluxbolt": {
+      "class": "Mystic",
+      "needWeapon": false,
+      "needWeaponType": null,
+      "desc": "Casts a magic projectile that explodes on impact. Has potential to hit multiple times each rank.",
+      "scalingType": "Mind",
+      "cost": {
+        "type": "Mana",
+        "amount": 6
+      },
+      "cast": 1,
+      "cooldown": 1.3
+    },
+
+    "Fluxspear": {
+      "class": "Mystic",
+      "needWeapon": false,
+      "needWeaponType": null,
+      "desc": "Casts a piercing spear of arcane magic in front of the caster, dealing damage and stunning all adjacent targets.",
+      "scalingType": "Mind",
+      "cost": {
+        "type": "Mana",
+        "amount": 10
+      },
+      "cast": 0,
+      "cooldown": 12
+    }
+
+  }
+}

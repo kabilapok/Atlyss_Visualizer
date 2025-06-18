@@ -1,10 +1,13 @@
 Promise.all([fetch("data/skills/index.json").then((response) => response.json()),
     fetch("data/skills/Fighter.json").then(response => response.json()),
+    fetch("data/skills/Mystic.json").then(response => response.json()),
+    fetch("data/skills/Bandit.json").then(response => response.json()),
+    fetch("data/skills/Novice.json").then(response => response.json())])
 
-Promise.all([fetch("data.json").then((response) => response.json()),
-
+    .then(([iconData, fighterData, mysticData, banditData, noviceData]) => {
+        
         // icon implementation
-        Object.entries(data).forEach(([skillClass, types]) => {
+        Object.entries(iconData).forEach(([skillClass, types]) => {
             Object.entries(types).forEach(([state, icons]) => {
                 icons.forEach((icon) => {
                     const img = document.createElement("img");
@@ -36,14 +39,34 @@ Promise.all([fetch("data.json").then((response) => response.json()),
         const skillData = {
             ...fighterData.Active,
             ...mysticData.Active,
+            ...banditData.Active,
+            ...noviceData.Active,
 
             ...fighterData.Passive,
             ...mysticData.Passive,
+            ...banditData.Passive
+        };               
 
         
         //tooltip implementation
         //Create a div(box) that willn be attributed to each icons
         Object.entries(skillData).forEach(([skillName, skillData]) => {
+            const icon = document.getElementById(skillName);
+
+            if (!icon) return;
+
+            icon.addEventListener('mouseenter', (event) => {
+                const tooltip = document.createElement('div');
+                tooltip.id = 'tooltip';
+                tooltip.innerHTML = generateTooltipContent(skillName, skillData);
+                tooltip.style.position = 'absolute';
+                tooltip.style.background = '#333';
+                tooltip.style.color = '#fff';
+                tooltip.style.padding = '6px 10px';
+                tooltip.style.borderRadius = '5px';
+                tooltip.style.pointerEvents = 'none';
+                tooltip.style.fontSize = '0.9em';
+                tooltip.style.zIndex = '1000';
 
                 document.body.appendChild(tooltip);
 
@@ -53,10 +76,15 @@ Promise.all([fetch("data.json").then((response) => response.json()),
                 };
 
                 moveTooltip(event);
+                document.addEventListener('mousemove', moveTooltip);
 
                 icon.addEventListener('mouseleave', () => {
                     tooltip.remove();
-
+                    document.removeEventListener('mousemove', moveTooltip);
+                }, { once: true });
+            });
+        });
+        
 
     });
 
@@ -79,10 +107,6 @@ initializeOptions();
 function getSelectedRace() {
     const selectElement = document.getElementById("Race");
     const selectedValue = selectElement.value; // Get the value of the selected option
-    console.log(`Selected Race value: ${selectedValue}`);
-
-    const selectedText = selectElement.options[selectElement.selectedIndex].text; // Get the text
-    console.log(`Selected Race text: ${selectedText}`);
 
     return selectedValue;
 };
@@ -123,10 +147,6 @@ function getSelectedClass() {
 
     const classSelect = document.getElementById("class");
     const classValue = classSelect.value;
-    console.log(classValue);
-
-    const classtext = classSelect.options[classSelect.selectedIndex].text;
-    console.log(classtext);
 
     return classValue;
 }
@@ -162,14 +182,30 @@ function populateLevelOption() {
 function getSelectedLevel() {
     const selectLevel = document.getElementById("level");
     const levelValue = selectLevel.value;
-    console.log(levelValue);
 
     const levelText = selectLevel.options[selectLevel.selectedIndex].text;
-    console.log(`The text is: ${levelText}`);
-
     return levelValue;
 };
 
 
 function generateTooltipContent(skillName, skillData) {
 
+    const isPassive = Object.keys(skillData).length === 1 && 'desc' in skillData;
+
+    if (isPassive) {
+        return `
+            <strong>${skillName.replace(/_/g, ' ') }</strong><br>
+            <em>${skillData.desc}</em>
+        `;
+    }
+    return `
+        <strong>${skillName.replace(/_/g, ' ') }</strong><br>
+        <em>${skillData.desc}</em><br><br>
+        ${skillData.scalingType !== null ? `Scaling Type: <strong>${skillData.scalingType}</strong><br>` : ''}
+        Class: ${skillData.class}<br>
+        Need weapon to be used: ${skillData.needWeapon}<br>
+        ${skillData.needWeaponType !== null ? `Weapon type needed: ${skillData.needWeaponType}<br>` : ''}
+        ${skillData.cast !== undefined ? `Cast: ${skillData.cast === 0 ? 'instant!' : `${skillData.cast}s`}<br>` : ''}
+        ${skillData.cooldown !== undefined ? `Cooldown: ${skillData.cooldown}s` : ''}
+    `;
+}

@@ -1,0 +1,78 @@
+{
+  "Passive": {
+    "Bulwark": {
+      "desc": "Bolsters the defensive strength of the Fighter."
+    },
+    "Reflect": {
+      "desc": "Allows the Fighter to reflect melee damage if successfully parried."
+    }
+  },
+
+  "Active": {
+
+    "Stomp": {
+      "class": "Fighter",
+      "needWeapon": false,
+      "needWeaponType": null,
+      "desc": "Stomps at the ground, damaging nearby enemies. Generates high threat.",
+      "scalingType": "Strength",
+      "cost": {
+        "type": "Stamina",
+        "amount": 10
+      },
+      "cast": 0.2,
+      "cooldown": 6
+    },
+
+    "Rage": {
+      "class": "Fighter",
+      "needWeapon": false,
+      "needWeaponType": null,
+      "desc": "Drives the fighter and their nearby allies into a fit of rage, increasing all power stats temporarily.",
+      "scalingType": "Strength",
+      "cost": {
+        "Rank-1": {
+          "type": "Mana",
+          "amount": 5
+        },
+        "Rank-2": {
+          "type": "Mana",
+          "amount": 5
+        },
+        "Rank-3": {
+          "type": "Mana",
+          "amount": 10
+        },
+        "Rank-4": {
+          "type": "Mana",
+          "amount": 10
+        },
+        "Rank-5": {
+          "type": "Mana",
+          "amount": 15
+        },
+        "Rank-6": {
+          "type": "Mana",
+          "amount": 15
+        }
+      },
+      "cast": 0,
+      "cooldown": 30
+
+    },
+
+    "Lethal_Strike": {
+      "class": "Fighter",
+      "needWeapon": true,
+      "needWeaponType": "Physical",
+      "desc": "Charge and release skill. Sends the fighter into a dash, landing a heavy force attack on hit. Requires a physical combat weapon",
+      "scalingType": "Strength",
+      "cost": {
+        "type": "Stamina",
+        "amount": 8
+      },
+      "cast": 0.6,
+      "cooldown": 12
+    }
+  }
+}
