@@ -112,18 +112,6 @@ h1 {
     width: 100%;
 }
 
-#modifiers {
-    float: right;
-    padding: 1rem;
-}
-
-.sub-stats-box {
-    text-align: left;
-}
-    .sub-stats-box span {
-        color: blue;
-    }
-
 
 #Icon-gallery {
     text-align: center;

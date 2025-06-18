@@ -1,21 +1,7 @@
-let statsData = {};
-let iconData = {};
+Promise.all([fetch("data/skills/index.json").then((response) => response.json()),
+    fetch("data/skills/Fighter.json").then(response => response.json()),
 
 Promise.all([fetch("data.json").then((response) => response.json()),
-            fetch("Stats.json").then(response => response.json()) ])
-
-    .then(([data, baseStats]) => {
-
-       
-
-        iconData = data;
-        console.log(iconData);
-
-
-        statsData = baseStats;
-        console.log(statsData);
-
-        
 
         // icon implementation
         Object.entries(data).forEach(([skillClass, types]) => {
@@ -47,33 +33,29 @@ Promise.all([fetch("data.json").then((response) => response.json()),
         });
 
 
-        //stats implementation
-        const Mainstats = baseStats["Main-stats"];
-        console.log(`Main stats: ${JSON.stringify(Mainstats, null, 2)}`);
+        const skillData = {
+            ...fighterData.Active,
+            ...mysticData.Active,
 
-        const Substats = baseStats["Sub-stats"];
-        console.log(`Sub stats: ${JSON.stringify(Substats, null, 2)}`);
+            ...fighterData.Passive,
+            ...mysticData.Passive,
 
-        Object.entries(Mainstats).forEach(([statName, statValue]) => {
-            const statContainer = document.getElementById(`${statName}-value`);
-            statContainer.textContent = statValue;
-        });
+        
+        //tooltip implementation
+        //Create a div(box) that willn be attributed to each icons
+        Object.entries(skillData).forEach(([skillName, skillData]) => {
 
-        Object.entries(Substats).forEach(([category, stats]) => {
-            Object.entries(stats).forEach(([statName, statValue]) => {
-                const statContainer = document.getElementById(`${statName}-value`);
+                document.body.appendChild(tooltip);
 
-                if (statName === "Evasion") {
-                    statValue = statValue.toFixed(2); 
-                } else if (statName === "Mov-spd") {
-                    statValue = statValue.toFixed(1); 
-                }
-                statContainer.textContent = statValue;
+                const moveTooltip = (e) => {
+                    tooltip.style.left = `${e.pageX + -150}px`;
+                    tooltip.style.top = `${e.pageY + -150}px`;
+                };
 
-            })
+                moveTooltip(event);
 
-        })
-        updateHealth(getSelectedLevel());
+                icon.addEventListener('mouseleave', () => {
+                    tooltip.remove();
 
 
     });
@@ -188,12 +170,6 @@ function getSelectedLevel() {
     return levelValue;
 };
 
-document.getElementById("level").addEventListener('change', function () {
-    updateHealth(this.value);
-})
 
-function updateHealth(amount) {
-    let healthValue = Number(statsData["Main-stats"].Health + (Number(amount) - 1) * 1.92).toFixed(0);
-    document.getElementById("Health-value").textContent = healthValue;
-}
+function generateTooltipContent(skillName, skillData) {
 
