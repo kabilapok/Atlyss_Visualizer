@@ -10,25 +10,30 @@ document.querySelectorAll('.box').forEach(box => {
     })
 });
 
+['hotbar-1', 'hotbar-2'].forEach(hotbarId => {
+    Sortable.create(document.getElementById(hotbarId), {
+        animation: 150,
+        swap: true,
+        swapClass: 'swap-preview',  // this will toggle the CSS class
+        onAdd(evt) {
+            const fromSlot = evt.from;
 
-Sortable.create(document.getElementById('hotbar'), {
-    animation: 150,
-    swap: true,
-    swapClass: 'swap-preview',  // this will toggle the CSS class
-    onAdd(evt) {
-        const fromSlot = evt.from;
-        const toSlot = evt.to;
-        const draggedItem = evt.item;
+            const toSlot = evt.to;
+            const draggedItem = evt.item;
 
-        if (toSlot.children.length > 1) {
-            const existingItem = toSlot.children[0];
-            toSlot.removeChild(draggedItem);
-            fromSlot.appendChild(existingItem);
+            if (toSlot.children.length > 1) {
+                const existingItem = toSlot.children[0];
+                toSlot.removeChild(draggedItem);
+                fromSlot.appendChild(existingItem);
+
+                evt.appendChild(existingItem);
+            }
+
+            toSlot.appendChild(draggedItem);
         }
-
-        toSlot.appendChild(draggedItem);
-    }
+    });
 });
+
 
 
 
@@ -64,6 +69,8 @@ document.querySelectorAll('.hotbar-slot').forEach(slot => {
 // click to remove (and bring back) individual abilities
 document.getElementById('hotbar').addEventListener('click', (event) => {
     const slot = event.target.closest('.hotbar-slot');
+    if (!slot) return;
+
     const img = slot.querySelector('img');
     
     if (slot && document.getElementById('hotbar').contains(slot) && slot.contains(img)) {
