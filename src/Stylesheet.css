@@ -259,6 +259,25 @@ header {
     align-items: center;
     width: 55%;
 }
+
+#tooltip {
+    position: absolute;
+    display: block; /* use JS to control visibility */
+    background-color: #222; /* slightly darker for clarity */
+    color: #fff;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    white-space: normal; /* allow line breaks (important for descriptions) */
+    max-width: 260px; /* prevent going off screen */
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform: translateY(5px); /* small upward animation */
+}
+
 /* dragndrop css to change*/
 .hotbar-slot.swap-preview {
     outline: 2px dashed #4caf50;

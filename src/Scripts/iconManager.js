@@ -17,9 +17,9 @@ export function createAndPlaceIcons(iconData) {
                 img.dataset.originalContainer = `${skillClass}-box`;
 
 
-                let container = document.getElementById(`${skillClass}-box`);
+                const container = document.getElementById(`${skillClass}-box`);
                 const masteryContainer = document.getElementById("Mastery-box");
-                let passiveContainer = document.getElementById(`${skillClass}-passive-box`);
+                const passiveContainer = document.getElementById(`${skillClass}-passive-box`);
 
                 const stateActions = {
                     "Mastery": () => masteryContainer.appendChild(img),
