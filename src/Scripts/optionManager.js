@@ -1,22 +1,42 @@
+
 export function populateClassOption() {
     const classSelect = document.getElementById("class");
+    if (!classSelect) return;
+
+    let hasNovice = false;
     document.querySelectorAll("[data-choice]").forEach(element => {
         let option = document.createElement("option");
         option.value = element.dataset.choice;
         option.textContent = element.dataset.choice;
+        if (option.value === "Novice") hasNovice = true;
         classSelect.appendChild(option);
     });
-    classSelect.value = "Novice";
+
+    if (hasNovice) {
+        classSelect.value = "Novice";
+    }
+   
 }
 
-export function populateLevelOption() {
-    const levelSelect = document.getElementById("level");
-    for (let i = 25; i >= 1; i--) {
-        const option = document.createElement("option");
-        option.value = i;
-        option.textContent = i;
-        levelSelect.appendChild(option);
-    }
+export function populateLevelOption(min = 1, max = 40, defaultLevel = 40) {
+    const levelContainer = document.getElementById("level");
+    if (!levelContainer) return;
+
+    // Create input element
+    const input = document.createElement("input");
+    input.type = "number";
+    input.id = "level";
+    input.min = min;
+    input.max = max;
+    input.value = defaultLevel;
+
+    // restrict typing beyond min/max
+    input.addEventListener("input", () => {
+        if (input.value < min) input.value = min;
+        if (input.value > max) input.value = max;
+    });
+
+    levelContainer.appendChild(input);
 }
 
 export function getSelectedRace() {
@@ -29,9 +49,21 @@ export function getSelectedClass() {
     return classSelect.value;
 }
 
-export function getSelectedLevel() {
-    const selectLevel = document.getElementById("level");
-    return selectLevel.value;
+export function getSelectedLevel(callback) {
+    const select = document.getElementById("level");
+
+    // Fire callback immediately with current value (after population)
+    if (typeof callback === "function") {
+        callback(select.value);
+    }
+
+    // Add event listener for future changes
+    select.addEventListener("change", function () {
+        if (typeof callback === "function") {
+            callback(this.value);
+        }
+    });
+    
 }
 
 export function updateRaceimg(selected) {
@@ -47,6 +79,8 @@ export function updateRaceimg(selected) {
 }
 
 export function initializeOptions() {
+
+
     populateClassOption();
     populateLevelOption();
     updateRaceimg(getSelectedRace());
@@ -56,13 +90,18 @@ export function initializeOptions() {
     document.getElementById("Race").addEventListener('change', function () {
         updateRaceimg(this.value);
     });
+
+
+    document.querySelectorAll('.icon-container').forEach(box => box.classList.add('hidden'));
+
     document.getElementById("class").addEventListener("change", function () {
         const selectedClass = getSelectedClass();
-        const resultBox = document.querySelectorAll('.icon-container');
-        resultBox.forEach(box => box.style.display = 'none');
-        const resultClass = document.getElementById(`${selectedClass}`);
+        const resultBoxes = document.querySelectorAll('.icon-container');
+        resultBoxes.forEach(box => box.classList.add('hidden'));
+
+        const resultClass = document.getElementById(selectedClass);
         if (resultClass) {
-            resultClass.style.display = "flex";
+            resultClass.classList.remove('hidden');
         }
     });
 }

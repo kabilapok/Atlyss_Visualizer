@@ -223,7 +223,7 @@
       },
       {
         "damageType": "Mind",
-        "name": "Chroma Ray",
+        "name": "Chroma_Ray",
         "tier": "Bishop",
         "description": "Casts a holy ray, healing allies it passes by and damaging targets continuously for $DMG holy damage on hit.",
         "type": "Active",
@@ -280,7 +280,7 @@
       },
       {
         "damageType": "Mind",
-        "name": "Shadow Ward",
+        "name": "Shadow_Ward",
         "tier": "Bishop",
         "description": "Applies a ward to the caster and nearby allies, increasing their shadow resistance and magic defense.",
         "type": "Active",

@@ -7,7 +7,7 @@ export function createAndPlaceIcons(iconData) {
                 img.src = `../assets/${skillClass}-icons/${icon}.png`;
                 img.id = icon;
                 img.alt = `${icon}.png`;
-                img.title = icon.replace(/_/g, ' ');
+                //img.title = icon.replace(/_/g, ' ');
                 img.setAttribute("draggable", "true");
                 img.classList.add(skillClass, state, "icon");
                 img.onerror = function () {

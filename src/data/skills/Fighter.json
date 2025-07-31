@@ -41,7 +41,7 @@
       },
       {
         "damageType": "Strength",
-        "name": "Blood Gush",
+        "name": "Blood_Gush",
         "description": "Deals $DMG damage to nearby targets, then applies a bleed condition to them.",
         "type": "Active",
         "ranks": [
@@ -59,7 +59,7 @@
       },
       {
         "damageType": "Strength",
-        "name": "Shield Bash",
+        "name": "Shield_Bash",
         "description": "Deals $DMG damage to adjacent targets, then applies a snare condition.",
         "type": "Active",
         "ranks": [
@@ -113,7 +113,7 @@
       },
       {
         "damageType": "Strength",
-        "name": "Lethal Strike",
+        "name": "Lethal_Strike",
         "description": "<span style=\"color: cyan;\">Charge and release skill.</span> Sends the Fighter into a dash, landing a heavy force attack on hit, dealing $DMG damage.",
         "type": "Active",
         "ranks": [

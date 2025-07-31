@@ -23,7 +23,7 @@
       },
       {
         "damageType": "Pure",
-        "name": "Inner Focus",
+        "name": "Inner_Focus",
         "description": "Provides a buff that guarantees a 100% Critical Strike chance for the next attack.",
         "type": "Active",
         "ranks": [
@@ -41,7 +41,7 @@
       },
       {
         "damageType": "Dexterity",
-        "name": "Leg Up",
+        "name": "Leg_Up",
         "description": "Grants a movement speed increase buff, additionally increasing evasion.",
         "type": "Active",
         "ranks": [
@@ -95,7 +95,7 @@
       },
       {
         "damageType": "Strength",
-        "name": "Rock Toss",
+        "name": "Rock_Toss",
         "description": "Tosses a rock, dealing $DMG damage and generating high threat.",
         "type": "Active",
         "ranks": [
@@ -113,7 +113,7 @@
       },
       {
         "damageType": "Mind",
-        "name": "Siphon Leech",
+        "name": "Siphon_Leech",
         "description": "Shoots a siphoning projectile that spawns eldritch leeches on the hit target, healing the caster as they deal damage.",
         "type": "Active",
         "ranks": [
@@ -149,7 +149,7 @@
       },
       {
         "damageType": "Dexterity",
-        "name": "Dexterity Mastery",
+        "name": "Dexterity_Mastery",
         "description": "Enhances charge and jump attacking with dexterity weapons.\n\nAdditionally adds a 18% damage bonus towards dexterity weapons.",
         "type": "Passive",
         "ranks": [
@@ -167,7 +167,7 @@
       },
       {
         "damageType": "Mind",
-        "name": "Mind Mastery",
+        "name": "Mind_Mastery",
         "description": "Enhances charge attacking with mind weapons.\n\nAdditionally adds a 12% damage bonus towards mind weapons.",
         "type": "Passive",
         "ranks": [
@@ -185,7 +185,7 @@
       },
       {
         "damageType": "Strength",
-        "name": "Strength Mastery",
+        "name": "Strength_Mastery",
         "description": "Enhances charge and jump attacking with strength weapons.\n\nAdditionally adds a 16% damage bonus towards strength weapons.",
         "type": "Passive",
         "ranks": [
@@ -203,7 +203,7 @@
       },
       {
         "damageType": "Strength",
-        "name": "Multi Bash",
+        "name": "Multi_Bash",
         "description": "Multihits adjacent targets, dealing constant $DMG damage using maximum weapon damage combined with skill power.",
         "type": "Active",
         "ranks": [
@@ -239,7 +239,7 @@
       },
       {
         "damageType": "Dexterity",
-        "name": "Spread Shot",
+        "name": "Spread_Shot",
         "description": "Fires a spread of projectiles, dealing \n$DMG damage twice.",
         "type": "Active",
         "ranks": [
@@ -257,7 +257,7 @@
       },
       {
         "damageType": "Dexterity",
-        "name": "Focus Shot",
+        "name": "Focus_Shot",
         "description": "Fires a focused piercing shot that goes through targets, using maximum weapon damage combined with skill power. Deals $DMG damage.",
         "type": "Active",
         "ranks": [
@@ -382,8 +382,26 @@
         ]
       },
       {
+        "damageType": "Mind",
+        "name": "Curis",
+        "description": "Instantly heals the caster and nearby allies by $DMG.",
+        "type": "Active",
+        "ranks": [
+          {
+            "description": "Instantly heals the caster and nearby allies by $DMG.",
+            "castTime": 0.12,
+            "staminaCost": 0,
+            "healthCost": 0,
+            "manaCost": 15,
+            "level": 12,
+            "cooldown": 15,
+            "itemCost": ""
+          }
+        ]
+      },
+      {
         "damageType": "Pure",
-        "name": "Life Tap",
+        "name": "Life_Tap",
         "description": "Fully replenishes the casters mana at the cost of 40% of their maximum health.",
         "type": "Active",
         "ranks": [

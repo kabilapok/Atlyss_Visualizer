@@ -11,6 +11,10 @@ body {
     background-color: antiquewhite;
 }
 
+.hidden {
+    display: none !important;
+}
+
 h1, h4 {
     text-align: center;
     text-decoration: underline;
@@ -24,7 +28,6 @@ footer {
     footer img {
         height: 5em;
         width: auto;
-
     }
 
 
@@ -118,7 +121,7 @@ header {
     gap: 10px;
 }
 
-#hotbar-1, #hotbar-2 {
+.hotbar-box {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -182,12 +185,26 @@ header {
     display: flex;
     overflow: hidden;
 }
+    .equipment-slot img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
+
+
 
 #skill-section {
     position: absolute;
     left: 1rem;
     width: 53%;
-}
+    pointer-events: none;
+}   
+    #skill-section *{
+        pointer-events: auto;
+
+    }
 
 #Passive {
     display: flex;
@@ -195,9 +212,7 @@ header {
     gap: 10px;
 }
 
-.icon-container {
-    display: none;
-}
+
 
 .icon {
    
@@ -225,6 +240,7 @@ header {
 }
 
 #Fighter {
+    display: flex;
     padding: 0.5rem;
     background-color: rgba(255, 0, 0, 0.400);
     border: 2px solid #ddd;
@@ -234,15 +250,7 @@ header {
 }
 
 #Mystic {
-    padding: 0.5rem;
-    background-color: rgba(0, 0, 255, 0.400);
-    border: 2px solid #ddd;
-    border-radius: 50px;
-    align-items: center;
-    width: 55%;
-}
-
-#Mystic {
+    display: flex;
     padding: 0.5rem;
     background-color: rgba(0, 0, 255, 0.400);
     border: 2px solid #ddd;
@@ -252,6 +260,7 @@ header {
 }
 
 #Bandit {
+    display: flex;
     padding: 0.5rem;
     background-color: rgba(0, 255, 0, 0.400);
     border: 2px solid #ddd;

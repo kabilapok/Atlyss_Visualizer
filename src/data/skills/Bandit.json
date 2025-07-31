@@ -5,7 +5,7 @@
     "skills": [
       {
         "damageType": "Dexterity",
-        "name": "Venom Shot",
+        "name": "Venom_Shot",
         "description": "Shoots a venom coated projectile, dealing $DMG damage. Applies a poison condition.",
         "type": "Active",
         "ranks": [
@@ -41,7 +41,7 @@
       },
       {
         "damageType": "Dexterity",
-        "name": "Killer Jab",
+        "name": "Killer_Jab",
         "description": "Strikes nearby targets, dealing $DMG damage. Applies a poison condition.",
         "type": "Active",
         "ranks": [
@@ -59,7 +59,7 @@
       },
       {
         "damageType": "Dexterity",
-        "name": "Pay Day",
+        "name": "Pay_Day",
         "description": "Mugs adjacent targets, dealing $DMG damage. Hit targets will be mugged and stunned, dropping currency when hit. Previously mugged targets will not drop currency again.",
         "type": "Active",
         "ranks": [
@@ -77,7 +77,7 @@
       },
       {
         "damageType": "Dexterity",
-        "name": "Bomb Trap",
+        "name": "Bomb_Trap",
         "description": "Places an explosive trap that triggers within proximity of nearby targets, dealing $DMG damage.",
         "type": "Active",
         "ranks": [
@@ -113,7 +113,7 @@
       },
       {
         "damageType": "Dexterity",
-        "name": "Devious Signet",
+        "name": "Devious_Signet",
         "description": "Applies an energizing, dexterious boon to the caster and nearby allies.",
         "type": "Active",
         "ranks": [
@@ -131,7 +131,7 @@
       },
       {
         "damageType": "Dexterity",
-        "name": "Mist Veil",
+        "name": "Mist_Veil",
         "description": "Evokes a mist, vanishing the caster and healing for a short time while invisible.",
         "type": "Active",
         "ranks": [
@@ -167,7 +167,7 @@
       },
       {
         "damageType": "Dexterity",
-        "name": "Agile Technique",
+        "name": "Agile_Technique",
         "description": "Unlocks the ability to triple jump, dash jump, and bounce. \n\nDouble tap $DASHINPUT to dash jump, and hold to bounce.",
         "type": "Passive",
         "ranks": [

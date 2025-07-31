@@ -1,23 +1,23 @@
 {
   "Fighter": {
-    "Active": [ "Stomp", "Rage", "Lethal_Strike", "Blood_Gush", "Cyclone", "Shield_Bash", "Execute" ],
-    "Passive": [ "Bulwark", "Reflect" ],
+    "Active": [ "Execute", "Stomp", "Blood_Gush", "Shield_Bash", "Cyclone", "Shockwave", "Lethal_Strike", "Rage", "Divine" ],
+    "Passive": [ "Reflect", "Bulwark" ],
 
-    "Mastery": [ "Heavy_Melee_Mastery", "Melee_Mastery", "Polearm_Mastery" ]
+    "Mastery": [ "Strength_Mastery" ]
   },
 
   "Mystic": {
-    "Active": [ "Fluxbolt", "Fluxspear", "Cross", "Nova", "Prism", "Imbue", "Restora" ],
+    "Active": [ "Fluxclaw", "Fluxbolt", "Nova", "Cross", "Fluxspear", "Restora", "Prism", "Imbue", "Ruin", "Haste", "Chroma_Ray", "Genesis", "Healos", "Shadow_Ward" ],
     "Passive": [ "Blink", "Manaflow" ],
 
-    "Mastery": [ "Bell_Mastery", "Scepter_Mastery" ]
+    "Mastery": [ "Mind_Mastery" ]
   },
 
   "Bandit": {
-    "Active": [ "Venom_Shot", "Killer_Jab", "Volley", "Pay_Day", "Bomb_Trap", "Mist_Veil", "Devious_Signet" ],
+    "Active": [ "Venom_Shot", "Volley", "Killer_Jab", "Pay_Day", "Bomb_Trap", "Caltrops", "Devious_Signet", "Mist_Veil", "Avoidance" ],
     "Passive": [ "Agile_Technique" ],
 
-    "Mastery": [ "Katar_Mastery", "Ranged_Mastery" ]
+    "Mastery": [ "Dexterity_Mastery" ]
   },
 
   "Novice": {
@@ -29,12 +29,19 @@
       "Rock_Toss",
       "Siphon_Leech",
       "Sturdy",
-      "Cryo_Needle",
-      "Divine",
-      "Fireball",
-      "Life_Tap",
+      "Multi_Bash",
+      "Taunt",
+      "Spread_Shot",
+      "Focus_Shot",
+      "Fira",
+      "Crya",
       "Spire",
-      "Spread_Shot"
+      "Aquos",
+      "Gust",
+      "Talus",
+      "Curis",
+      "Life_Tap"
+
     ]
   }
 

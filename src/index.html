@@ -30,6 +30,7 @@
                 <p><strong>Site Version:</strong> 1.0</p>
                 <p><strong>Status:</strong> Beta</p>
                 <p><strong>Last Update:</strong> July 2025</p>
+                <a href="https://github.com/kabilapok/Atlyss_Visualizer">Repo</a>
             </div>
         </aside>
     </header>
@@ -42,65 +43,67 @@
                 <div id="Race-img">
                     <!-- RACE IMG -->
                 </div>
-                <div class="main-stats-box">
-                    <label for="nickname">Nickname:</label>
-                    <input type="text" id="nickname" placeholder="IHaveALoonaPlush">
-                </div>
+                <form>
+                    <div class="main-stats-box">
+                        <label for="nickname">Nickname:</label>
+                        <input type="text" id="nickname" placeholder="IHaveALoonaPlush">
+                    </div>
 
-                <div class="main-stats-box">
-                    <label for="Race">Race:</label>
-                    <select id="Race">
-                        <option value="poon">Poon</option>
-                        <option value="azora">Kubold</option>
-                        <option value="byrdle">Byrdle</option>
-                        <option value="chang">Chang</option>
-                        <option value="imp">Imp</option>
-                    </select>
+                    <div class="main-stats-box">
+                        <label for="Race">Race:</label>
+                        <select id="Race">
+                            <option value="poon">Poon</option>
+                            <option value="azora">Kubold</option>
+                            <option value="byrdle">Byrdle</option>
+                            <option value="chang">Chang</option>
+                            <option value="imp">Imp</option>
+                        </select>
 
 
-                    <label for="class">Class:</label>
-                    <select id="class">
-                        <!-- CLASS # -->
-                    </select>
+                        <label for="class">Class:</label>
+                        <select id="class">
+                            <!-- CLASS # -->
+                        </select>
 
-                    <label for="level">Level:</label>
-                    <select id="level">
-                        <!-- LEVEL # -->
-                    </select>
-                </div>
+                        <label for="level">Level:</label>
+                        <div id="level">
+                            <!-- LEVEL # -->
+                        </div>
+                    </div>
+                </form>
             </div>
 
             <div id="skill-section">
 
                 <div id="Fighter" class="icon-container" data-choice="Fighter">
                     <h3>Fighter Skills</h3>
-                    <div id="Fighter-box" class="box"></div>
+                    <div id="Fighter-box" class="dragdropJSdragbox"></div>
 
                     <div>
                         <h3>Passives</h3>
-                        <div id="Fighter-passive-box" class="box"></div>
+                        <div id="Fighter-passive-box" class="dragdropJSdragbox"></div>
                     </div>
 
                 </div>
 
                 <div id="Mystic" class="icon-container" data-choice="Mystic">
                     <h3>Mystic Skills</h3>
-                    <div id="Mystic-box" class="box"></div>
+                    <div id="Mystic-box" class="dragdropJSdragbox"></div>
 
                     <div>
                         <h3>Passives</h3>
-                        <div id="Mystic-passive-box" class="box"></div>
+                        <div id="Mystic-passive-box" class="dragdropJSdragbox"></div>
                     </div>
 
                 </div>
 
                 <div id="Bandit" class="icon-container" data-choice="Bandit">
                     <h3>Bandit Skills</h3>
-                    <div id="Bandit-box" class="box"></div>
+                    <div id="Bandit-box" class="dragdropJSdragbox"></div>
 
                     <div>
                         <h3>Passives</h3>
-                        <div id="Bandit-passive-box" class="box"></div>
+                        <div id="Bandit-passive-box" class="dragdropJSdragbox"></div>
                     </div>
 
                 </div>
@@ -108,11 +111,11 @@
                 <div id="Novice" data-choice="Novice">
                     <div>
                         <h3>Mastery Skills</h3>
-                        <div id="Mastery-box" class="box"></div>
+                        <div id="Mastery-box" class="dragdropJSdragbox"></div>
                     </div>
                     <div>
                         <h3>Novice Skills</h3>
-                        <div id="Novice-box" class="box"></div>
+                        <div id="Novice-box" class="dragdropJSdragbox"></div>
                     </div>
                 </div>
 
@@ -122,7 +125,7 @@
                 <div class="stat-orb" id="hp-orb"></div>
 
                 <div id="hotbar">
-                    <div id="hotbar-1">
+                    <div class="hotbar-box">
                         <div class="hotbar-slot"></div>
                         <div class="hotbar-slot"></div>
                         <div class="hotbar-slot"></div>
@@ -130,7 +133,7 @@
                         <div class="hotbar-slot"></div>
                         <div class="hotbar-slot"></div>
                     </div>
-                    <div id="hotbar-2">
+                    <div class="hotbar-box">
                         <div class="hotbar-slot"></div>
                         <div class="hotbar-slot"></div>
                         <div class="hotbar-slot"></div>
@@ -160,21 +163,14 @@
             </div>
 
 
-        </section>
-
-        <section>
-
-           <h4>Skillbook</h4> 
 
         </section>
 
+        <div id="tooltip"></div>
 
-    </main>
-
-    <div id="tooltip"></div>
+    </main>    
     
     <footer>
-        <a href="https://github.com/kabilapok/Atlyss_Visualizer">Git repo</a>
     </footer>
 
 </body>
