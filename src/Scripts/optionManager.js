@@ -1,31 +1,10 @@
-
-export function populateClassOption() {
-    const classSelect = document.getElementById("class");
-    if (!classSelect) return;
-
-    let hasNovice = false;
-    document.querySelectorAll("[data-choice]").forEach(element => {
-        let option = document.createElement("option");
-        option.value = element.dataset.choice;
-        option.textContent = element.dataset.choice;
-        if (option.value === "Novice") hasNovice = true;
-        classSelect.appendChild(option);
-    });
-
-    if (hasNovice) {
-        classSelect.value = "Novice";
-    }
-   
-}
-
 export function populateLevelOption(min = 1, max = 40, defaultLevel = 40) {
-    const levelContainer = document.getElementById("level");
+    const levelContainer = document.getElementById("level-container");
     if (!levelContainer) return;
 
-    // Create input element
     const input = document.createElement("input");
     input.type = "number";
-    input.id = "level";
+    input.id = "levelInput";
     input.min = min;
     input.max = max;
     input.value = defaultLevel;
@@ -36,34 +15,45 @@ export function populateLevelOption(min = 1, max = 40, defaultLevel = 40) {
         if (input.value > max) input.value = max;
     });
 
-    levelContainer.appendChild(input);
+    levelContainer.appendChild(input);   
 }
 
 export function getSelectedRace() {
-    const selectElement = document.getElementById("Race");
-    return selectElement.value;
+    const selectElement = document.querySelectorAll('input[name="race"]');
+    for (const input of selectElement) {
+        if (input.checked) {
+            return input.value;
+        }
+    }
+    return null; 
 }
 
 export function getSelectedClass() {
-    const classSelect = document.getElementById("class");
-    return classSelect.value;
+    const classSelect = document.querySelectorAll('input[name="skillclass"]');
+    for (const input of classSelect) {
+        if (input.checked) {
+            return input.value;
+        }
+    }
+    return null; 
 }
 
 export function getSelectedLevel(callback) {
-    const select = document.getElementById("level");
+    const input = document.getElementById("levelInput");
+    if (!input) return;
 
-    // Fire callback immediately with current value (after population)
     if (typeof callback === "function") {
-        callback(select.value);
+        callback(Number(input.value));
+        input.addEventListener("change", function () {
+            callback(Number(this.value));
+        });
     }
+}
 
-    // Add event listener for future changes
-    select.addEventListener("change", function () {
-        if (typeof callback === "function") {
-            callback(this.value);
-        }
-    });
-    
+export function getSelectedLevelValue() {
+    const input = document.getElementById("levelInput");
+    if (!input) return null;
+    return Number(input.value);
 }
 
 export function updateRaceimg(selected) {
@@ -81,27 +71,41 @@ export function updateRaceimg(selected) {
 export function initializeOptions() {
 
 
-    populateClassOption();
     populateLevelOption();
     updateRaceimg(getSelectedRace());
     getSelectedRace();
     getSelectedClass();
+    getSelectedLevelValue();
     getSelectedLevel();
-    document.getElementById("Race").addEventListener('change', function () {
-        updateRaceimg(this.value);
+
+    document.querySelectorAll('input[name="race"]').forEach(input => {
+        input.addEventListener('change', () => {
+            updateRaceimg(getSelectedRace());
+        });
     });
+    
 
 
     document.querySelectorAll('.icon-container').forEach(box => box.classList.add('hidden'));
 
-    document.getElementById("class").addEventListener("change", function () {
-        const selectedClass = getSelectedClass();
-        const resultBoxes = document.querySelectorAll('.icon-container');
-        resultBoxes.forEach(box => box.classList.add('hidden'));
 
-        const resultClass = document.getElementById(selectedClass);
-        if (resultClass) {
-            resultClass.classList.remove('hidden');
-        }
+    document.querySelectorAll('input[name="skillclass"]').forEach(input => {
+        input.addEventListener('change', () => {
+            const selectedClass = getSelectedClass();
+            const resultBoxes = document.querySelectorAll('.icon-container');
+            resultBoxes.forEach(box => box.classList.add('hidden'));
+            const resultClass = document.getElementById(selectedClass);
+            if (resultClass) {
+                resultClass.classList.remove('hidden');
+            }
+        });
+    })
+
+    console.log("Initial level:", getSelectedLevelValue());
+
+    document.getElementById("levelInput").addEventListener("change", () => {
+        console.log("Level changed to:", getSelectedLevelValue());
     });
+    
+   
 }

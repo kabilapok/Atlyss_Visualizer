@@ -1,68 +1,60 @@
-const iconBox = document.querySelectorAll(".dragdropJSdragbox");
-const hotbarSlot = document.querySelectorAll(".hotbar-slot");
-const hotbarContainers = document.querySelectorAll(".hotbar-box");
+const iconBoxes = document.querySelectorAll(".dragdropJSdragbox");
+const skillbarSlots = document.querySelectorAll(".skillbar-slot");
+const skillbarContainers = document.querySelectorAll(".skillbar");
+const skillbarContainer = document.querySelector(".skillbar-container");
 
-iconBox.forEach(box => {
+// Initialize Sortable for skill icon pools (drag source only)
+iconBoxes.forEach(box => {
     Sortable.create(box, {
-        group: {
-            name: "skills",
-            put: false
-        },
-
+        group: { name: "skills", put: false },
         sort: false
-    })
+    });
 });
 
-hotbarSlot.forEach(slot => {
+// Initialize Sortable for each skillbar slot
+skillbarSlots.forEach(slot => {
     Sortable.create(slot, {
-        group: {
-            name: "skills",
-        },
-
+        group: { name: "skills" },
         draggable: true,
 
         onAdd(evt) {
             const toSlot = evt.to;
             const draggedItem = evt.item;
-            const img = slot.querySelector('img');
+            const existingImg = slot.querySelector("img");
 
-            const originalContainerId = img.dataset.originalContainer;
-            const originalContainer = document.getElementById(originalContainerId);
-
-
-            // If destination already has an item, swap them
-            if (toSlot.children.length > 1) {
-
-                // Put the existing item back into the origin slot
-                originalContainer.appendChild(img);
+            // Return existing item if slot already occupied
+            if (existingImg) {
+                const originalContainerId = existingImg.dataset.originalContainer;
+                const originalContainer = document.getElementById(originalContainerId);
+                if (originalContainer) originalContainer.appendChild(existingImg);
             }
 
-            // Append the dragged item into the destination slot
+            // Place dragged item into slot
             toSlot.appendChild(draggedItem);
         }
-    })
-})
+    });
+});
 
-hotbarContainers.forEach(container => {
+// Initialize Sortable for the skillbar container (for reordering/swapping)
+skillbarContainers.forEach(container => {
     Sortable.create(container, {
-        group: {
-            name: "hotbars"
-        },
+        group: { name: "hotbars" },
         animation: 150,
         swap: true,
-        swapClass: 'swap-preview',
+        swapClass: "swap-preview"
     });
-})
+});
 
-// click to remove (and bring back) individual skill icons from the hotbar
-document.getElementById('hotbar').addEventListener('click', (event) => {
-    const slot = event.target.closest('.hotbar-slot');
-    if (!slot) return;
+// Click-to-remove skill from hotbar
+if (skillbarContainer) {
+    skillbarContainer.addEventListener("click", event => {
+        const slot = event.target.closest(".skillbar-slot");
+        if (!slot) return;
 
-    const img = slot.querySelector('img');
+        const img = slot.querySelector("img");
+        if (!img) return;
 
-    if (slot && document.getElementById('hotbar').contains(slot) && slot.contains(img)) {
-        console.log('hotbar-slot clicked!');
+        console.log("skillbar-slot clicked!");
 
         const originalContainerId = img.dataset.originalContainer;
         const originalContainer = document.getElementById(originalContainerId);
@@ -70,7 +62,7 @@ document.getElementById('hotbar').addEventListener('click', (event) => {
         if (originalContainer) {
             originalContainer.appendChild(img);
         } else {
-            img.remove(); // Or just remove it if no original container
+            img.remove(); // fallback
         }
-    };
-});
+    });
+}

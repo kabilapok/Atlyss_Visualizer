@@ -39,39 +39,77 @@
     <main>
         <section>
 
-            <div id="main-profile">
-                <div id="Race-img">
-                    <!-- RACE IMG -->
+            <div class="profile">
+
+                <div class="profile-nickname">
+                    <label>Nickname</label>
+                    <input type="text" name="nickname" placeholder="IHaveALoonaPlush">
                 </div>
-                <form>
-                    <div class="main-stats-box">
-                        <label for="nickname">Nickname:</label>
-                        <input type="text" id="nickname" placeholder="IHaveALoonaPlush">
+
+                <div class="profile-detail">
+                    <div class="profile-detail-race">
+                        <span class="profile-label">Race:</span>
+                        <label class=" "><input type="radio" name="race" value="poon" checked>Poon</label>
+                        <label class=" "><input type="radio" name="race" value="azora">Kubold</label>
+                        <label class=" "><input type="radio" name="race" value="byrdle">Byrdle</label>
+                        <label class=" "><input type="radio" name="race" value="chang">Chang</label>
+                        <label class=" "><input type="radio" name="race" value="imp">Imp</label>
                     </div>
 
-                    <div class="main-stats-box">
-                        <label for="Race">Race:</label>
-                        <select id="Race">
-                            <option value="poon">Poon</option>
-                            <option value="azora">Kubold</option>
-                            <option value="byrdle">Byrdle</option>
-                            <option value="chang">Chang</option>
-                            <option value="imp">Imp</option>
-                        </select>
-
-
-                        <label for="class">Class:</label>
-                        <select id="class">
-                            <!-- CLASS # -->
-                        </select>
-
-                        <label for="level">Level:</label>
-                        <div id="level">
+                    <div class="profile-detail-level">
+                        <span class="profile-label">Level:</span>
+                        <label id="level-container">
                             <!-- LEVEL # -->
+                        </label>
+                    </div>
+
+                    <div class="profile-detail-class">
+                        <span class="profile-label">Class:</span>
+                        <label class=" "><input type="radio" name="skillclass" value="Fighter"><img src="..\assets\Fighter_(Icon).png">Fighter</label>
+                        <label class=" "><input type="radio" name="skillclass" value="Mystic"><img src="..\assets\Mystic_(Icon).png">Mystic</label>
+                        <label class=" "><input type="radio" name="skillclass" value="Bandit"><img src="..\assets\Bandit_(Icon).png">Bandit</label>
+                        <label class=" "><input type="radio" name="skillclass" value="Novice" checked><img src="..\assets\Novice_(Icon).png">Novice</label>
+                    </div>
+
+
+                </div>
+
+
+                <div class="profile-box">
+                    <div class="profile-icon">
+                        <div id="Race-img">
+                            <!-- RACE IMG -->
                         </div>
                     </div>
-                </form>
+                </div>
+
+                <div id="points-display">
+                    Skill points: <span id="total-points"></span><br>
+                    Used: <span id="used-points"></span><br>
+                    Remaining: <span id="remaining-points"></span>
+                </div>
+
+                <div class="skillbar-container">
+                    <div class="skillbar">
+                        <div class="skillbar-slot"></div>
+                        <div class="skillbar-slot"></div>
+                        <div class="skillbar-slot"></div>
+                        <div class="skillbar-slot"></div>
+                        <div class="skillbar-slot"></div>
+                        <div class="skillbar-slot"></div>
+                    </div>
+                    <div class="skillbar">
+                        <div class="skillbar-slot"></div>
+                        <div class="skillbar-slot"></div>
+                        <div class="skillbar-slot"></div>
+                        <div class="skillbar-slot"></div>
+                        <div class="skillbar-slot"></div>
+                        <div class="skillbar-slot"></div>
+                    </div>
+                </div>
+
             </div>
+
 
             <div id="skill-section">
 
@@ -121,55 +159,13 @@
 
             </div>
 
-            <div id="hotbar-container">
-                <div class="stat-orb" id="hp-orb"></div>
-
-                <div id="hotbar">
-                    <div class="hotbar-box">
-                        <div class="hotbar-slot"></div>
-                        <div class="hotbar-slot"></div>
-                        <div class="hotbar-slot"></div>
-                        <div class="hotbar-slot"></div>
-                        <div class="hotbar-slot"></div>
-                        <div class="hotbar-slot"></div>
-                    </div>
-                    <div class="hotbar-box">
-                        <div class="hotbar-slot"></div>
-                        <div class="hotbar-slot"></div>
-                        <div class="hotbar-slot"></div>
-                        <div class="hotbar-slot"></div>
-                        <div class="hotbar-slot"></div>
-                        <div class="hotbar-slot"></div>
-                    </div>
-                </div>
-
-                <div class="stat-orb" id="mana-orb"></div>
-            </div>
-
-
-            <div id="stat-profile">
-
-                <div id="equipment-container">
-
-                    <div class="equipment-slot" id="helm"></div>
-                    <div class="equipment-slot" id="cape"></div>
-                    <div class="equipment-slot" id="chestpiece"></div>
-                    <div class="equipment-slot" id="leggings"></div>
-                    <div class="equipment-slot" id="shield"></div>
-                    <div class="equipment-slot" id="ring"></div>
-
-                </div>
-
-            </div>
-
-
 
         </section>
 
         <div id="tooltip"></div>
 
-    </main>    
-    
+    </main>
+
     <footer>
     </footer>
 

@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Terminal-Grotesque';
-    src: url('../assets/Terminale-Grotesque-master/terminal-grotesque.ttf') format('truetype'),
-         url('../assets/Terminale-Grotesque-master/terminal-grotesque_open.otf') format('opentype');
+    src: url('../assets/Terminale-Grotesque-master/terminal-grotesque.ttf') format('truetype'), url('../assets/Terminale-Grotesque-master/terminal-grotesque_open.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -19,12 +18,13 @@ h1, h4 {
     text-align: center;
     text-decoration: underline;
     font-size: 2em;
-
 }
+
 footer {
     text-align: center;
     font-size: 1.5rem;
-}   
+}
+
     footer img {
         height: 5em;
         width: auto;
@@ -59,140 +59,14 @@ header {
     font-weight: bold;
 }
 
-#main-profile {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    gap: 20px; /* spacing between orbs and hotbar */
-    border-radius: 20px;
-    padding: 20px 30px;
-    gap: 20px;
-    margin: 40px auto;
-    width: fit-content;
-}
+
 
 #Race-img {
     width: 60px;
     height: 60px;
-    margin: auto;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
-}   
-
-.main-stats-box {
-    padding: 5px;
 }
-
-#hotbar-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px; /* spacing between orbs and hotbar */
-    background: rgba(40, 40, 40, 0.9); /* dark semi-transparent panel */
-    border-radius: 20px;
-    padding: 20px 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    gap: 20px;
-    margin: 40px auto;
-    width: fit-content;
-}
-
-.stat-orb {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    border: 2px solid #333;
-}
-    #hp-orb {
-        background: radial-gradient(circle, red 60%, darkred 100%);
-    }
-
-    #mana-orb {
-          background: radial-gradient(circle, blue 60%, navy 100%);
-    }
-
-
-#hotbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.hotbar-box {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    background-color: #f1f1f1;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-}
-
-.hotbar-slot {
-    width: 60px;
-    height: 60px;
-    border: 2px dashed #aaa;
-    background-color: #fff;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    overflow: hidden;
-}
-    .hotbar-slot img {
-        width: auto;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    .hotbar-slot:hover {
-        transform: scale(1.1);
-    }
-
-    .hotbar-slot .icon:hover {
-        transform: none;
-    }
-
-
-#stat-profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-}
-
-#equipment-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    background-color: #fff6d4;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-}
-
-.equipment-slot {
-    width: 50px;
-    height: 50px;
-    border: 2px dashed #aaa;
-    border-radius: 8px;
-    background-color: #ae775a;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    overflow: hidden;
-}
-    .equipment-slot img {
-        width: auto;
-        height: 100%;
-        object-fit: contain;
-    }
-
-
-
 
 
 #skill-section {
@@ -200,10 +74,10 @@ header {
     left: 1rem;
     width: 53%;
     pointer-events: none;
-}   
-    #skill-section *{
-        pointer-events: auto;
+}
 
+    #skill-section * {
+        pointer-events: auto;
     }
 
 #Passive {
@@ -215,7 +89,6 @@ header {
 
 
 .icon {
-   
     border-radius: 5px;
     margin: 0.5rem;
     object-fit: contain;
@@ -223,6 +96,7 @@ header {
     transform-origin: center;
     transition: transform 0.2s ease-in-out;
 }
+
     .icon:hover {
         transform: scale(1.1);
     }
@@ -234,8 +108,8 @@ header {
     border: 2px solid #ddd;
     border-radius: 8px;
     width: 55%;
-/*    flex-wrap: wrap;
-*/    padding: 10px;
+    /*    flex-wrap: wrap;
+*/ padding: 10px;
     margin-top: 20px;
 }
 
@@ -271,15 +145,15 @@ header {
 
 #tooltip {
     position: absolute;
-    display: block; /* use JS to control visibility */
+    display: block; 
     background-color: #222; /* slightly darker for clarity */
     color: #fff;
     padding: 10px 14px;
-    font-size: 14px;
+    font-size: 1.3rem;
     border-radius: 6px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
     white-space: normal; /* allow line breaks (important for descriptions) */
-    max-width: 260px; /* prevent going off screen */
+    max-width: 20em; /* prevent going off screen */
     pointer-events: none;
     z-index: 1000;
     opacity: 0;
@@ -288,7 +162,7 @@ header {
 }
 
 /* dragndrop css to change*/
-.hotbar-slot.swap-preview {
+.skillbar-slot.swap-preview {
     outline: 2px dashed #4caf50;
     background-color: rgba(76, 175, 80, 0.1);
     transition: background-color 0.2s ease;
@@ -303,3 +177,179 @@ header {
     border: 2px dashed #2196f3;
     background-color: rgba(33, 150, 243, 0.2);
 }
+
+
+
+.profile {
+    border: 1px solid #999999;
+    background: #DAE5F0 no-repeat scroll 10px 5px none;
+    border-radius: 10px;
+    padding: 2px 0 0 3px;
+    height: 20rem;
+    width: 70rem;
+    margin: 40px auto;
+    box-shadow: inset 1px 1px 0 rgba(255,255,255,.6);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.profile-nickname input, .profile-nickname input.inputform {
+    display: block;
+    padding: 0.2rem 0.1rem;
+    margin: 02px;
+    width: 11rem;
+    height: auto;
+    font-size: 1.2rem;
+    border: 1px solid #999999;
+    border-radius: 5px;
+}
+
+.profile-nickname {
+    position: absolute;
+    border: 1px solid #999999;
+    background: #CBD6E1;
+    border-radius: 5px;
+    padding: 5px 0 0 0;
+    box-shadow: inset 1px 1px 0 rgba(255,255,255,.6);
+}
+
+.profile-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+    .profile-icon img {
+        width: 7em;
+        height: auto;
+    }
+
+.profile-detail {
+    padding-bottom: 40px;
+}
+
+.profile-detail-race label, .profile-detail-class label {
+    margin-right: 0.9rem; /* space between choices */
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 0.1rem 0.2rem; /* give some "button-like" spacing */
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    
+}
+
+    .profile-detail-race label:hover, .profile-detail-class label:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* subtle dim */
+    }
+
+    .profile-detail-class label:hover {
+        padding-top: 20px;
+    }
+
+.profile-detail-race input[type="radio"], .profile-detail-class input[type="radio"] {
+    cursor: pointer; 
+    width: 18px; /* default ~14px */
+    height: 18px;
+    accent-color: #333;
+}
+
+.profile-detail-race, .profile-detail-class, .profile-detail-level {
+    padding: 4px;
+}
+
+.profile-label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.skillbar-container {
+    text-align: center;
+    align-content: center;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skillbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+.skillbar-slot {
+    width: 60px;
+    height: 60px;
+    border: 2px dashed #aaa;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+}
+
+#points-display {
+    position: absolute;
+    padding-left: 9em;
+}
+
+
+
+.damage-strength {
+    color: red;
+    font-weight: bold;
+}
+
+.damage-mind {
+    color: blue;
+    font-weight: bold;
+}
+
+.damage-dexterity {
+    color: green;
+    font-weight: bold;
+}
+
+.icon.selected {
+    outline: 3px solid #0078D7;
+    box-shadow: 0 0 7px #0078D7;
+    transition: outline 0.2s, box-shadow 0.2s;
+}
+
+/*.profile-attribute {
+    display: flex;
+    margin-left: auto;
+    width: 20rem;
+}
+
+.profile-attribute-head {
+    border: 1px solid #999999;
+    background: #CBD6E1;
+    border-radius: 5px;
+    padding: 1px 0 0 0;
+    box-shadow: inset 1px 1px 0 rgba(255,255,255,.6);
+}
+
+.profile-attribute-stats {
+    justify-content: space-between;*/ /* pushes label left, number right */
+    /*align-items: center;
+    padding: 2px 0;
+    border-bottom: 3px solid #ccc;
+}
+
+.profile-stats-row label {
+    margin: 0;
+}*/
+/*.row-result {
+    font-weight: bold;
+    text-align: right;
+    min-width: 40px;*/ /* keeps numbers aligned even if shorter */
+/*}*/
