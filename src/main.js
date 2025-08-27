@@ -3,6 +3,7 @@ import { loadSkillData } from './Scripts/dataLoader.js';
 import { initializeOptions } from './Scripts/optionManager.js';
 import { loadAndInitTooltips } from './Scripts/tooltipManager.js';
 import { loadPoints } from './Scripts/pointLoader.js';
+import { loadStats } from './Scripts/statLoader.js';
 
 async function main() {
     const data = await loadSkillData();
@@ -12,5 +13,6 @@ async function main() {
     initializeOptions();
     loadAndInitTooltips();
     loadPoints();
+    loadStats();
 }
 main();

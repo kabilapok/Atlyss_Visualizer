@@ -21,11 +21,17 @@ async function buildSkillPointMap() {
     });
 }
 
-function calculateTotalPoints(level) {
+function calculateTotalSkillPoints(level) {
     // 0 points at level 1.
     // From level 2 onwards, points increment by 3 every 2 levels.
     if (level < 2) return 0;
     return Math.floor((level - 2) / 2 + 1) * 3;
+}
+
+function calculateTotalStatPoints(level) {
+    // 6 points at level 1, +3 for each level after
+    if (level < 1) return 0;
+    return 6 + (level - 1) * 3;
 }
 
 export async function loadPoints() {
@@ -36,28 +42,39 @@ export async function loadPoints() {
     const usedPoints = document.getElementById("used-points");
     const remainingPoints = document.getElementById("remaining-points");
 
+    // Stat points containers 
+    const statTotalPoints = document.getElementById("stat-total-points");
+    const statUsedPoints = document.getElementById("stat-used-points");
+    const statRemainingPoints = document.getElementById("stat-remaining-points");
+
     if (!pointDisplay || !totalPoints || !usedPoints || !remainingPoints) return;
 
     function updatePoints(level) {
-        const total = calculateTotalPoints(level);
-
-        // Sum up the pointCost for all selected icons
-        let used = 0;
+        // Skill points
+        const totalSkill = calculateTotalSkillPoints(level);
+        let usedSkill = 0;
         document.querySelectorAll('.icon.selected').forEach(icon => {
             const iconId = icon.id;
-            used += skillPointMap[iconId] ?? 1;
+            usedSkill += skillPointMap[iconId] ?? 1;
         });
+        const remainingSkill = totalSkill - usedSkill;
 
-        const remaining = total - used;
+        totalPoints.textContent = totalSkill;
+        usedPoints.textContent = usedSkill;
+        remainingPoints.textContent = remainingSkill >= 0 ? remainingSkill : 0;
+        remainingPoints.style.color = remainingSkill < 0 ? "red" : "";
 
-        totalPoints.textContent = total;
-        usedPoints.textContent = used;
-        remainingPoints.textContent = remaining >= 0 ? remaining : 0;
+        // Stat points
+        if (statTotalPoints && statUsedPoints && statRemainingPoints) {
+            const totalStat = calculateTotalStatPoints(level);
+            let usedStat = 0;
 
-        if (remaining < 0) {
-            remainingPoints.style.color = "red";
-        } else {
-            remainingPoints.style.color = "";
+            // You can implement your own logic for usedStat, e.g. count assigned stat points
+
+            statTotalPoints.textContent = totalStat;
+            statUsedPoints.textContent = usedStat;
+            statRemainingPoints.textContent = totalStat - usedStat;
+            statRemainingPoints.style.color = (totalStat - usedStat) < 0 ? "red" : "";
         }
     }
 
