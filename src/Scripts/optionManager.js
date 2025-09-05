@@ -1,10 +1,23 @@
-export function populateLevelOption(min = 1, max = 40, defaultLevel = 40) {
+export function initializeOptions() {
+    populateLevelOption();
+
+    // Use the universal manager on the whole profile
+    getInputs(".profile", values => {
+        updateRaceimg(values.race);
+        updateClassDisplay(values.skillclass);
+        updateProfile(values); 
+    });
+}
+
+// Create the level input
+function populateLevelOption(min = 1, max = 40, defaultLevel = 40) {
     const levelContainer = document.getElementById("level-container");
     if (!levelContainer) return;
 
     const input = document.createElement("input");
     input.type = "number";
     input.id = "levelInput";
+    input.name = "level"; // <-- important for getInputs
     input.min = min;
     input.max = max;
     input.value = defaultLevel;
@@ -15,97 +28,129 @@ export function populateLevelOption(min = 1, max = 40, defaultLevel = 40) {
         if (input.value > max) input.value = max;
     });
 
-    levelContainer.appendChild(input);   
+    levelContainer.appendChild(input);
 }
 
-export function getSelectedRace() {
-    const selectElement = document.querySelectorAll('input[name="race"]');
-    for (const input of selectElement) {
-        if (input.checked) {
-            return input.value;
-        }
-    }
-    return null; 
-}
+// Universal input manager
+export function getInputs(containerSelector, onChangeCallback) {
+    const container =
+        typeof containerSelector === "string"
+            ? document.querySelector(containerSelector)
+            : containerSelector;
 
-export function getSelectedClass() {
-    const classSelect = document.querySelectorAll('input[name="skillclass"]');
-    for (const input of classSelect) {
-        if (input.checked) {
-            return input.value;
-        }
-    }
-    return null; 
-}
+    if (!container) return {};
 
-export function getSelectedLevel(callback) {
-    const input = document.getElementById("levelInput");
-    if (!input) return;
+    function extractAllValues() {
+        const values = {};
+        const inputs = container.querySelectorAll("input, select, textarea");
 
-    if (typeof callback === "function") {
-        callback(Number(input.value));
-        input.addEventListener("change", function () {
-            callback(Number(this.value));
-        });
-    }
-}
+        inputs.forEach(input => {
+            if (!input.name) return; // skip unnamed inputs
 
-export function getSelectedLevelValue() {
-    const input = document.getElementById("levelInput");
-    if (!input) return null;
-    return Number(input.value);
-}
-
-export function updateRaceimg(selected) {
-    const container = document.getElementById("Race-img");
-    container.innerHTML = '';
-    if (selected) {
-        const raceId = document.createElement("img");
-        raceId.src = `../assets/Race-icons/rcIco_${selected}.png`;
-        raceId.id = selected;
-        raceId.alt = `${selected}.png`;
-        container.appendChild(raceId);
-    }
-}
-
-export function initializeOptions() {
-
-
-    populateLevelOption();
-    updateRaceimg(getSelectedRace());
-    getSelectedRace();
-    getSelectedClass();
-    getSelectedLevelValue();
-    getSelectedLevel();
-
-    document.querySelectorAll('input[name="race"]').forEach(input => {
-        input.addEventListener('change', () => {
-            updateRaceimg(getSelectedRace());
-        });
-    });
-    
-
-
-    document.querySelectorAll('.icon-container').forEach(box => box.classList.add('hidden'));
-
-
-    document.querySelectorAll('input[name="skillclass"]').forEach(input => {
-        input.addEventListener('change', () => {
-            const selectedClass = getSelectedClass();
-            const resultBoxes = document.querySelectorAll('.icon-container');
-            resultBoxes.forEach(box => box.classList.add('hidden'));
-            const resultClass = document.getElementById(selectedClass);
-            if (resultClass) {
-                resultClass.classList.remove('hidden');
+            if (input.type === "radio") {
+                if (input.checked) {
+                    values[input.name] = input.value;
+                }
+            } else if (input.type === "checkbox") {
+                values[input.name] = input.checked;
+            } else if (input.type === "number") {
+                values[input.name] = Number(input.value);
+            } else {
+                values[input.name] = input.value;
             }
         });
-    })
 
-    console.log("Initial level:", getSelectedLevelValue());
+        return values;
+    }
 
-    document.getElementById("levelInput").addEventListener("change", () => {
-        console.log("Level changed to:", getSelectedLevelValue());
-    });
-    
-   
+    let lastValues = extractAllValues();
+
+    if (typeof onChangeCallback === "function") {
+        onChangeCallback(lastValues);
+    }
+
+    if (typeof onChangeCallback === "function") {
+        container.addEventListener("change", event => {
+            if (event.target.matches("input, select, textarea")) {
+                const newValues = extractAllValues();
+
+                const changed =
+                    JSON.stringify(newValues) !== JSON.stringify(lastValues);
+                if (changed) {
+                    lastValues = newValues;
+                    onChangeCallback(newValues);
+                }
+            }
+        });
+    }
+
+    return lastValues;
 }
+
+// Update functions
+
+function updateRaceimg(selected) {
+    const container = document.getElementById("Race-img");
+    if (!container) return;
+
+    // Try to find an existing img
+    let raceImg = container.querySelector("img");
+
+    // If it doesn't exist, create it once
+    if (!raceImg) {
+        raceImg = document.createElement("img");
+        container.appendChild(raceImg);
+    }
+
+    // Only update src if it's actually different
+    const newSrc = `../assets/Race-icons/rcIco_${selected}.png`;
+    if (raceImg.src !== new URL(newSrc, location.href).href) {
+        raceImg.src = newSrc;
+        raceImg.id = selected;
+        raceImg.alt = `${selected}.png`;
+    }
+}
+
+function updateProfile(values) {
+    let profileDiv = document.getElementById("player-profile");
+    if (!profileDiv) return;
+
+    // If the container doesn’t have a section yet, create one once
+    let textSection = profileDiv.querySelector(".profile-text");
+    if (!textSection) {
+        textSection = document.createElement("div");
+        textSection.classList.add("profile-text");
+        profileDiv.appendChild(textSection);
+    }
+
+    const { nickname, race, skillclass, level } = values;
+
+    const displayRace = race
+        ? race.toLowerCase() === "azora"
+            ? "Kubold"
+            : race.charAt(0).toUpperCase() + race.slice(1)
+        : "None selected";
+
+    textSection.innerHTML = `
+        <h3>Player Profile</h3>
+        <p><strong>Nickname:</strong> ${nickname || "Unnamed"}</p>
+        <p><strong>Race:</strong> ${displayRace}</p>
+        <p><strong>Class:</strong> ${skillclass || "None selected"}</p>
+        <p><strong>Level:</strong> ${level || 1}</p>
+    `;
+}
+
+
+function updateClassDisplay(selectedClass) {
+    document.querySelectorAll(".icon-container").forEach(box =>
+        box.classList.add("hidden")
+    );
+
+    if (selectedClass) {
+        const resultClass = document.getElementById(selectedClass);
+        if (resultClass) {
+            resultClass.classList.remove("hidden");
+        }
+    }
+}
+
