@@ -1,7 +1,7 @@
 import { createAndPlaceIcons } from './Scripts/iconManager.js';
 import { loadSkillData } from './Scripts/dataLoader.js';
 import { initializeOptions } from './Scripts/optionManager.js';
-import { loadAndInitTooltips } from './Scripts/tooltipManager.js';
+import { tippyLoad } from './Scripts/tippyTooltip.js';
 import { loadPoints } from './Scripts/pointLoader.js';
 import { loadStats } from './Scripts/statLoader.js';
 
@@ -11,7 +11,7 @@ async function main() {
     const { iconData } = data;
     createAndPlaceIcons(iconData);
     initializeOptions();
-    loadAndInitTooltips();
+    tippyLoad();
     loadPoints();
     loadStats();
 }
