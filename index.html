@@ -11,6 +11,8 @@
 
 
     <script defer src="Libs/Sortable.min.js"></script>
+    <script defer src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script defer src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 
 
     <script defer src="Scripts/dragdrop.js"></script>
@@ -37,6 +39,7 @@
 
 
     <main>
+
         <section>
 
             <div class="profile">
@@ -116,6 +119,21 @@
 
             </div>
 
+            <button id="theme-toggle">Toggle Dark Mode</button>
+
+
+            <div id="player-profile">
+                <div class="profile-text">
+                    <h3>Player Profile</h3>
+                    <p><strong>Nickname:</strong></p>
+                    <p><strong>Race:</strong> </p>
+                    <p><strong>Class:</strong> </p>
+                    <p><strong>Level:</strong> </p>
+                </div>
+                <!-- other sections can be appended here later -->
+            </div>
+
+
             <div class="stat-container">
                 HP: <span id="hp-stat">0</span><br>
                 MP: <span id="mp-stat">0</span><br>
@@ -125,6 +143,7 @@
                 Mgk. Power: <span id="mgk-stat">0</span><br>
                 Dex Power: <span id="dex-stat">0</span><br>
             </div>
+
 
             <div id="skill-section">
 
@@ -175,9 +194,10 @@
             </div>
 
 
+
+
         </section>
 
-        <div id="tooltip"></div>
 
     </main>
 

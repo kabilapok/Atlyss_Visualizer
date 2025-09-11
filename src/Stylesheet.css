@@ -5,9 +5,22 @@
     font-style: normal;
 }
 
+:root {
+    --bg-color: antiquewhite;
+    --text-color: #000;
+    --card-color: #DAE5F0;
+}
+
 body {
     font-family: 'Terminal Grotesque', Verdana, Geneva, Tahoma, sans-serif;
-    background-color: antiquewhite;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.dark-mode {
+    --bg-color: #1b1b1b;
+    --text-color: #DDD;
+    --card-color: #5A6570;
 }
 
 .hidden {
@@ -34,7 +47,7 @@ footer {
 header aside {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 200px;
     height: auto;
 }
@@ -54,7 +67,7 @@ header {
     position: absolute;
     top: -0.7em;
     left: 1rem;
-    background-color: antiquewhite;
+    background-color: var(--bg-color);
     padding: 0 0.5em;
     font-weight: bold;
 }
@@ -161,6 +174,43 @@ header {
     transform: translateY(5px); /* small upward animation */
 }
 
+/* Style all Tippy tooltips */
+.tippy-tooltip {
+    backdrop-filter: none !important;
+    filter: none !important;
+
+    background-color: #222; /* slightly darker for clarity */
+    color: #fff;
+    padding: 5px 4px;
+    font-size: 1.3rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+    max-width: 20em;
+    /*background: url('/assets/bk_01.png') no-repeat;
+    background-size: cover;
+    background-position: ;*/
+}
+
+.tippy-popper {
+}
+
+/* Style the content area */
+.tippy-content {
+    backdrop-filter: none !important;
+    filter: none !important;
+
+    white-space: normal;
+    line-height: 1.5;
+    font-size: 1.3rem;
+}
+
+
+.tippy-backdrop, .tippy-popper, tippy-tooltip, .tippy-content, .tippy-box[data-theme~="default-style"] {
+    backdrop-filter: none !important;
+    filter: none !important;
+}
+
+
 /* dragndrop css to change*/
 .skillbar-slot.swap-preview {
     outline: 2px dashed #4caf50;
@@ -182,7 +232,7 @@ header {
 
 .profile {
     border: 1px solid #999999;
-    background: #DAE5F0 no-repeat scroll 10px 5px none;
+    background: var(--card-color) no-repeat scroll 10px 5px none;
     border-radius: 10px;
     padding: 2px 0 0 3px;
     height: 20rem;
@@ -207,7 +257,7 @@ header {
 .profile-nickname {
     position: absolute;
     border: 1px solid #999999;
-    background: #CBD6E1;
+    background: var(--card-color);
     border-radius: 5px;
     padding: 5px 0 0 0;
     box-shadow: inset 1px 1px 0 rgba(255,255,255,.6);
