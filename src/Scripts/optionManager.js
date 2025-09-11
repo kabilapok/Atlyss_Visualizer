@@ -133,7 +133,7 @@ function updateProfile(values) {
 
     textSection.innerHTML = `
         <h3>Player Profile</h3>
-        <p><strong>Nickname:</strong> ${nickname || "Unnamed"}</p>
+        <p><strong>Nickname:</strong> ${nickname || "--"}</p>
         <p><strong>Race:</strong> ${displayRace}</p>
         <p><strong>Class:</strong> ${skillclass || "None selected"}</p>
         <p><strong>Level:</strong> ${level || 1}</p>
@@ -153,4 +153,5 @@ function updateClassDisplay(selectedClass) {
         }
     }
 }
+
 
