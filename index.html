@@ -5,18 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main ig</title>
-    <link rel="icon" type="image/svg+xml" href="assets/order_icon.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/images/misc/order_icon.svg">
 
-    <link rel="stylesheet" href="src/Stylesheet.css">
+    <link rel="stylesheet" href="styling/Stylesheet.css">
 
 
-    <script defer src="Libs/Sortable.min.js"></script>
+    <script defer src="scripts/libs/Sortable.min.js"></script>
     <script defer src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script defer src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 
 
-    <script defer src="Scripts/dragdrop.js"></script>
-    <script defer type="module" src="src/main.js"></script>
+    <script defer src="scripts/dragdrop.js"></script>
+    <script defer type="module" src="scripts/main.js"></script>
 
 
 </head>
@@ -26,6 +26,7 @@
     <header>
         <h1>Select your class and start dragging!</h1>
 
+
         <aside class="info-box">
             <div class="legend-style">Info</div>
             <div class="info-content">
@@ -34,8 +35,14 @@
                 <p><strong>Last Update:</strong> August 2025</p>
                 <a href="https://github.com/kabilapok/Atlyss_Visualizer">Repo</a>
             </div>
+            <br>
+            <button id="theme-toggle">Toggle Dark Mode</button>
+
         </aside>
+
+
     </header>
+
 
 
     <main>
@@ -68,10 +75,10 @@
 
                     <div class="profile-detail-class">
                         <span class="profile-label">Class:</span>
-                        <label class=" "><input type="radio" name="skillclass" value="Fighter"><img src="..\assets\Fighter_(Icon).png">Fighter</label>
-                        <label class=" "><input type="radio" name="skillclass" value="Mystic"><img src="..\assets\Mystic_(Icon).png">Mystic</label>
-                        <label class=" "><input type="radio" name="skillclass" value="Bandit"><img src="..\assets\Bandit_(Icon).png">Bandit</label>
-                        <label class=" "><input type="radio" name="skillclass" value="Novice" checked><img src="..\assets\Novice_(Icon).png">Novice</label>
+                        <label class=" "><input type="radio" name="skillclass" value="Fighter"><img alt="Fighter-Icon" src="assets/images/misc/Fighter_(Icon).png">Fighter</label>
+                        <label class=" "><input type="radio" name="skillclass" value="Mystic"><img alt="Mystic-Icon"  src="assets/images/misc/Mystic_(Icon).png">Mystic</label>
+                        <label class=" "><input type="radio" name="skillclass" value="Bandit"><img alt="Bandit-Icon" src="assets/images/misc/Bandit_(Icon).png">Bandit</label>
+                        <label class=" "><input type="radio" name="skillclass" value="Novice" checked><img alt="Novice-Icon" src="assets/images/misc/Novice_(Icon).png">Novice</label>
                     </div>
 
 
@@ -86,17 +93,6 @@
                     </div>
                 </div>
 
-                <div id="points-display">
-                    <!-- SKILL POINTS -->
-                    Skill Points: <span id="total-points"></span><br>
-                    Used: <span id="used-points"></span><br>
-                    Remaining: <span id="remaining-points"></span>
-                    <br><br>
-                    <!-- STAT POINTS -->
-                    Stat Points:<span id="stat-total-points"></span><br>
-                    Used: <span id="stat-used-points"></span><br>
-                    Remaining<span id="stat-remaining-points"></span>
-                </div>
 
                 <div class="skillbar-container">
                     <div class="skillbar">
@@ -119,30 +115,24 @@
 
             </div>
 
-            <button id="theme-toggle">Toggle Dark Mode</button>
 
 
             <div id="player-profile">
+
                 <div class="profile-text">
-                    <h3>Player Profile</h3>
-                    <p><strong>Nickname:</strong></p>
-                    <p><strong>Race:</strong> </p>
-                    <p><strong>Class:</strong> </p>
-                    <p><strong>Level:</strong> </p>
+                    <p class="profile-row"><strong>Nickname:</strong><span id="profile-nick" class="profile-value">LOL</span></p>
+                    <p class="profile-row"><strong>Race:</strong><span id="profile-race" class="profile-value"></span></p>
+                    <p class="profile-row"><strong>Class:</strong><span id="profile-class" class="profile-value"></span></p>
+                    <p class="profile-row"><strong>Level:</strong><span id="profile-level" class="profile-value"></span></p>
                 </div>
+
+               
+
                 <!-- other sections can be appended here later -->
             </div>
 
 
-            <div class="stat-container">
-                HP: <span id="hp-stat">0</span><br>
-                MP: <span id="mp-stat">0</span><br>
-                stamina: <span id="stamina-stat">0</span><br>
-                <br>
-                Attack Power: <span id="attack-stat">0</span><br>
-                Mgk. Power: <span id="mgk-stat">0</span><br>
-                Dex Power: <span id="dex-stat">0</span><br>
-            </div>
+           
 
 
             <div id="skill-section">

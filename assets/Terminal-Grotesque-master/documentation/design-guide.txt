@@ -1,1 +1,0 @@
-- Each dot in Terminal Grotesque must strictly fit to the grid. See fontforge sources.
