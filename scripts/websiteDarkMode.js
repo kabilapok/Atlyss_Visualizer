@@ -13,10 +13,10 @@
         body.classList.remove("light-mode", "dark-mode");
         if (theme === "dark") {
             body.classList.add("dark-mode");
-            themeIcon.src = `${ICONS.dark}`;
+            themeIcon.src = ICONS.dark;
         } else {
             body.classList.add("light-mode");
-            themeIcon.src = `${ICONS.light}`;
+            themeIcon.src = ICONS.light;
         }
     }
 
