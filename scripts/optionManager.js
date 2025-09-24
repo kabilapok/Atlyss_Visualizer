@@ -2,7 +2,7 @@ export function initializeOptions() {
     populateLevelOption();
 
     // Use the universal manager on the whole profile
-    getInputs(".profile", values => {
+    getInputs(".profile-detail", values => {
         updateRaceimg(values.race);
         updateClassDisplay(values.skillclass);
         updateProfile(values); 

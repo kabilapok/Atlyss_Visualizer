@@ -7,14 +7,17 @@
     <title>main ig</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/misc/order_icon.svg">
 
-    <link rel="stylesheet" href="styling/Stylesheet.css">
+    <link rel="stylesheet" href="styling/general.css">
     <script type="module" src="scripts/websiteDarkMode.js"></script>
+
+    <link rel="stylesheet" href="styling/layout.css">
+    <link rel="stylesheet" href="styling/display.css">
+
 
 
     <script defer src="scripts/libs/Sortable.min.js"></script>
     <script defer src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script defer src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-
 
     <script defer src="scripts/dragdrop.js"></script>
     <script defer type="module" src="scripts/main.js"></script>
@@ -24,77 +27,57 @@
 
 <body>
 
-    <header>
-        <h1>Select your class and start dragging!</h1>
+    <div id="layout-container">
+
+        <header>
+
+            <h1>Select your class and start dragging!</h1>
+            <div>Save 1 | Save 2 | Save 3 | Save 4 | Save 5</div>
 
             <button id="theme-toggle" aria-label="Toggle dark mode">
                 <img id="theme-icon" src="assets/images/misc/_ico_night.png" alt="Toggle theme" width="24" height="24">
             </button>
-            <div class="info-content">
-                <p><strong>Site Version:</strong> 1.0</p>
-                <p><strong>Status:</strong> Beta</p>
-                <p><strong>Last Update:</strong> August 2025</p>
-                <a href="https://github.com/kabilapok/Atlyss_Visualizer">Repo</a>
-            </div>
-            <br>
-            <button id="theme-toggle">Toggle Dark Mode</button>
-
-        </aside>
+        </header>
 
 
-    </header>
+        <div class="display-element">
 
 
+            <div class="skills-interaction">
 
-    <main>
-
-        <section>
-
-            <div class="profile">
-
-                <div class="profile-nickname">
-                    <label>Nickname</label>
-                    <input type="text" name="nickname" placeholder="IHaveALoonaPlush">
-                </div>
-
-                <div class="profile-detail">
-                    <div class="profile-detail-race">
-                        <span class="profile-label">Race:</span>
-                        <label class=" "><input type="radio" name="race" value="poon" checked>Poon</label>
-                        <label class=" "><input type="radio" name="race" value="azora">Kubold</label>
-                        <label class=" "><input type="radio" name="race" value="byrdle">Byrdle</label>
-                        <label class=" "><input type="radio" name="race" value="chang">Chang</label>
-                        <label class=" "><input type="radio" name="race" value="imp">Imp</label>
-                    </div>
-
-                    <div class="profile-detail-level">
-                        <span class="profile-label">Level:</span>
-                        <label id="level-container">
-                            <!-- LEVEL # -->
-                        </label>
-                    </div>
-
-                    <div class="profile-detail-class">
-                        <span class="profile-label">Class:</span>
-                        <label class=" "><input type="radio" name="skillclass" value="Fighter"><img alt="Fighter-Icon" src="assets/images/misc/Fighter_(Icon).png">Fighter</label>
-                        <label class=" "><input type="radio" name="skillclass" value="Mystic"><img alt="Mystic-Icon"  src="assets/images/misc/Mystic_(Icon).png">Mystic</label>
-                        <label class=" "><input type="radio" name="skillclass" value="Bandit"><img alt="Bandit-Icon" src="assets/images/misc/Bandit_(Icon).png">Bandit</label>
-                        <label class=" "><input type="radio" name="skillclass" value="Novice" checked><img alt="Novice-Icon" src="assets/images/misc/Novice_(Icon).png">Novice</label>
-                    </div>
+                <div class="choice-selection">
 
 
-                </div>
+                    <div class="profile-detail">
 
-
-                <div class="profile-box">
-                    <div class="profile-icon">
-                        <div id="Race-img">
-                            <!-- RACE IMG -->
+                        <div class="profile-detail-race">
+                            <span class="profile-label">Race:</span>
+                            <label class=" "><input type="radio" name="race" value="poon" checked>Poon</label>
+                            <label class=" "><input type="radio" name="race" value="azora">Kubold</label>
+                            <label class=" "><input type="radio" name="race" value="byrdle">Byrdle</label>
+                            <label class=" "><input type="radio" name="race" value="chang">Chang</label>
+                            <label class=" "><input type="radio" name="race" value="imp">Imp</label>
                         </div>
+
+                        <div class="profile-detail-level">
+                            <span class="profile-label">Level:</span>
+                            <label id="level-container">
+                                <!-- LEVEL # -->
+                            </label>
+                        </div>
+
+                        <div class="profile-detail-class">
+                            <span class="profile-label">Class:</span>
+                            <label class=" "><input type="radio" name="skillclass" value="Fighter"><img alt="Fighter-Icon" src="assets/images/misc/Fighter_(Icon).png">Fighter</label>
+                            <label class=" "><input type="radio" name="skillclass" value="Mystic"><img alt="Mystic-Icon" src="assets/images/misc/Mystic_(Icon).png">Mystic</label>
+                            <label class=" "><input type="radio" name="skillclass" value="Bandit"><img alt="Bandit-Icon" src="assets/images/misc/Bandit_(Icon).png">Bandit</label>
+                            <label class=" "><input type="radio" name="skillclass" value="Novice" checked><img alt="Novice-Icon" src="assets/images/misc/Novice_(Icon).png">Novice</label>
+                        </div>
+
+
                     </div>
+
                 </div>
-
-
                 <div class="skillbar-container">
                     <div class="skillbar">
                         <div class="skillbar-slot"></div>
@@ -114,86 +97,85 @@
                     </div>
                 </div>
 
-            </div>
+                <div id="skills-container">
 
+                    <div id="Fighter" class="icon-container" data-choice="Fighter">
+                        <h3>Fighter Skills</h3>
+                        <div id="Fighter-box" class="dragdropJSdragbox"></div>
 
+                        <div>
+                            <h3>Passives</h3>
+                            <div id="Fighter-passive-box" class="dragdropJSdragbox"></div>
+                        </div>
 
-            <div id="player-profile">
-
-                <div class="profile-text">
-                    <p class="profile-row"><strong>Nickname:</strong><span id="profile-nick" class="profile-value">LOL</span></p>
-                    <p class="profile-row"><strong>Race:</strong><span id="profile-race" class="profile-value"></span></p>
-                    <p class="profile-row"><strong>Class:</strong><span id="profile-class" class="profile-value"></span></p>
-                    <p class="profile-row"><strong>Level:</strong><span id="profile-level" class="profile-value"></span></p>
-                </div>
-
-               
-
-                <!-- other sections can be appended here later -->
-            </div>
-
-
-           
-
-
-            <div id="skill-section">
-
-                <div id="Fighter" class="icon-container" data-choice="Fighter">
-                    <h3>Fighter Skills</h3>
-                    <div id="Fighter-box" class="dragdropJSdragbox"></div>
-
-                    <div>
-                        <h3>Passives</h3>
-                        <div id="Fighter-passive-box" class="dragdropJSdragbox"></div>
                     </div>
 
-                </div>
+                    <div id="Mystic" class="icon-container" data-choice="Mystic">
+                        <h3>Mystic Skills</h3>
+                        <div id="Mystic-box" class="dragdropJSdragbox"></div>
 
-                <div id="Mystic" class="icon-container" data-choice="Mystic">
-                    <h3>Mystic Skills</h3>
-                    <div id="Mystic-box" class="dragdropJSdragbox"></div>
+                        <div>
+                            <h3>Passives</h3>
+                            <div id="Mystic-passive-box" class="dragdropJSdragbox"></div>
+                        </div>
 
-                    <div>
-                        <h3>Passives</h3>
-                        <div id="Mystic-passive-box" class="dragdropJSdragbox"></div>
                     </div>
 
-                </div>
+                    <div id="Bandit" class="icon-container" data-choice="Bandit">
+                        <h3>Bandit Skills</h3>
+                        <div id="Bandit-box" class="dragdropJSdragbox"></div>
 
-                <div id="Bandit" class="icon-container" data-choice="Bandit">
-                    <h3>Bandit Skills</h3>
-                    <div id="Bandit-box" class="dragdropJSdragbox"></div>
+                        <div>
+                            <h3>Passives</h3>
+                            <div id="Bandit-passive-box" class="dragdropJSdragbox"></div>
+                        </div>
 
-                    <div>
-                        <h3>Passives</h3>
-                        <div id="Bandit-passive-box" class="dragdropJSdragbox"></div>
                     </div>
 
-                </div>
+                    <div id="Novice" data-choice="Novice">
+                        <div>
+                            <h3>Mastery Skills</h3>
+                            <div id="Mastery-box" class="dragdropJSdragbox"></div>
+                        </div>
+                        <div>
+                            <h3>Novice Skills</h3>
+                            <div id="Novice-box" class="dragdropJSdragbox"></div>
+                        </div>
+                    </div>
 
-                <div id="Novice" data-choice="Novice">
-                    <div>
-                        <h3>Mastery Skills</h3>
-                        <div id="Mastery-box" class="dragdropJSdragbox"></div>
-                    </div>
-                    <div>
-                        <h3>Novice Skills</h3>
-                        <div id="Novice-box" class="dragdropJSdragbox"></div>
-                    </div>
                 </div>
 
             </div>
 
 
 
+            <div class="player-info">
 
-        </section>
+                <div id="player-profile">
+
+                    <div class="profile-box">
+                        <div class="profile-icon">
+                            <div id="Race-img">
+                                <!-- RACE IMG -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-text">
+                        <p class="profile-row"><strong>Nickname:</strong><span id="profile-nick" class="profile-value">LOL</span></p>
+                        <p class="profile-row"><strong>Race:</strong><span id="profile-race" class="profile-value"></span></p>
+                        <p class="profile-row"><strong>Class:</strong><span id="profile-class" class="profile-value"></span></p>
+                        <p class="profile-row"><strong>Level:</strong><span id="profile-level" class="profile-value"></span></p>
+                    </div>
+
+                </div>
+
+            </div>
 
 
-    </main>
+        </div>
 
-    <footer>
-    </footer>
+    </div>
 
 </body>
 </html>
