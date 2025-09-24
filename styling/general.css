@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Terminal-Grotesque';
+    src: url('../assets/fonts/terminal-grotesque.woff2') format('woff2'), url('../assets/fonts/terminal-grotesque.woff') format('woff');
+}
+
+
+:root {
+    --bg-color: antiquewhite;
+    --text-color: #000;
+    --card-color: #DAE5F0;
+}
+
+body {
+    font-family: 'Terminal Grotesque', Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.dark-mode {
+    --bg-color: #1b1b1b;
+    --text-color: #DDD;
+    --card-color: #5A6570;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+    #theme-toggle img {
+        display: block;
+        width: 24px;
+        height: 24px;
+    }
+
+.hidden {
+    display: none !important;
+}
+
+h1, h4 {
+    text-decoration: underline;
+    font-size: 2em;
+}
+
+header {
+    text-align: center;
+}
+
+    header aside {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: auto;
+    }

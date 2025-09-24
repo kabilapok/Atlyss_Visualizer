@@ -19,6 +19,7 @@ body {
     font-family: 'Terminal Grotesque', Verdana, Geneva, Tahoma, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
+
 }
 
 .dark-mode {
@@ -106,12 +107,11 @@ header {
 
 
 .icon {
+    image-rendering: pixelated;
     border-radius: 5px;
     margin: 0.5rem;
-    object-fit: contain;
     cursor: pointer;
     transform-origin: center;
-    transition: transform 0.2s ease-in-out;
 }
 
     .icon:hover {
@@ -321,7 +321,7 @@ header {
     font-size: 1.4rem;
     padding: 0.1rem 0.2rem; /* give some "button-like" spacing */
     border-radius: 4px;
-    transition: background-color 0.2s ease;
+    transition: background-color 5.2s ease;
     
 }
 
