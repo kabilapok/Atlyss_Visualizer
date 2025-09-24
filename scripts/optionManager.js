@@ -103,7 +103,7 @@ function updateRaceimg(selected) {
     }
 
     // Only update src if it's actually different
-    const newSrc = `../assets/images/Race-icons/rcIco_${selected}.png`;
+    const newSrc = `assets/images/Race-icons/rcIco_${selected}.png`;
     if (raceImg.src !== new URL(newSrc, location.href).href) {
         raceImg.src = newSrc;
         raceImg.id = selected;
