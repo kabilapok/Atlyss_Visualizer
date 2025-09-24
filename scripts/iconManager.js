@@ -4,14 +4,14 @@ export function createAndPlaceIcons(iconData) {
         Object.entries(types).forEach(([state, icons]) => {
             icons.forEach((icon) => {
                 const img = document.createElement("img");
-                img.src = `../assets/images/${skillClass}-icons/${icon}.png`;
+                img.src = `assets/images/${skillClass}-icons/${icon}.png`;
                 img.id = icon;
                 img.alt = `${icon}.png`;
                 //img.title = icon.replace(/_/g, ' ');
                 img.setAttribute("draggable", "true");
                 img.classList.add(skillClass, state, "icon");
                 img.onerror = function () {
-                    this.src = "../assets/images/misc/order_icon.svg";
+                    this.src = "assets/images/misc/order_icon.svg";
                 };
 
                 img.dataset.originalContainer = `${skillClass}-box`;
