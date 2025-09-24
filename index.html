@@ -8,6 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/misc/order_icon.svg">
 
     <link rel="stylesheet" href="styling/Stylesheet.css">
+    <script type="module" src="scripts/websiteDarkMode.js"></script>
 
 
     <script defer src="scripts/libs/Sortable.min.js"></script>
@@ -26,9 +27,9 @@
     <header>
         <h1>Select your class and start dragging!</h1>
 
-
-        <aside class="info-box">
-            <div class="legend-style">Info</div>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <img id="theme-icon" src="assets/images/misc/_ico_night.png" alt="Toggle theme" width="24" height="24">
+            </button>
             <div class="info-content">
                 <p><strong>Site Version:</strong> 1.0</p>
                 <p><strong>Status:</strong> Beta</p>
