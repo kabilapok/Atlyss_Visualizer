@@ -26,26 +26,16 @@ import skillLoadout from './components/skillLoadout.vue';
 
 import { ref } from 'vue';
 
-const base = import.meta.env.BASE_URL;
-
-let currentIcon = ref(`${base}images/misc/_ico_night.png`);
+let currentIcon = ref('./images/misc/_ico_night.png');
 
 function togglerIcon() {
   currentIcon.value =
-    currentIcon.value === `${base}images/misc/ico_night.png`
-      ? `${base}images/misc/ico_day.png`
-      : `${base}images/misc/ico_night.png`;
+    currentIcon.value === './images/misc/_ico_night.png'
+      ? './images/misc/_ico_day.png'
+      : './images/misc/_ico_night.png';
 }
 </script>
 
-<style scoped>
-#theme-toggle {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-</style>
 <style scoped>
 #theme-toggle {
   background: none;

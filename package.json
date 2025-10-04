@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "predeploy": "npm run build && echo > dist/.nojekyll",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -23,7 +24,7 @@
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.5.0",
-    "ghpages": "^0.0.10",
+    "gh-pages": "^6.1.1",
     "globals": "^16.4.0",
     "prettier": "^3.6.2",
     "vite": "^7.1.7"
