@@ -38,11 +38,4 @@ function togglerIcon() {
 }
 </script>
 
-<style scoped>
-#theme-toggle {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-</style>
+<style scoped></style>
