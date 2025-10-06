@@ -1,6 +1,9 @@
 <script setup>
+import { ref } from 'vue';
+
 import skillClass from '../assets/skills-data/index.json';
 
+const race = ref('poon');
 // Collect mastery skills from Fighter, Mystic, Bandit
 const masterySkills = [
   ...(skillClass.Fighter.Mastery || []).map((s) => ({
@@ -34,23 +37,31 @@ if (novice) {
 
 <template>
   <div>
-    <div class="skillbar-container">
-      <div class="skillbar">
-        <div class="skillbar-slot"></div>
-        <div class="skillbar-slot"></div>
-        <div class="skillbar-slot"></div>
-        <div class="skillbar-slot"></div>
-        <div class="skillbar-slot"></div>
-        <div class="skillbar-slot"></div>
-      </div>
-      <div class="skillbar">
-        <div class="skillbar-slot"></div>
-        <div class="skillbar-slot"></div>
-        <div class="skillbar-slot"></div>
-        <div class="skillbar-slot"></div>
-        <div class="skillbar-slot"></div>
-        <div class="skillbar-slot"></div>
-      </div>
+    <div>Picked: {{ race }}</div>
+
+    <div>
+      <img
+        :src="`./images/Race-icons/rcIco_${race}.png`"
+        :alt="`rcIco_${race}.png`"
+      />
+    </div>
+
+    <div>
+      <span>Race: </span>
+      <input type="radio" id="poon" value="poon" v-model="race" />
+      <label for="poon">Poon</label>
+
+      <input type="radio" id="kubold" value="azora" v-model="race" />
+      <label for="kubold">Kubold</label>
+
+      <input type="radio" id="byrdle" value="byrdle" v-model="race" />
+      <label for="byrdle">Byrdle</label>
+
+      <input type="radio" id="chang" value="chang" v-model="race" />
+      <label for="chang">Chang</label>
+
+      <input type="radio" id="imp" value="imp" v-model="race" />
+      <label for="imp">Imp</label>
     </div>
   </div>
 
@@ -68,8 +79,6 @@ if (novice) {
           :alt="`${item.skill || item}.png`"
           class="icon"
           :title="(item.skill || item).replace('_', ' ')"
-          draggable="true"
-          :originalContainer="category"
         />
       </div>
     </div>
