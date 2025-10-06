@@ -1,9 +1,24 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, reactive, watch } from 'vue';
 
 import skillClass from '../assets/skills-data/index.json';
 
+const defaultClass = ref('Novice');
 const race = ref('poon');
+const level = reactive({
+  min: 1,
+  max: 32,
+  value: 32,
+});
+
+// Watch for changes and clamp value between min and max
+watch(
+  () => level.value,
+  (newVal) => {
+    if (newVal > level.max) level.value = level.max;
+    if (newVal < level.min) level.value = level.min;
+  }
+);
 // Collect mastery skills from Fighter, Mystic, Bandit
 const masterySkills = [
   ...(skillClass.Fighter.Mastery || []).map((s) => ({
@@ -36,6 +51,35 @@ if (novice) {
 </script>
 
 <template>
+  <div>Class selected: {{ defaultClass }}</div>
+
+  <div v-for="set in skillSets" :key="set.name">
+    <input
+      type="radio"
+      :id="set.name"
+      :value="set.name"
+      v-model="defaultClass"
+    />
+    <label :for="set.name"
+      ><img
+        :src="`./images/misc/${set.name}_(Icon).png`"
+        :alt="`${set.name}_(Icon).png`"
+      />{{ `${set.name}` }}</label
+    >
+  </div>
+
+  <div>
+    <div>Level selected: {{ level.value }}</div>
+
+    <label for="level">Level ({{ level.min }}-{{ level.max }}) </label>
+    <input
+      id="level"
+      type="number"
+      v-model.number="level.value"
+      :min="level.min"
+      :max="level.max"
+    />
+  </div>
   <div>
     <div>Picked: {{ race }}</div>
 
