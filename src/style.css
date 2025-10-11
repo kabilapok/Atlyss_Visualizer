@@ -10,8 +10,15 @@
   --text-color: #000;
 }
 
+.dark {
+  --bg-color: #1b1b1b;
+  --text-color: #ddd;
+}
+
 body {
   background-color: var(--bg-color);
+  color: var(--text-color);
+
   font-family: 'Terminal Grotesque', Verdana, Geneva, Tahoma, sans-serif;
   font-weight: normal;
 }
