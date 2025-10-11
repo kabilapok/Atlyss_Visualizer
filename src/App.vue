@@ -14,7 +14,7 @@
       </button>
     </header>
 
-    <!-- <test /> -->
+    <profileInput />
 
     <skillLoadout />
   </main>
@@ -22,12 +22,7 @@
 
 <script setup>
 import skillLoadout from './components/skillLoadout.vue';
-//import test from './components/testFile.vue';
-
-import { ref } from 'vue';
-
-let currentIcon = ref('./images/misc/_ico_night.png');
-
+import profileInput from './components/profileInput.vue';
 function togglerIcon() {
   currentIcon.value =
     currentIcon.value === './images/misc/_ico_night.png'
