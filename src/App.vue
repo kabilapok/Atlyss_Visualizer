@@ -17,7 +17,7 @@
             :src="pendulumIcon"
             alt=""
             :class="{ spinning: isSpinning }"
-        />
+          />
         </div>
       </button>
     </header>
@@ -32,7 +32,6 @@
 import { ref, onMounted } from 'vue';
 
 import skillLoadout from './components/skillLoadout.vue';
-
 import profileInput from './components/profileInput.vue';
 
 // Icons
