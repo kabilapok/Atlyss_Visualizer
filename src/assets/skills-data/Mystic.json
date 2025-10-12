@@ -1,0 +1,315 @@
+{
+  "name": "Mystic",
+  "skills": {
+    "Shadow_Ward": {
+      "damageType": "Mind",
+      "name": "Shadow Ward",
+      "tier": "Bishop",
+      "description": "Applies a ward to the caster and nearby allies, increasing their shadow resistance and magic defense.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Applies a ward to the caster and nearby allies, increasing their shadow resistance and magic defense.",
+          "pointCost": 3,
+          "castTime": 0.12,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 20,
+          "level": 28,
+          "cooldown": 50,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Genesis": {
+      "damageType": "Mind",
+      "name": "Genesis",
+      "tier": "Bishop",
+      "description": "Applies a timed holy bomb to surrounding targets, dealing $DMG holy damage and decreasing their holy resistance.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Applies a timed holy bomb to surrounding targets, dealing $DMG holy damage and decreasing their holy resistance.",
+          "pointCost": 3,
+          "castTime": 0.7,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 30,
+          "level": 28,
+          "cooldown": 15,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Healos": {
+      "damageType": "Mind",
+      "name": "Healos",
+      "tier": "Bishop",
+      "description": "Casts a holy glyph, healing the caster and surrounding allies by $DMG and providing a heal over time condition to them.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Casts a holy glyph, healing the caster and surrounding allies by $DMG and providing a heal over time condition to them.",
+          "pointCost": 3,
+          "castTime": 0.6,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 25,
+          "level": 28,
+          "cooldown": 30,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Fluxclaw": {
+      "damageType": "Mind",
+      "name": "Fluxclaw",
+      "description": "Invokes a short ranged arcane claw that slashes targets twice, dealing $DMG damage each slash.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Invokes a short ranged arcane claw that slashes targets twice, dealing $DMG damage each slash.",
+          "pointCost": 1,
+          "castTime": 0.24,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 6,
+          "level": 10,
+          "cooldown": 0.6,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Nova": {
+      "damageType": "Mind",
+      "name": "Nova",
+      "description": "Emits a ring of magic energy around the caster, dealing $DMG damage. Provides knockback to hit targets. Can potentially apply a snare condition.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Emits a ring of magic energy around the caster, dealing $DMG damage. Provides knockback to hit targets. Can potentially apply a snare condition.",
+          "pointCost": 2,
+          "castTime": 0.12,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 20,
+          "level": 10,
+          "cooldown": 6,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Haste": {
+      "damageType": "Mind",
+      "name": "Haste",
+      "tier": "Magus",
+      "description": "Grants a buff increasing skill casting speed and skill cooldown speed to the caster and nearby allies.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Grants a buff increasing skill casting speed and skill cooldown speed to the caster and nearby allies.",
+          "pointCost": 6,
+          "castTime": 0.8,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 30,
+          "level": 28,
+          "cooldown": 80,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Fluxbolt": {
+      "damageType": "Mind",
+      "name": "Fluxbolt",
+      "description": "Casts a magic projectile that explodes on impact, multi hitting up to four times, dealing $DMG heavy damage each hit.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Casts a magic projectile that explodes on impact, multi hitting up to four times, dealing $DMG heavy damage each hit.",
+          "pointCost": 3,
+          "castTime": 0.8,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 16,
+          "level": 10,
+          "cooldown": 3,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Manaflow": {
+      "damageType": "Mind",
+      "name": "Manaflow",
+      "description": "Increases mana regeneration speed by <span style=\"color: yellow;\">36%.</span>",
+      "type": "Passive",
+      "ranks": [
+        {
+          "description": "Increases mana regeneration speed by <span style=\"color: yellow;\">36%.</span>",
+          "pointCost": 6,
+          "castTime": 0.85,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 1,
+          "level": 10,
+          "cooldown": 1.25,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Chroma_Ray": {
+      "damageType": "Mind",
+      "name": "Chroma Ray",
+      "tier": "Bishop",
+      "description": "Casts a holy ray, healing allies it passes by and damaging targets continuously for $DMG holy damage on hit.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Casts a holy ray, healing allies it passes by and damaging targets continuously for $DMG holy damage on hit.",
+          "pointCost": 3,
+          "castTime": 1,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 25,
+          "level": 28,
+          "cooldown": 8,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Blink": {
+      "damageType": "Mind",
+      "name": "Blink",
+      "description": "Unlocks the ability to quickly teleport from one point to another. Double tap $DASHINPUT to blink.",
+      "type": "Passive",
+      "ranks": [
+        {
+          "description": "Unlocks the ability to quickly teleport from one point to another. Double tap $DASHINPUT to blink.",
+          "pointCost": 6,
+          "castTime": 0.2,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 1,
+          "level": 10,
+          "cooldown": 1.4,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Ruin": {
+      "damageType": "Mind",
+      "name": "Ruin",
+      "tier": "Magus",
+      "description": "Invokes a glyph that spawns a swirl of shadow magic, dealing $DMG shadow damage up to three hits to targets within the radius.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Invokes a glyph that spawns a swirl of shadow magic, dealing $DMG shadow damage up to three hits to targets within the radius.",
+          "pointCost": 3,
+          "castTime": 1,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 24,
+          "level": 25,
+          "cooldown": 8,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Cross": {
+      "damageType": "Mind",
+      "name": "Cross",
+      "description": "Manifests a source of explosive arcane magic, dealing $DMG damage to afflicted targets. Applies an elemental condition.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Manifests a source of explosive arcane magic, dealing $DMG damage to afflicted targets. Applies an elemental condition.",
+          "pointCost": 2,
+          "castTime": 0.3,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 15,
+          "level": 10,
+          "cooldown": 5,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Imbue": {
+      "damageType": "Mind",
+      "name": "Imbue",
+      "description": "Imbues a mystical boon to the caster and nearby allies.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Imbues a mystical boon to the caster and nearby allies.",
+          "pointCost": 3,
+          "castTime": 0.12,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 12,
+          "level": 10,
+          "cooldown": 42,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Restora": {
+      "damageType": "Mind",
+      "name": "Restora",
+      "description": "Restores nearby friendly targets and the caster's health by $DMG.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Restores nearby friendly targets and the caster's health by $DMG.",
+          "pointCost": 2,
+          "castTime": 1.2,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 20,
+          "level": 10,
+          "cooldown": 10,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Prism": {
+      "damageType": "Mind",
+      "name": "Prism",
+      "description": "Forms a shield around the caster, absorbing damage.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Forms a shield around the caster, absorbing damage.",
+          "pointCost": 3,
+          "castTime": 0.12,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 20,
+          "level": 10,
+          "cooldown": 35,
+          "itemCost": ""
+        }
+      ]
+    },
+    "Fluxspear": {
+      "damageType": "Mind",
+      "name": "Fluxspear",
+      "description": "Casts a short piercing arcane spear, dealing $DMG damage. Applies a snare condition to adjacent targets.",
+      "type": "Active",
+      "ranks": [
+        {
+          "description": "Casts a short piercing arcane spear, dealing $DMG damage. Applies a snare condition to adjacent targets.",
+          "pointCost": 3,
+          "castTime": 0.12,
+          "staminaCost": 0,
+          "healthCost": 0,
+          "manaCost": 15,
+          "level": 10,
+          "cooldown": 12,
+          "itemCost": ""
+        }
+      ]
+    }
+  }
+}
