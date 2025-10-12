@@ -1,5 +1,5 @@
 <script setup>
-import { reactive } from 'vue';
+import { useProfile } from '../composables/useProfile';
 
 // Dynamic data arrays
 const classes = [
@@ -22,12 +22,7 @@ const races = [
 ];
 
 // Single reactive state
-const state = reactive({
-  nick: '',
-  class: 'Novice',
-  race: 'poon',
-  level: { min: 1, max: 32, value: 32 },
-});
+const state = useProfile();
 </script>
 
 <template>
