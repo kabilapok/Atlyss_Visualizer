@@ -33,12 +33,14 @@ export function useTooltip() {
 
     // Simple HTML escape function
     function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
+      return (
+        String(str)
+          .replace(/&/g, '&amp;')
+          // .replace(/</g, '&lt;')
+          // .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;')
+      );
     }
 
     return `

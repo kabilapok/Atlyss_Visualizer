@@ -204,7 +204,7 @@ function fallbackImage(item, img) {
   padding: 10px;
   border: 2px solid #aaa;
   border-radius: 6px;
-  background: #f8f8f8;
+  background: var(--bg-color);
   width: 700px;
   height: 360px;
   overflow-y: auto;
@@ -219,7 +219,7 @@ function fallbackImage(item, img) {
   padding: 10px;
   border: 2px solid #aaa;
   border-radius: 6px;
-  background: #f8f8f8;
+  background: var(--bg-color);
   height: fit-content;
   margin: 0 auto;
 }
@@ -271,7 +271,7 @@ function fallbackImage(item, img) {
   width: 72px;
   height: 72px;
   margin: 4px;
-  background: url('./images/misc/bk_02.png') center/72px 72px no-repeat;
+  background: url('/images/misc/bk_02.png') center/72px 72px no-repeat;
   image-rendering: pixelated;
   display: flex;
   justify-content: center;

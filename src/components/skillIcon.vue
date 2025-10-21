@@ -72,7 +72,7 @@ function handleImageError(e) {
 .icon .bg-bottom {
   position: absolute;
   inset: 0;
-  background: url('./images/misc/bk_02.png') center/72px 72px no-repeat;
+  background: url('/images/misc/bk_02.png') center/72px 72px no-repeat;
   image-rendering: pixelated;
   z-index: 1;
 }
@@ -89,7 +89,7 @@ function handleImageError(e) {
 .icon .bg-top {
   position: absolute;
   inset: 0;
-  background: url('./images/misc/bkOver_01.png') center/68px 68px no-repeat;
+  background: url('/images/misc/bkOver_01.png') center/68px 68px no-repeat;
   image-rendering: pixelated;
   z-index: 3;
 }
