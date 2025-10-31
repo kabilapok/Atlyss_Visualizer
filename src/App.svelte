@@ -1,9 +1,11 @@
 <script>
+  import Header from './components/Header.svelte';
   import SkillLoadout from './components/SkillLoadout.svelte';
 </script>
 
 <main>
-<SkillLoadout />
+  <Header />
+  <SkillLoadout />
 </main>
 
 <style>

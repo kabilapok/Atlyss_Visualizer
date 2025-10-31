@@ -9,6 +9,11 @@
   --text-color: #000;
 }
 
+.dark {
+  --bg-color: #313431;
+  --text-color: #ddd;
+}
+
 body {
   font-family: 'Terminal-Grotesque', Arial, Helvetica, sans-serif;
   background-color: var(--bg-color);
