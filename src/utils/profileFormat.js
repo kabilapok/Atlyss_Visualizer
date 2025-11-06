@@ -2,7 +2,7 @@ const defaultState = ({
   nick: '',
   class: 'Novice',
   race: 'poon',
-  level: { min: 1, max: 32, value: 32 }
+  level: { min: 1, max: 32}
 });
 
 
