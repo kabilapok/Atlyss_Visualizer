@@ -1,3 +1,4 @@
+<script>
   import { profileFormat } from '../utils/profileFormat.js';
   const { defaultState: baseState, profileData } = profileFormat();
   function clampLevel() {
@@ -7,6 +8,7 @@
     defaultState.level.value = Math.min(max, Math.max(min, lvl));
   }
 </script>
+
 <!-- Nickname -->
 <div>
   {#if defaultState.nick === ''}
@@ -35,7 +37,6 @@
     Level
   </label>
   <input type="number" class="number-input" id="level" onInput={clampLevel} bind:value={defaultState.level.value} min={defaultState.level.min} max={defaultState.level.max}>
-
   <input type="range" list="tickmarks" step="1" class="number-input" id="level" onInput={clampLevel} bind:value={defaultState.level.value} min={defaultState.level.min} max={defaultState.level.max}>
     <datalist id="tickmarks">
       <option value={defaultState.level.min}></option>
@@ -55,6 +56,7 @@
 </div>
 
 <style>
+
   div:has(div) {
     border: solid 1px white;
     padding: 3px;
@@ -68,4 +70,5 @@
     font-family: inherit;
     font-size: xx-large;
     background: transparent;
-  }</style>
+  }
+</style>
