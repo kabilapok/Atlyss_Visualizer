@@ -9,6 +9,8 @@
   }
 </script>
 
+<div id="profile-box"><h2>Profile Box</h2></div>
+
 <!-- Nickname -->
 <div>
   {#if defaultState.nick === ''}
