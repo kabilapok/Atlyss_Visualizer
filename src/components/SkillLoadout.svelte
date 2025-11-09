@@ -1,4 +1,5 @@
 <script>
+  import Muuri from 'muuri';
   import '../styles/tooltip.css';
   import {tippy} from 'svelte-tippy';
   import 'tippy.js/dist/tippy.css';
@@ -43,12 +44,18 @@
 {:else}
   <div class="icon-container">
     {#each icons as icon}
-      <img 
-        src={icon.url} 
-        alt={icon.name}.png
-        class:failed={!icon.loaded}
-        use:tooltip={["", icon.name]}
-      />
+      <div class="icon-item"
+      use:tooltip={["", icon.name]}
+      >
+        <div class="icon-bottom"></div>
+        <img 
+          src={icon.url} 
+          alt={icon.name}.png
+          class:failed={!icon.loaded}
+          draggable="false"
+        />
+        <div class="icon-top"></div>
+      </div>
     {/each}
   </div>
 {/if}
@@ -58,14 +65,45 @@
 	
  .icon-container {
     display: flex;
-    flex-wrap: wrap;
+    position: relative;
     gap: 10px;
+    flex-wrap: wrap;
+    
   }
   
  .icon-container img {
-    width: 64px;
-    height: 64px;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .icon-item {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    overflow: hidden;
+  }
+  
+  .icon-bottom {
+    position: absolute;
+    background: url('/images/misc/bk_02.png') center/72px 72px no-repeat;
     image-rendering: pixelated;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .icon-top {
+    position: absolute;
+    inset: 0;
+    background: url('/images/misc/bkOver_01.png') center/68px 68px no-repeat;
+    image-rendering: pixelated;
+    z-index: 3;
   }
 
  .failed {
@@ -73,5 +111,4 @@
     filter: grayscale(80%);
   }
   
-
 </style>
