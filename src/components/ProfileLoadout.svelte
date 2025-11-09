@@ -1,6 +1,6 @@
 <script>
   import { profileFormat } from '../utils/profileFormat.js';
-  const { defaultState: baseState, profileData } = profileFormat();
+  const { defaultState, defaultState: baseState, profileData } = profileFormat();
   function clampLevel() {
     const lvl = defaultState.level.value;
     const min = defaultState.level.min;
@@ -52,7 +52,7 @@
   <div>Class selected: {defaultState.class}</div>
   {#each profileData.classes as classes}
   <label>
-    <input type="radio" id={classes.name} value={classes.name} bind:group={defaultState.class}><img src={classes.icon} alt={classes.name}.png/>{classes.name}
+    <input type="radio" id={classes.name} value={classes.name} bindgroup={defaultState.class}><img src={classes.icon} alt={classes.name}.png/>{classes.name}
   </label>
   {/each}
 </div>
