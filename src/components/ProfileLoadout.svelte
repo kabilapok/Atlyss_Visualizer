@@ -1,12 +1,78 @@
+<script>
+  import { defaultLevelValue, DEFAULT_LEVEL } from '../lib/stores/level.js'  
+  import { get } from 'svelte/store';
+  import { onMount } from 'svelte';
   import { profileFormat } from '../utils/profileFormat.js';
+  import { saveSlot, loadSlot } from '../lib/storage/profileStorage.js';
+  
   const { defaultState: baseState, profileData } = profileFormat();
+  let defaultState = structuredClone(baseState);
+
+  const SLOT_COUNT = 7;
+  let activeSlot = 0;
+
+  onMount(() => {
+  applyLoadedProfile(loadSlot("profile", activeSlot, baseState));
+  });
+
+  function saveCurrentSlot() {
+  const dataToSave = {
+    ...defaultState,
+    level: {
+      ...defaultState.level,
+      value: get(defaultLevelValue) // take store value at saving time
+    }
+  };
+
+  saveSlot("profile", activeSlot, dataToSave);
+}
+
+
+function loadSlotIndex(index) {
+activeSlot = index;
+  applyLoadedProfile(loadSlot("profile", activeSlot, baseState));
+}
+
+function applyLoadedProfile(loaded) {
+  defaultState = structuredClone(loaded);
+
+  if (loaded.level?.value != null) {
+    defaultLevelValue.set(loaded.level.value);
+  }
+
+}
+  function resetProfile() {
+    defaultState = structuredClone(baseState);
+    defaultLevelValue.set(DEFAULT_LEVEL);
+    saveCurrentSlot();
+  } 
+  
+
   function clampLevel() {
-    const lvl = defaultState.level.value;
+    const lvl = $defaultLevelValue;
     const min = defaultState.level.min;
     const max = defaultState.level.max;
-    defaultState.level.value = Math.min(max, Math.max(min, lvl));
+    $defaultLevelValue = Math.min(max, Math.max(min, lvl));
   }
 </script>
+
+<div class="slots">
+  {#each Array(SLOT_COUNT) as _, i}
+    <button
+      class:active={i === activeSlot}
+      onclick={() => loadSlotIndex(i)}
+    >
+      Slot {i + 1}
+    </button>
+  {/each}
+</div>
+
+<div class="buttons">
+  <button onclick={saveCurrentSlot}>Save Slot</button>
+  <button onclick={resetProfile}>Reset to Default</button>
+</div
+>
+
 <!-- Nickname -->
 <div>
   {#if defaultState.nick === ''}
@@ -30,13 +96,13 @@
 
 <!-- Level Selection -->
 <div>
-  <div>Level selected: {defaultState.level.value}</div>
+  <div>Level selected: {$defaultLevelValue}</div>
   <label for="level">
     Level
   </label>
-  <input type="number" class="number-input" id="level" onInput={clampLevel} bind:value={defaultState.level.value} min={defaultState.level.min} max={defaultState.level.max}>
+  <input type="number" class="number-input" id="level" oninput={clampLevel} bind:value={$defaultLevelValue} min={defaultState.level.min} max={defaultState.level.max}>
 
-  <input type="range" list="tickmarks" step="1" class="number-input" id="level" onInput={clampLevel} bind:value={defaultState.level.value} min={defaultState.level.min} max={defaultState.level.max}>
+  <input type="range" list="tickmarks" step="1" class="number-input" id="level" oninput={clampLevel} bind:value={$defaultLevelValue} min={defaultState.level.min} max={defaultState.level.max}>
     <datalist id="tickmarks">
       <option value={defaultState.level.min}></option>
       <option value={defaultState.level.max / 2}></option>
@@ -55,6 +121,7 @@
 </div>
 
 <style>
+
   div:has(div) {
     border: solid 1px white;
     padding: 3px;
@@ -68,4 +135,33 @@
     font-family: inherit;
     font-size: xx-large;
     background: transparent;
-  }</style>
+  }
+
+  .text-input {
+    background: transparent;      
+    border: 2px solid #888;
+    border-radius: 6px;
+    padding: 6px 10px;
+    color: inherit;               
+    outline: none;    
+  }
+
+  .text-input:focus {
+    border-color: #ffb400;        
+  }
+
+  /* Optional hover */
+  .text-input:hover {
+    border-color: #c9c9c9;
+  }
+
+  .slots button.active {
+    border: 2px solid #ffd256;
+    background: #2f2f2f;
+  }
+ 
+  .buttons button {
+    margin-right: 8px;
+  }
+  
+</style>
