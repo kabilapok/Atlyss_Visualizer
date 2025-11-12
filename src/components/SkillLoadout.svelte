@@ -1,7 +1,7 @@
 <script>
   import Muuri from 'muuri';
   import '../styles/tooltip.css';
-  import {tippy} from 'svelte-tippy';
+  import { tippy } from 'svelte-tippy';
   import 'tippy.js/dist/tippy.css';
   import { onMount } from 'svelte';
   import { loadAllIcons } from '../utils/iconLoader.js';
@@ -31,7 +31,7 @@
 
   tippy(el, {
       allowHTML: true,
-      content: skill ?  createTooltipContent(skill) : "<em> No data available>",
+      content: skill ?  createTooltipContent(skill) : "<em>No data available>",
       placement: "top",
       delay: [150, 0]
     });
