@@ -36,7 +36,7 @@ export function createTooltipContent(skill) {
 
         <div class="tooltip-stats">
         ${rank.pointCost ? `<div><strong>Point Cost:</strong> ${rank.pointCost}</div>` : ""}
-        ${rank.level ? `<div><strong>Requires Level:</strong> ${rank.level}</div>` : ""}
+        ${rank.level ? `<div><strong>Required Level:</strong> ${rank.level}</div>` : ""}
         </div>
 
       </div>  
@@ -57,8 +57,9 @@ export function createTooltipContent(skill) {
       </div>
 
       <div class="tooltip-stats">
+        ${skill.damageType ? `<div><strong>Damage Type:<strong> ${skill.damageType}</div>` : "" }
         ${rank.pointCost ? `<div><strong>Point Cost:</strong> ${rank.pointCost}</div>` : ""}
-        ${rank.level ? `<div><strong>Requires Level:</strong> ${rank.level}</div>` : ""}
+        ${rank.level ? `<div><strong>Required Level:</strong> ${rank.level}</div>` : ""}
         ${rank.castTime ? `<div><strong>Cast Time:</strong> ${rank.castTime}</div>` : ""}
         ${rank.cooldown ? `<div><strong>Cooldown:</strong> ${rank.cooldown}</div>` : ""}
 

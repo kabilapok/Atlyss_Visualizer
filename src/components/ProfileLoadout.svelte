@@ -116,7 +116,7 @@ function applyLoadedProfile(loaded) {
   <div>Class selected: {defaultState.class}</div>
   {#each profileData.classes as classes}
   <label>
-    <input type="radio" id={classes.name} value={classes.name} bindgroup={defaultState.class}><img src={classes.icon} alt={classes.name}.png/>{classes.name}
+    <input type="radio" id={classes.name} value={classes.name} bind:group={defaultState.class}><img src={classes.icon} alt={classes.name}.png/>{classes.name}
   </label>
   {/each}
 </div>

@@ -1,7 +1,7 @@
 <script>
   import Muuri from 'muuri';
+  import tippy from 'tippy.js';
   import '../styles/tooltip.css';
-  import { tippy } from 'svelte-tippy';
   import 'tippy.js/dist/tippy.css';
   import { onMount } from 'svelte';
   import { loadAllIcons } from '../utils/iconLoader.js';
@@ -19,17 +19,16 @@
   });
 
   function tooltip(el, [className, skillName]) {
-
     let skill;
 
-  for (const classObj of Object.values(classes)) {
-    if (classObj.skills?.[skillName]) {
-      skill = classObj.skills[skillName];
-      break;
+    for (const classObj of Object.values(classes)) {
+      if (classObj.skills?.[skillName]) {
+        skill = classObj.skills[skillName];
+        break;
+      }
     }
-  }
 
-  tippy(el, {
+    tippy(el, {
       allowHTML: true,
       content: skill ?  createTooltipContent(skill) : "<em>No data available>",
       placement: "top",
