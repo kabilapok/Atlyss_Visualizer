@@ -63,7 +63,6 @@ export function createTooltipContent(skill) {
         ${rank.castTime ? `<div><strong>Cast Time:</strong> ${rank.castTime}</div>` : ""}
         ${rank.cooldown ? `<div><strong>Cooldown:</strong> ${rank.cooldown}</div>` : ""}
 
-        ${skill.damageType ? `<div><strong>Damage type:</strong> ${skill.damageType}</div>` : ""}
         ${rank.manaCost ? `<div><strong>Mana Cost:</strong> ${rank.manaCost}</div>` : ""}
         ${rank.staminaCost ? `<div><strong>Stamina Cost:</strong> ${rank.staminaCost}</div>` : ""}
         ${rank.healthCost ? `<div><strong>Health:</strong> ${rank.healthCost}</div>` : ""}

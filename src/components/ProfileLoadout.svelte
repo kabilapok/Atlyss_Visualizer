@@ -103,12 +103,7 @@ function applyLoadedProfile(loaded) {
   </label>
   <input type="number" class="number-input" id="level" oninput={clampLevel} bind:value={$defaultLevelValue} min={defaultState.level.min} max={defaultState.level.max}>
 
-  <input type="range" list="tickmarks" step="1" class="number-input" id="level" oninput={clampLevel} bind:value={$defaultLevelValue} min={defaultState.level.min} max={defaultState.level.max}>
-    <datalist id="tickmarks">
-      <option value={defaultState.level.min}></option>
-      <option value={defaultState.level.max / 2}></option>
-      <option value={defaultState.level.max}></option>
-    </datalist>
+  <input type="range" step="1" class="number-input" id="level" oninput={clampLevel} bind:value={$defaultLevelValue} min={defaultState.level.min} max={defaultState.level.max}>
 </div>
 
 <!-- Class Selection -->
