@@ -1,0 +1,305 @@
+@font-face {
+    font-family: 'Terminal-Grotesque';
+    src: url('../assets/Terminale-Grotesque-master/terminal-grotesque.ttf') format('truetype'),
+         url('../assets/Terminale-Grotesque-master/terminal-grotesque_open.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Terminal Grotesque', Verdana, Geneva, Tahoma, sans-serif;
+    background-color: antiquewhite;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1, h4 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2em;
+
+}
+footer {
+    text-align: center;
+    font-size: 1.5rem;
+}   
+    footer img {
+        height: 5em;
+        width: auto;
+    }
+
+
+header aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: auto;
+}
+
+header {
+    position: relative;
+}
+
+.info-box {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.legend-style {
+    position: absolute;
+    top: -0.7em;
+    left: 1rem;
+    background-color: antiquewhite;
+    padding: 0 0.5em;
+    font-weight: bold;
+}
+
+#main-profile {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* spacing between orbs and hotbar */
+    border-radius: 20px;
+    padding: 20px 30px;
+    gap: 20px;
+    margin: 40px auto;
+    width: fit-content;
+}
+
+#Race-img {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+}   
+
+.main-stats-box {
+    padding: 5px;
+}
+
+#hotbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* spacing between orbs and hotbar */
+    background: rgba(40, 40, 40, 0.9); /* dark semi-transparent panel */
+    border-radius: 20px;
+    padding: 20px 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    gap: 20px;
+    margin: 40px auto;
+    width: fit-content;
+}
+
+.stat-orb {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border: 2px solid #333;
+}
+    #hp-orb {
+        background: radial-gradient(circle, red 60%, darkred 100%);
+    }
+
+    #mana-orb {
+          background: radial-gradient(circle, blue 60%, navy 100%);
+    }
+
+
+#hotbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hotbar-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+.hotbar-slot {
+    width: 60px;
+    height: 60px;
+    border: 2px dashed #aaa;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+}
+    .hotbar-slot img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .hotbar-slot:hover {
+        transform: scale(1.1);
+    }
+
+    .hotbar-slot .icon:hover {
+        transform: none;
+    }
+
+
+#stat-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#equipment-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #fff6d4;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+.equipment-slot {
+    width: 50px;
+    height: 50px;
+    border: 2px dashed #aaa;
+    border-radius: 8px;
+    background-color: #ae775a;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+}
+    .equipment-slot img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
+
+
+
+#skill-section {
+    position: absolute;
+    left: 1rem;
+    width: 53%;
+    pointer-events: none;
+}   
+    #skill-section *{
+        pointer-events: auto;
+
+    }
+
+#Passive {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+.icon {
+   
+    border-radius: 5px;
+    margin: 0.5rem;
+    object-fit: contain;
+    cursor: pointer;
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out;
+}
+    .icon:hover {
+        transform: scale(1.1);
+    }
+
+
+#Novice {
+    display: flex;
+    background-color: #f1f1f1;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 55%;
+/*    flex-wrap: wrap;
+*/    padding: 10px;
+    margin-top: 20px;
+}
+
+#Fighter {
+    display: flex;
+    padding: 0.5rem;
+    background-color: rgba(255, 0, 0, 0.400);
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    align-items: center;
+    width: 55%;
+}
+
+#Mystic {
+    display: flex;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 255, 0.400);
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    align-items: center;
+    width: 55%;
+}
+
+#Bandit {
+    display: flex;
+    padding: 0.5rem;
+    background-color: rgba(0, 255, 0, 0.400);
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    align-items: center;
+    width: 55%;
+}
+
+#tooltip {
+    position: absolute;
+    display: block; /* use JS to control visibility */
+    background-color: #222; /* slightly darker for clarity */
+    color: #fff;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    white-space: normal; /* allow line breaks (important for descriptions) */
+    max-width: 260px; /* prevent going off screen */
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform: translateY(5px); /* small upward animation */
+}
+
+/* dragndrop css to change*/
+.hotbar-slot.swap-preview {
+    outline: 2px dashed #4caf50;
+    background-color: rgba(76, 175, 80, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.sortable-chosen {
+    opacity: 0.6;
+    transform: scale(0.95);
+}
+
+.sortable-ghost {
+    border: 2px dashed #2196f3;
+    background-color: rgba(33, 150, 243, 0.2);
+}
