@@ -1,0 +1,30 @@
+  .tooltip-skill {
+  max-width: 260px;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.tooltip-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.tooltip-name {
+  color: gold;
+}
+
+.tooltip-type {
+  color: #8ecaff;
+}
+
+.tooltip-description {
+  margin-bottom: 6px;
+}
+
+.tooltip-stats > div {
+  margin-bottom: 2px;
+}  
+
+  

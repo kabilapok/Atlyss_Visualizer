@@ -1,6 +1,18 @@
-# Atlyss_Visualizer
+# Atlyss Visualizer
 
-My attempt at doing a Skill Visualizer for the game Atlyss. Please don't mind as I'm getting into the environment of setting my code up and doing things properly.
+A **Svelte + Vite** project
 
-## The very first Mockup
-![Atlyss_Visualizer_Mockup__1](assets/Atlyss_Visualizer_Mockup(lowres).png)
+## What is Atlyss Visualizer?
+
+WIP
+
+## Installation
+
+Requires **Node.js** and a package manager like **NPM** for local testing
+
+### Steps
+
+- Clone the repo
+- Open the directory in a shell (Command Prompt)
+- Install the packages `npm install`
+- Run a server to make sure everything works `npm run dev`

@@ -1,0 +1,78 @@
+{
+  "Fighter": {
+    "Action": [
+      "Execute",
+      "Stomp",
+      "Blood_Gush",
+      "Shield_Bash",
+      "Cyclone",
+      "Shockwave",
+      "Lethal_Strike",
+      "Divine"
+    ],
+    "Support": ["Rage"],
+    "Passive": ["Reflect", "Bulwark"],
+
+    "Mastery": ["Strength_Mastery"]
+  },
+
+  "Mystic": {
+    "Action": [
+      "Fluxclaw",
+      "Fluxbolt",
+      "Nova",
+      "Cross",
+      "Fluxspear",
+      "Ruin",
+      "Chroma_Ray",
+      "Genesis"
+    ],
+    "Support": ["Restora", "Prism", "Imbue", "Haste", "Healos", "Shadow_Ward"],
+
+    "Passive": ["Blink", "Manaflow"],
+
+    "Mastery": ["Mind_Mastery"]
+  },
+
+  "Bandit": {
+    "Action": [
+      "Venom_Shot",
+      "Volley",
+      "Killer_Jab",
+      "Pay_Day",
+      "Bomb_Trap",
+      "Caltrops",
+      "Avoidance"
+    ],
+    "Support": ["Devious_Signet", "Mist_Veil"],
+    "Passive": ["Agile_Technique"],
+
+    "Mastery": ["Dexterity_Mastery"]
+  },
+
+  "Novice": {
+    "Action": [
+      "Rock_Toss",
+      "Siphon_Leech",
+      "Multi_Bash",
+      "Taunt",
+      "Spread_Shot",
+      "Focus_Shot",
+      "Fira",
+      "Crya",
+      "Spire",
+      "Aquos",
+      "Gust",
+      "Talus"
+    ],
+    "Support": [
+      "Alacrity",
+      "Inner_Focus",
+      "Leg_Up",
+      "Recovery",
+      "Sturdy",
+      "Curis",
+      "Life_Tap"
+    ]
+  }
+}

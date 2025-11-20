@@ -1,31 +1,54 @@
-﻿.vscode/
-.vs/
-*.user
-*.suo
-*.vcxproj.user
-*.code-workspace
-bin/
-obj/
-out/
-Debug/
-*.exe
-*.dll
-*.pdb
+# Logs
+logs
 *.log
-node_modules/
-package-lock.json
-dist/
-wwwroot/
-.env   
-secrets.json
-appsettings.*.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+/dist
+
+# VS Code workspace files
+.vscode/*
+!.vscode/extensions.json
+.vs
+*.code-workspace
+.history/
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
 .DS_Store
-Thumbs.db
-*.bak
-*.map
-tsconfig.tsbuildinfo
-*.vsidx
-Release/
-.sln
-.eproj
-/Atlyss_Visualizer.esproj
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Vite
+dist
+dist-ssr
+*.local
+
+# Project specific
+.vs/
+.vscode/
+*.sqlite
+*.json.user
+copilot-chat/
+CopilotIndices/
+FileContentIndex/
+v17/

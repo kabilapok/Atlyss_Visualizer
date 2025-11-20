@@ -1,14 +1,10 @@
-import { createAndPlaceIcons } from './Scripts/iconManager.js';
-import { loadSkillData } from './Scripts/dataLoader.js';
-import { initializeOptions } from './Scripts/optionManager.js';
-import { loadAndInitTooltips } from './Scripts/tooltipManager.js';
+import { mount } from 'svelte';
+import './app.css';
+import 'web-animations-js';
+import App from './App.svelte';
 
-async function main() {
-    const data = await loadSkillData();
-    if (!data) return;
-    const { iconData } = data;
-    createAndPlaceIcons(iconData);
-    initializeOptions();
-    loadAndInitTooltips();
-}
-main();
+const app = mount(App, {
+  target: document.getElementById('app'),
+})
+
+export default app
