@@ -3,23 +3,54 @@
   import tippy from 'tippy.js';
   import '../styles/tooltip.css';
   import 'tippy.js/dist/tippy.css';
-  import { onMount } from 'svelte';
+
+  import { onMount, tick } from 'svelte';
   import { loadAllIcons } from '../utils/iconLoader.js';
   import { loadData, createTooltipContent } from '../utils/tooltip.js';
-  import { defaultClassValue, DEFAULT_CLASS } from '../lib/stores/level.js'  
+  import { defaultClassValue, DEFAULT_CLASS } from '../lib/stores/level.js';  
 
   let icons = [];
   let loading = true;
-
   let classes = {};
+  let grid;
 
   onMount(async () => {
-    icons = await loadAllIcons(); 
+    icons = await loadAllIcons();
     classes = await loadData();
     loading = false;
+
+    await tick(); // ensure DOM is ready
+
+    grid = new Muuri('.grid', {
+      dragEnabled: true,
+      layout: {
+        fillGaps: true,
+      }
+    });
+
+    // Listen to store changes → trigger filtering
+    defaultClassValue.subscribe(filterByClass);
   });
 
-  function tooltip(el, [className, skillName]) {
+  function filterByClass(selected) {
+    if (!grid) return;
+
+    grid.filter(item => {
+      const el = item.getElement();
+      const category = el.dataset.category;
+      const name = el.dataset.name;
+
+      const isMastery = name.includes("Mastery");
+
+      return (
+        category === DEFAULT_CLASS ||
+        category === selected ||
+        isMastery
+      );
+    });
+  }
+
+  function tooltip(el, [_, skillName]) {
     let skill;
 
     for (const classObj of Object.values(classes)) {
@@ -31,85 +62,86 @@
 
     tippy(el, {
       allowHTML: true,
-      content: skill ?  createTooltipContent(skill) : "<em>No data available>",
+      content: skill
+        ? createTooltipContent(skill)
+        : "<em>No data available</em>",
       placement: "top",
       delay: [150, 0]
     });
   }
-  
 </script>
 
 {#if loading}
   <p><strong>Loading icons...</strong></p>
 {:else}
-  <div class="icon-container">
+  <div class="grid">
     {#each icons as icon}
-      <div class="icon-item"
-            class:hidden={
-            // Give the hidden attribute to icons at the condition that
-            // the icon category is not the default one,
-             icon.category !== DEFAULT_CLASS &&
-
-            // the icon category is not the one the user selected,
-              icon.category !== $defaultClassValue &&
-
-            // and the icon does not have the name Mastery
-              !icon.name.includes("Mastery")
-               }
-      use:tooltip={["", icon.name]}
+      <div
+        class="item"
+        data-category={icon.category}
+        data-name={icon.name}
+        use:tooltip={["", icon.name]}
       >
-        <div class="icon-bottom"></div>
-        <img 
-          src={icon.url} 
-          alt={icon.name}.png
-          class:failed={!icon.loaded}
-          draggable="false"
-        />
-        <div class="icon-top"></div>
+        <div class="item-content">
+          <div class="bg-bottom"></div>
+
+          <img
+            src={icon.url}
+            alt={icon.name}
+            data-name={icon.name}
+            draggable="false"
+            class:failed={!icon.loaded}
+            class="skill-icon"
+          />
+
+          <div class="bg-top"></div>
+        </div>
       </div>
     {/each}
   </div>
 {/if}
 
-
 <style>
-	
- .icon-container {
-    display: flex;
+  /* Muuri container */
+  .grid {
     position: relative;
-    gap: 10px;
-    flex-wrap: wrap;
-    
   }
-  
- .icon-container img {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    z-index: 2;
-    pointer-events: none;
-  }
-  
-  .icon-item {
-    position: relative;
+
+  /* Muuri item */
+  .item {
+    position: absolute;
     width: 72px;
     height: 72px;
+    cursor: grab;
+  }
+
+  /* Required Muuri wrapper */
+  .item-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: grab;
-    overflow: hidden;
   }
-  
-  .icon-bottom {
+
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+    image-rendering: pixelated;
+    z-index: 2;
+  }
+
+  .bg-bottom {
     position: absolute;
+    inset: 0;
     background: url('/images/misc/bk_02.png') center/72px 72px no-repeat;
     image-rendering: pixelated;
-    inset: 0;
     z-index: 1;
   }
 
-  .icon-top {
+  .bg-top {
     position: absolute;
     inset: 0;
     background: url('/images/misc/bkOver_01.png') center/68px 68px no-repeat;
@@ -117,12 +149,8 @@
     z-index: 3;
   }
 
- .failed {
+  .failed {
     opacity: 0.5;
     filter: grayscale(80%);
-  }
-  
-  .hidden {
-    display: none;
   }
 </style>
