@@ -6,6 +6,7 @@
   import { onMount } from 'svelte';
   import { loadAllIcons } from '../utils/iconLoader.js';
   import { loadData, createTooltipContent } from '../utils/tooltip.js';
+  import { defaultClassValue, DEFAULT_CLASS } from '../lib/stores/level.js'  
 
   let icons = [];
   let loading = true;
@@ -44,6 +45,7 @@
   <div class="icon-container">
     {#each icons as icon}
       <div class="icon-item"
+            class:hidden={ icon.category !== DEFAULT_CLASS && icon.category !== $defaultClassValue }
       use:tooltip={["", icon.name]}
       >
         <div class="icon-bottom"></div>
@@ -110,4 +112,7 @@
     filter: grayscale(80%);
   }
   
+  .hidden {
+    display: none;
+  }
 </style>

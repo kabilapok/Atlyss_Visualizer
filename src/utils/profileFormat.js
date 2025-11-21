@@ -1,9 +1,8 @@
-const defaultState = ({
+const defaultState = {
   nick: '',
-  class: 'Novice',
   race: 'poon',
   level: { min: 1, max: 32}
-});
+};
 
 
 const profileData = {

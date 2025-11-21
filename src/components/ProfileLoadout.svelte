@@ -1,5 +1,5 @@
 <script>
-  import { defaultLevelValue, DEFAULT_LEVEL } from '../lib/stores/level.js'  
+  import { defaultLevelValue, DEFAULT_LEVEL, defaultClassValue, DEFAULT_CLASS } from '../lib/stores/level.js'  
   import { get } from 'svelte/store';
   import { onMount } from 'svelte';
   import { profileFormat } from '../utils/profileFormat.js';
@@ -108,10 +108,10 @@ function applyLoadedProfile(loaded) {
 
 <!-- Class Selection -->
 <div>
-  <div>Class selected: {defaultState.class}</div>
+  <div>Class selected: {$defaultClassValue}</div>
   {#each profileData.classes as classes}
   <label>
-    <input type="radio" id={classes.name} value={classes.name} bind:group={defaultState.class}><img src={classes.icon} alt={classes.name}.png/>{classes.name}
+    <input type="radio" id={classes.name} value={classes.name} bind:group={$defaultClassValue}><img src={classes.icon} alt={classes.name}.png/>{classes.name}
   </label>
   {/each}
 </div>
