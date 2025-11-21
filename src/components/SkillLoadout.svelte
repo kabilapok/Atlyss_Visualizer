@@ -45,7 +45,17 @@
   <div class="icon-container">
     {#each icons as icon}
       <div class="icon-item"
-            class:hidden={ icon.category !== DEFAULT_CLASS && icon.category !== $defaultClassValue }
+            class:hidden={
+            // Give the hidden attribute to icons at the condition that
+            // the icon category is not the default one,
+             icon.category !== DEFAULT_CLASS &&
+
+            // the icon category is not the one the user selected,
+              icon.category !== $defaultClassValue &&
+
+            // and the icon does not have the name Mastery
+              !icon.name.includes("Mastery")
+               }
       use:tooltip={["", icon.name]}
       >
         <div class="icon-bottom"></div>
