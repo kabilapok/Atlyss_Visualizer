@@ -11,9 +11,7 @@
       "Divine"
     ],
     "Support": ["Rage"],
-    "Passive": ["Reflect", "Bulwark"],
-
-    "Mastery": ["Strength_Mastery"]
+    "Passive": ["Reflect", "Bulwark", "Strength_Mastery"]
   },
 
   "Mystic": {
@@ -29,9 +27,7 @@
     ],
     "Support": ["Restora", "Prism", "Imbue", "Haste", "Healos", "Shadow_Ward"],
 
-    "Passive": ["Blink", "Manaflow"],
-
-    "Mastery": ["Mind_Mastery"]
+    "Passive": ["Blink", "Manaflow", "Mind_Mastery"]
   },
 
   "Bandit": {
@@ -45,9 +41,7 @@
       "Avoidance"
     ],
     "Support": ["Devious_Signet", "Mist_Veil"],
-    "Passive": ["Agile_Technique"],
-
-    "Mastery": ["Dexterity_Mastery"]
+    "Passive": ["Agile_Technique", "Dexterity_Mastery"]
   },
 
   "Novice": {
